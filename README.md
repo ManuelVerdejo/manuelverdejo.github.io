@@ -1,27 +1,36 @@
-# 👋 Hola, soy Manuel Verdejo
+# 📊 Portafolio de Análisis de Datos — Manuel Verdejo García
 
-Soy analista de datos en formación con base matemática sólida. Me especializo en análisis estadístico, visualización interactiva y herramientas como Power BI, Python y SQL.
-
----
-
-## 📊 Proyectos
-
-### 1. Dashboard de Ventas – Power BI  
-🔗 [Descargar archivo](proyectos/dashboard-ventas.pbix)  
-![Vista previa](img/dashboard-ventas.png)  
-> Visualización de métricas de ventas por región, canal y categoría.
-
-### 2. Análisis Exploratorio – Python  
-🔗 [Ver notebook](proyectos/eda-titanic.ipynb)  
-> Limpieza, visualización y análisis de un dataset clásico usando Python (Pandas, Seaborn).
-
-### 3. Informe PDF – Datos INE  
-🔗 [Ver informe](proyectos/informe-datos.pdf)  
-> Análisis descriptivo con gráficos y conclusiones, orientado a la toma de decisiones.
+Buenas. Soy **Manuel Verdejo**, estudiante de último curso del Grado en Matemáticas por la Universidad de Sevilla y aspirante a **analista de datos**. En este repositorio encontrarás algunos de los proyectos y ejercicios prácticos que he realizado para aplicar técnicas de análisis estadístico, machine learning, visualización de datos y optimización.
 
 ---
 
-## 📬 Contacto
+## 📁 Contenido del repositorio
 
-- 📧 manuelverdejo2000@gmail.com  
-- 💼 [LinkedIn](https://linkedin.com/in/manuel-verdejo-garc%C3%ADa-8483b7260)
+| Archivo                                    | Descripción breve |
+|-------------------------------------------|-------------------|
+| `modelo_loess_clustering_pca.R`           | Análisis multivariante con regresión LOESS, clustering y PCA. |
+| `regresion_loess_bootstrap_pca.R`         | Script completo con validación por bootstrap y análisis factorial. |
+| `Optimización.py` / `Optimización2.py`    | Algoritmos de optimización matemática en Python. |
+| `FutbolInternacional.pbix` / `Libros.pbix`| Dashboards interactivos creados con Power BI. |
+| `ACP Teno.pdf` / `Clúster Teno.pdf`       | Análisis de componentes principales y clustering de datos reales. |
+| `Regresión Lineal Ríos Nueva York.pdf`    | Regresión aplicada a series temporales ambientales. |
+| `README.md`                               | Este documento 😊 |
+
+---
+
+## 🧠 Tecnologías utilizadas
+
+- **R**: análisis estadístico, PCA, regresión, clustering.
+- **Python**: optimización, scripts matemáticos.
+- **Power BI**: dashboards visuales y paneles interactivos.
+- **GitHub Pages**: este repositorio está publicado en [manuelverdejo.github.io](https://manuelverdejo.github.io)
+
+---
+
+## 📌 Sobre mí
+
+Actualmente me encuentro en búsqueda de una **oportunidad laboral como analista de datos** en remoto o en Sevilla. Me interesa especialmente el análisis de métricas de negocio, reporting, visualización de datos y modelos predictivos aplicados a problemas reales. Puedes contactarme por correo a **manuelverdejo2000@gmail.com**.
+
+---
+
+Gracias por visitar mi portafolio. ¡Estoy abierto a sugerencias, colaboraciones o entrevistas! 🚀
