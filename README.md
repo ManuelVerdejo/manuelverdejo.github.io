@@ -1,36 +1,52 @@
 # 📊 Portafolio de Análisis de Datos — Manuel Verdejo García
 
-Buenas. Soy **Manuel Verdejo**, estudiante de último curso del Grado en Matemáticas por la Universidad de Sevilla y aspirante a **analista de datos**. En este repositorio encontrarás algunos de los proyectos y ejercicios prácticos que he realizado para aplicar técnicas de análisis estadístico, machine learning, visualización de datos y optimización.
+👋 Hola, soy **Manuel Verdejo**  
+Soy analista de datos en formación con base matemática sólida. Me especializo en **análisis estadístico**, **visualización interactiva** y herramientas como **Power BI**, **Python** y **SQL**.
 
 ---
 
-## 📁 Contenido del repositorio
+## 📁 Proyectos destacados
 
-| Archivo                                    | Descripción breve |
-|-------------------------------------------|-------------------|
-| `modelo_loess_clustering_pca.R`           | Análisis multivariante con regresión LOESS, clustering y PCA. |
-| `regresion_loess_bootstrap_pca.R`         | Script completo con validación por bootstrap y análisis factorial. |
-| `Optimización.py` / `Optimización2.py`    | Algoritmos de optimización matemática en Python. |
-| `FutbolInternacional.pbix` / `Libros.pbix`| Dashboards interactivos creados con Power BI. |
-| `ACP Teno.pdf` / `Clúster Teno.pdf`       | Análisis de componentes principales y clustering de datos reales. |
-| `Regresión Lineal Ríos Nueva York.pdf`    | Regresión aplicada a series temporales ambientales. |
-| `README.md`                               | Este documento 😊 |
+### 1. Dashboard de Ventas – Power BI  
+📎 [`FutbolInternacional.pbix`](./FutbolInternacional.pbix)  
+Visualización de métricas de ventas por región, canal y categoría.  
+🔍 *Vista previa incluida en mi web.*
+
+---
+
+### 2. Análisis Exploratorio – Python  
+📎 [`Optimización.py`](./Optimización.py)  
+Limpieza, visualización y análisis de un dataset clásico usando Python (Pandas, Seaborn).
+
+---
+
+### 3. Informe PDF – Datos INE  
+📎 [`ACP Teno.pdf`](./ACP%20Teno.pdf)  
+Análisis descriptivo con gráficos y conclusiones orientado a la toma de decisiones.
+
+---
+
+### 4. Análisis Multivariante (R)  
+📎 [`modelo_loess_clustering_pca.R`](./modelo_loess_clustering_pca.R)  
+📎 [`regresion_loess_bootstrap_pca.R`](./regresion_loess_bootstrap_pca.R)  
+Modelos predictivos, PCA, clustering y visualizaciones interactivas en R.
 
 ---
 
 ## 🧠 Tecnologías utilizadas
-
-- **R**: análisis estadístico, PCA, regresión, clustering.
-- **Python**: optimización, scripts matemáticos.
-- **Power BI**: dashboards visuales y paneles interactivos.
-- **GitHub Pages**: este repositorio está publicado en [manuelverdejo.github.io](https://manuelverdejo.github.io)
-
----
-
-## 📌 Sobre mí
-
-Actualmente me encuentro en búsqueda de una **oportunidad laboral como analista de datos** en remoto o en Sevilla. Me interesa especialmente el análisis de métricas de negocio, reporting, visualización de datos y modelos predictivos aplicados a problemas reales. Puedes contactarme por correo a **manuelverdejo2000@gmail.com**.
+- `R` y `RStudio`: PCA, clustering, modelos estadísticos.
+- `Python`: Pandas, Scikit-learn, Seaborn, optimización.
+- `Power BI`: dashboards e informes interactivos.
+- `GitHub Pages`: publicación de portafolio web.
 
 ---
 
-Gracias por visitar mi portafolio. ¡Estoy abierto a sugerencias, colaboraciones o entrevistas! 🚀
+## 🌐 Enlaces
+- 🖥️ [Mi portafolio online](https://manuelverdejo.github.io)
+- 💼 [Mi LinkedIn](https://www.linkedin.com/in/tu-perfil) ← *(añade tu enlace real)*
+
+---
+
+## 📬 Contacto
+📧 manuelverdejo2000@gmail.com  
+📍 Sevilla / Remoto  
