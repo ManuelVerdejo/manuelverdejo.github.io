@@ -14,7 +14,7 @@ Soy analista de datos en formación con base matemática sólida. Me especializo
   Regresión lineal multivariable con validación mediante bootstrap y rotaciones factoriales.
 
 ### 📈 Power BI Dashboards
-- [`FutbolInternacional.pbix`](./FutbolInternacional.pbix)  
+- [`FutbolInternacional.pbix`](https://github.com/ManuelVerdejo/manuelverdejo.github.io/raw/main/FutbolInternacional.pbix)  
   Dashboard visual interactivo para análisis de ligas y equipos internacionales.
 - [`Libros.pbix`](./Libros.pbix)  
   Visualización de datos relacionados con lectura y hábitos editoriales.
