@@ -53,5 +53,5 @@ Soy analista de datos en formación con base matemática sólida. Me especializo
 
 ## 📬 Contacto
 📧 manuelverdejo2000@gmail.com  
-📍 Sevilla o remoto  
+📍 Sevilla, Huelva, Córdoba o remoto  
 📁 Repositorio actualizado con ejemplos prácticos de análisis y visualización de datos.
