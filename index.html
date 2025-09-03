@@ -3,541 +3,623 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manuel Verdejo – Portafolio</title>
+  <title>Manuel Verdejo García – Portafolio Profesional</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    * {
       margin: 0;
-      padding: 2rem;
-      color: #333;
-      min-height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fafbfc;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 2rem;
     }
-    .intro {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+    .header {
+      background: #ffffff;
+      border: 1px solid #e1e8ed;
+      border-radius: 8px;
       padding: 3rem;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      margin-bottom: 3rem;
-      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     h1 {
-      color: #2c3e50;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    h2 {
-      color: #2c3e50;
-      font-size: 2rem;
-      margin: 3rem 0 1.5rem 0;
-      text-align: center;
+      color: #1a1a1a;
+      font-size: 2.5rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
-    h3 {
-      color: #34495e;
-      font-size: 1.4rem;
-      margin: 2rem 0 1rem 0;
-      padding-left: 1rem;
-      border-left: 4px solid #3498db;
-      font-weight: 600;
-    }
-    .intro p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #555;
-    }
-    .section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-    .project {
-      background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border-left: 5px solid #3498db;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
-    .cert-category {
-      background: linear-gradient(145deg, #ffffff, #f1f3f4);
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-    }
-    .cert-category:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
-    .cert-item {
-      display: inline-block;
-      margin: 0.3rem 0;
-      padding: 0.5rem 0;
-      width: 100%;
-    }
-    .cert-item a {
-      color: #2980b9;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      display: inline-block;
-      font-weight: 500;
-    }
-    .cert-item a:hover {
-      background: linear-gradient(145deg, #3498db, #2980b9);
-      color: white;
-      transform: translateX(10px);
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      color: #1abc9c;
-    }
-    .divider {
-      border: none;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
-      margin: 3rem 0;
-    }
-    .contact {
-      background: linear-gradient(145deg, #34495e, #2c3e50);
-      color: white;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-    .contact h2 {
-      color: white;
+    .subtitle {
+      color: #6b7280;
+      font-size: 1.1rem;
+      font-weight: 400;
       margin-bottom: 1.5rem;
     }
-    .contact a {
-      color: #1abc9c;
+    .intro-text {
+      color: #374151;
+      font-size: 1rem;
+      max-width: 800px;
+    }
+    .section {
+      background: #ffffff;
+      border: 1px solid #e1e8ed;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .section-header {
+      padding: 2rem 2rem 1rem 2rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    h2 {
+      color: #1a1a1a;
+      font-size: 1.75rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
     }
-    .contact a:hover {
-      color: #16a085;
+    .section-description {
+      color: #6b7280;
+      font-size: 0.95rem;
     }
-    .project strong {
-      color: #2c3e50;
+    .section-content {
+      padding: 0 2rem 2rem 2rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .project-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      border-color: #d1d5db;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .project-title {
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .project-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      transition: color 0.2s ease;
+    }
+    .project-link:last-child {
+      border-bottom: none;
+    }
+    .project-link:hover {
+      color: #1d4ed8;
+    }
+    .cert-category {
+      margin-bottom: 2.5rem;
+    }
+    .cert-category:last-child {
+      margin-bottom: 0;
+    }
+    h3 {
+      color: #1a1a1a;
       font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0.75rem;
+    }
+    .cert-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      transition: all 0.2s ease;
+    }
+    .cert-item:hover {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+    }
+    .cert-link {
+      color: #374151;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      transition: color 0.2s ease;
+    }
+    .cert-link:hover {
+      color: #2563eb;
+    }
+    .contact-section {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 2.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: #f9fafb;
+      margin-bottom: 1.5rem;
+    }
+    .contact-info {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .contact-info a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 3rem 0;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      .header {
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="intro">
-      <h1>👋 Manuel Verdejo García</h1>
-      <p>Soy analista de datos en formación con base en matemáticas. Trabajo con <strong>Power BI, Python, R y SQL</strong> para resolver problemas reales mediante análisis estadístico y visualización de datos.</p>
-    </div>
+    <header class="header">
+      <h1>Manuel Verdejo García</h1>
+      <p class="subtitle">Analista de Datos | Especialista en Business Intelligence</p>
+      <p class="intro-text">
+        Profesional en formación con sólidos fundamentos matemáticos y experiencia práctica en análisis de datos. 
+        Especializado en Power BI, Python, R y SQL para la resolución de problemas empresariales mediante 
+        análisis estadístico avanzado y visualización de datos estratégica.
+      </p>
+    </header>
 
-    <div class="section">
-      <h2>📁 Proyectos</h2>
-      <div class="project">
-        <strong>📘 ACP y Clustering – Proyecto Teno</strong><br>
-        <a href="ACP Teno.pdf" download>📎 Ver informe ACP</a><br>
-        <a href="Clúster Teno.pdf" download>📎 Ver informe Clúster</a>
+    <section class="section">
+      <div class="section-header">
+        <h2>Proyectos Destacados</h2>
+        <p class="section-description">Implementaciones prácticas de análisis de datos y modelado estadístico</p>
       </div>
-      <div class="project">
-        <strong>📘 Regresión y Clustering – Ríos Nueva York</strong><br>
-        <a href="Regresión Lineal Ríos Nueva York.pdf" download>📎 Ver informe Regresión Lineal</a><br>
-        <a href="Clúster Ríos Nueva York.pdf" download>📎 Ver informe Clúster</a>
+      <div class="section-content">
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-title">Análisis de Componentes Principales y Clustering – Proyecto Teno</div>
+            <div class="project-links">
+              <a href="ACP Teno.pdf" class="project-link" download>Informe de Análisis ACP</a>
+              <a href="Clúster Teno.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Regresión Lineal y Clustering – Análisis Ríos Nueva York</div>
+            <div class="project-links">
+              <a href="Regresión Lineal Ríos Nueva York.pdf" class="project-link" download>Informe de Regresión Lineal</a>
+              <a href="Clúster Ríos Nueva York.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Dashboards Interactivos en Power BI</div>
+            <div class="project-links">
+              <a href="FutbolInternacional.pbix" class="project-link" download>Dashboard Fútbol Internacional</a>
+              <a href="Libros.pbix" class="project-link" download>Dashboard Análisis de Libros</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Scripts de Análisis Estadístico en R</div>
+            <div class="project-links">
+              <a href="modelado_loess_clustering_pca.R" class="project-link" download>Modelado LOESS, Clustering y PCA</a>
+              <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>Regresión LOESS, Bootstrap y PCA</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Algoritmos de Optimización en Python</div>
+            <div class="project-links">
+              <a href="Optimización.py" class="project-link" download>Algoritmos de Optimización I</a>
+              <a href="Optimización2.py" class="project-link" download>Algoritmos de Optimización II</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project">
-        <strong>📊 Dashboards Power BI</strong><br>
-        <a href="FutbolInternacional.pbix" download>📎 Dashboard de Fútbol Internacional</a><br>
-        <a href="Libros.pbix" download>📎 Dashboard de Libros</a>
-      </div>
-      <div class="project">
-        <strong>📄 Scripts en R</strong><br>
-        <a href="modelado_loess_clustering_pca.R" download>📎 modelado_loess_clustering_pca.R</a><br>
-        <a href="regresion_loess_bootstrap_pca.R" download>📎 regresion_loess_bootstrap_pca.R</a>
-      </div>
-      <div class="project">
-        <strong>🐍 Scripts de Optimización – Python</strong><br>
-        <a href="Optimización.py" download>📎 Optimización.py</a><br>
-        <a href="Optimización2.py" download>📎 Optimización2.py</a>
-      </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>🎓 Certificaciones Profesionales</h2>
-      
-      <div class="cert-category">
-        <h3>📊 Business Intelligence y Power BI</h3>
-        <div class="cert-item">
-          <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" download>
-            📎 Power BI para Principiantes: Análisis de Datos (2019)
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="CertificadoDeFinalizacion_Power BI esencial 2020.pdf" download>
-            📎 Power BI Esencial (2020)
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="CertificadoDeFinalizacion_Power BI Modelado de datos con DAX.pdf" download>
-            📎 Power BI – Modelado de Datos con DAX
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Data Visualization With Power BI.pdf" download>
-            📎 Data Visualization with Power BI
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Business_Intelligence_y_anlisis_de_Big_Data.pdf" download>
-            📎 Business Intelligence y Análisis de Big Data
-          </a>
-        </div>
+    <section class="section">
+      <div class="section-header">
+        <h2>Certificaciones Profesionales</h2>
+        <p class="section-description">Formación continua y especialización en tecnologías de análisis de datos</p>
       </div>
+      <div class="section-content">
+        
+        <div class="cert-category">
+          <h3>Business Intelligence y Power BI</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" class="cert-link" download>
+                Power BI para Principiantes: Análisis de Datos (2019)
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="CertificadoDeFinalizacion_Power BI esencial 2020.pdf" class="cert-link" download>
+                Power BI Esencial (2020)
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="CertificadoDeFinalizacion_Power BI Modelado de datos con DAX.pdf" class="cert-link" download>
+                Power BI – Modelado de Datos con DAX
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Data Visualization With Power BI.pdf" class="cert-link" download>
+                Data Visualization with Power BI
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Business_Intelligence_y_anlisis_de_Big_Data.pdf" class="cert-link" download>
+                Business Intelligence y Análisis de Big Data
+              </a>
+            </div>
+          </div>
+        </div>
 
-      <div class="cert-category">
-        <h3>🗄️ Bases de Datos y SQL</h3>
-        <div class="cert-item">
-          <a href="ABDEU.pdf" download>
-            📎 SQL Básico
-          </a>
+        <div class="cert-category">
+          <h3>Gestión de Bases de Datos y SQL</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="ABDEU.pdf" class="cert-link" download>
+                SQL Básico
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Advanced SQL.pdf" class="cert-link" download>
+                Advanced SQL
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Analytics with SQL and Python.pdf" class="cert-link" download>
+                Analytics with SQL and Python
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="SQL for Data Science.pdf" class="cert-link" download>
+                SQL for Data Science
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Advanced SQL.pdf" download>
-            📎 Advanced SQL
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Analytics with SQL and Python.pdf" download>
-            📎 Analytics with SQL and Python
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="SQL for Data Science.pdf" download>
-            📎 SQL for Data Science
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>🐍 Python y Machine Learning</h3>
-        <div class="cert-item">
-          <a href="Python Data Wrangling.pdf" download>
-            📎 Python Data Wrangling
-          </a>
+        <div class="cert-category">
+          <h3>Python y Machine Learning</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Python Data Wrangling.pdf" class="cert-link" download>
+                Python Data Wrangling
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Python for Data Science.pdf" class="cert-link" download>
+                Python for Data Science
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Python for ML and DS.pdf" class="cert-link" download>
+                Python for Machine Learning and Data Science
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Introduction to Neural Network.pdf" class="cert-link" download>
+                Introduction to Neural Network
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Neural Network in R.pdf" class="cert-link" download>
+                Neural Network in R
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="KNN and Naive Bayes Algorithm.pdf" class="cert-link" download>
+                KNN and Naive Bayes Algorithm
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Batch Normalization.pdf" class="cert-link" download>
+                Batch Normalization
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Python for Data Science.pdf" download>
-            📎 Python for Data Science
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Python for ML and DS.pdf" download>
-            📎 Python for Machine Learning and Data Science
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Introduction to Neural Network.pdf" download>
-            📎 Introduction to Neural Network
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Neural Network in R.pdf" download>
-            📎 Neural Network in R
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="KNN and Naive Bayes Algorithm.pdf" download>
-            📎 KNN and Naive Bayes Algorithm
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Batch Normalization.pdf" download>
-            📎 Batch Normalization
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>📈 R y Análisis Estadístico</h3>
-        <div class="cert-item">
-          <a href="R for Data Science.pdf" download>
-            📎 R for Data Science
-          </a>
+        <div class="cert-category">
+          <h3>Análisis Estadístico con R</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="R for Data Science.pdf" class="cert-link" download>
+                R for Data Science
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Clustering in R.pdf" class="cert-link" download>
+                Clustering in R
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Analysis of Variance.pdf" class="cert-link" download>
+                Analysis of Variance
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Principal Component Analysis.pdf" class="cert-link" download>
+                Principal Component Analysis
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="k-fold Cross Validation.pdf" class="cert-link" download>
+                k-Fold Cross Validation
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Multivariate Time Series Forecasting in R.pdf" class="cert-link" download>
+                Multivariate Time Series Forecasting in R
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Predictive Modeling and Analytics - Regression.pdf" class="cert-link" download>
+                Predictive Modeling and Analytics – Regression
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Clustering in R.pdf" download>
-            📎 Clustering in R
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Analysis of Variance.pdf" download>
-            📎 Analysis of Variance
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Principal Component Analysis.pdf" download>
-            📎 Principal Component Analysis
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="k-fold Cross Validation.pdf" download>
-            📎 k-Fold Cross Validation
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Multivariate Time Series Forecasting in R.pdf" download>
-            📎 Multivariate Time Series Forecasting in R
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Predictive Modeling and Analytics - Regression.pdf" download>
-            📎 Predictive Modeling and Analytics – Regression
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>🧮 Matemáticas y Estadística</h3>
-        <div class="cert-item">
-          <a href="Data Science Mathematics.pdf" download>
-            📎 Data Science Mathematics
-          </a>
+        <div class="cert-category">
+          <h3>Fundamentos Matemáticos y Estadísticos</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Data Science Mathematics.pdf" class="cert-link" download>
+                Data Science Mathematics
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Probability for Data Science.pdf" class="cert-link" download>
+                Probability for Data Science
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Statistical Methods for Decision Making.pdf" class="cert-link" download>
+                Statistical Methods for Decision Making
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Linear Programming for Data Science.pdf" class="cert-link" download>
+                Linear Programming for Data Science
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Dynamic Programing.pdf" class="cert-link" download>
+                Dynamic Programming
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Financial Risk Analytics.pdf" class="cert-link" download>
+                Financial Risk Analytics
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Probability for Data Science.pdf" download>
-            📎 Probability for Data Science
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Statistical Methods for Decision Making.pdf" download>
-            📎 Statistical Methods for Decision Making
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Linear Programming for Data Science.pdf" download>
-            📎 Linear Programming for Data Science
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Dynamic Programing.pdf" download>
-            📎 Dynamic Programming
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Financial Risk Analytics.pdf" download>
-            📎 Financial Risk Analytics
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>🤖 Inteligencia Artificial y Big Data</h3>
-        <div class="cert-item">
-          <a href="Artificial Intelligence Projects.pdf" download>
-            📎 Artificial Intelligence Projects
-          </a>
+        <div class="cert-category">
+          <h3>Inteligencia Artificial y Big Data</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Artificial Intelligence Projects.pdf" class="cert-link" download>
+                Artificial Intelligence Projects
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="AI and Big Data in IOT.pdf" class="cert-link" download>
+                AI and Big Data in IoT
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Big Data and AI.pdf" class="cert-link" download>
+                Big Data and AI
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Business Applications of Data Science, AI, and ML.pdf" class="cert-link" download>
+                Business Applications of Data Science, AI and ML
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Introduction to Natural Language Processing.pdf" class="cert-link" download>
+                Introduction to Natural Language Processing
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Popular Applications of Data Science.pdf" class="cert-link" download>
+                Popular Applications of Data Science
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="AI and Big Data in IOT.pdf" download>
-            📎 AI and Big Data in IoT
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Big Data and AI.pdf" download>
-            📎 Big Data and AI
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Business Applications of Data Science, AI, and ML.pdf" download>
-            📎 Business Applications of Data Science, AI and ML
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Introduction to Natural Language Processing.pdf" download>
-            📎 Introduction to Natural Language Processing
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Popular Applications of Data Science.pdf" download>
-            📎 Popular Applications of Data Science
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>💻 Herramientas Ofimáticas y Excel</h3>
-        <div class="cert-item">
-          <a href="Data Analytics with Excel.pdf" download>
-            📎 Data Analytics with Excel
-          </a>
+        <div class="cert-category">
+          <h3>Herramientas de Análisis y Productividad</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Data Analytics with Excel.pdf" class="cert-link" download>
+                Data Analytics with Excel
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Excel regression analysis.pdf" class="cert-link" download>
+                Excel Regression Analysis
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
+                Análisis y Visualización de Datos con Excel y Power BI
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Microsoft_Excel_2016.pdf" class="cert-link" download>
+                Microsoft Excel 2016
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Microsoft_Access_2016.pdf" class="cert-link" download>
+                Microsoft Access 2016
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_LibreOffice_Calc_3.pdf" class="cert-link" download>
+                LibreOffice Calc 3
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Excel regression analysis.pdf" download>
-            📎 Excel Regression Analysis
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" download>
-            📎 Análisis y Visualización de Datos con Excel y Power BI
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Microsoft_Excel_2016.pdf" download>
-            📎 Microsoft Excel 2016
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Microsoft_Access_2016.pdf" download>
-            📎 Microsoft Access 2016
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_LibreOffice_Calc_3.pdf" download>
-            📎 LibreOffice Calc 3
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>☁️ Cloud Computing y Tecnología</h3>
-        <div class="cert-item">
-          <a href="Cloud Foundations.pdf" download>
-            📎 Cloud Foundations
-          </a>
+        <div class="cert-category">
+          <h3>Tecnologías Cloud y Desarrollo Web</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Cloud Foundations.pdf" class="cert-link" download>
+                Cloud Foundations
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Microsoft Azure Application.pdf" class="cert-link" download>
+                Microsoft Azure Application
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Iniciacin_a_HTML_CSS_y_JavaScript.pdf" class="cert-link" download>
+                Iniciación a HTML, CSS y JavaScript
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Metodologas_para_la_gestin_de_proyectos_TIC.pdf" class="cert-link" download>
+                Metodologías para la Gestión de Proyectos TIC
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Microsoft Azure Application.pdf" download>
-            📎 Microsoft Azure Application
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Iniciacin_a_HTML_CSS_y_JavaScript.pdf" download>
-            📎 Iniciación a HTML, CSS y JavaScript
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Metodologas_para_la_gestin_de_proyectos_TIC.pdf" download>
-            📎 Metodologías para la Gestión de Proyectos TIC
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>🔒 Ciberseguridad</h3>
-        <div class="cert-item">
-          <a href="Advanced Cyber Security - Threats and Governance.pdf" download>
-            📎 Advanced Cyber Security: Threats and Governance
-          </a>
+        <div class="cert-category">
+          <h3>Ciberseguridad y Protección de Datos</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="Advanced Cyber Security - Threats and Governance.pdf" class="cert-link" download>
+                Advanced Cyber Security: Threats and Governance
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Proteccin_y_seguridad_informtica_en_la_empresa.pdf" class="cert-link" download>
+                Protección y Seguridad Informática en la Empresa
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Ciberseguridad en el Teletrabajo.pdf" class="cert-link" download>
+                Ciberseguridad en el Teletrabajo
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="cert-item">
-          <a href="Certificado_Proteccin_y_seguridad_informtica_en_la_empresa.pdf" download>
-            📎 Protección y Seguridad Informática en la Empresa
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Ciberseguridad en el Teletrabajo.pdf" download>
-            📎 Ciberseguridad en el Teletrabajo
-          </a>
-        </div>
-      </div>
 
-      <div class="cert-category">
-        <h3>💼 Marketing Digital y Negocios</h3>
-        <div class="cert-item">
-          <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" download>
-            📎 Comercio Electrónico y Marketing Online
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Marketing_online_para_Pymes.pdf" download>
-            📎 Marketing Online para PYMES
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Fundamentos del Marketing Digital.pdf" download>
-            📎 Fundamentos del Marketing Digital
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Generador_de_contenidos_digitales.pdf" download>
-            📎 Generador de Contenidos Digitales
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Market Basket Analysis.pdf" download>
-            📎 Market Basket Analysis
-          </a>
-        </div>
-      </div>
-
-      <div class="cert-category">
-        <h3>🛠️ Herramientas y Fundamentos</h3>
-        <div class="cert-item">
-          <a href="ADTotal.pdf" download>
-            📎 Análisis de Datos – Completo
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Data Science Foundations.pdf" download>
-            📎 Data Science Foundations
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Data Science Projects.pdf" download>
-            📎 Data Science Projects
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="GPTotal.pdf" download>
-            📎 Gestión de Proyectos – Total
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Iniciacin_al_uso_de_herramientas_de_Google.pdf" download>
-            📎 Iniciación al Uso de Herramientas de Google
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" download>
-            📎 Digitaliza Paso a Paso tu Negocio con Herramientas de Google
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" download>
-            📎 Pensamiento Crítico en un Mundo Digital
-          </a>
+        <div class="cert-category">
+          <h3>Competencias Complementarias</h3>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <a href="ADTotal.pdf" class="cert-link" download>
+                Análisis de Datos – Completo
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Data Science Foundations.pdf" class="cert-link" download>
+                Data Science Foundations
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Data Science Projects.pdf" class="cert-link" download>
+                Data Science Projects
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="GPTotal.pdf" class="cert-link" download>
+                Gestión de Proyectos – Total
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Market Basket Analysis.pdf" class="cert-link" download>
+                Market Basket Analysis
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
+                Comercio Electrónico y Marketing Online
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Fundamentos del Marketing Digital.pdf" class="cert-link" download>
+                Fundamentos del Marketing Digital
+              </a>
+            </div>
+            <div class="cert-item">
+              <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
+                Pensamiento Crítico en un Mundo Digital
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr class="divider">
     
-    <div class="contact">
-      <h2>📬 Contacto</h2>
-      <p>
-        📧 manuelverdejo2000@gmail.com<br>
-        💼 <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank">LinkedIn</a><br>
-        🌍 Sevilla / Huelva / Córdoba / Remoto
-      </p>
-    </div>
+    <footer class="contact-section">
+      <h2>Información de Contacto</h2>
+      <div class="contact-info">
+        <p>📧 manuelverdejo2000@gmail.com</p>
+        <p>💼 <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank">LinkedIn Professional Profile</a></p>
+        <p>🌍 Disponibilidad: Sevilla | Huelva | Córdoba | Trabajo Remoto</p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
