@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel Verdejo García – Professional Portfolio</title>
+  <meta name="description" content="Manuel Verdejo García - Data Analyst specialized in Power BI, Python, R and SQL. Professional portfolio with Business Intelligence projects and Data Science certifications.">
+  <meta name="keywords" content="Manuel Verdejo García, data analyst, Power BI, Python, R, SQL, Business Intelligence, Data Science, statistical analysis, data visualization, machine learning">
+  <meta name="author" content="Manuel Verdejo García">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232563eb'/%3E%3Ctext x='50' y='60' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle'%3EMVG%3C/text%3E%3C/svg%3E">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #fafbfc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f9fafb;
+      --text-primary: #1a1a1a;
+      --text-secondary: #374151;
+      --text-muted: #6b7280;
+      --border: #e1e8ed;
+      --border-light: #f3f4f6;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --shadow: rgba(0,0,0,0.04);
+      --shadow-hover: rgba(0,0,0,0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --border-light: #475569;
+      --accent: #3b82f6;
+      --accent-hover: #60a5fa;
+      --shadow: rgba(0,0,0,0.2);
+      --shadow-hover: rgba(0,0,0,0.3);
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 16px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      scroll-behavior: smooth;
+      padding-top: 80px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px var(--shadow);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      background: var(--bg-tertiary);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .lang-toggle {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .header:hover {
+      box-shadow: 0 8px 25px var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      flex-shrink: 0;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    h1 {
+      color: var(--text-primary);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      transition: color 0.3s ease;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .intro-text {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 800px;
+      transition: color 0.3s ease;
+    }
+
+    .download-cv {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .download-cv:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Sections */
+    .section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      box-shadow: 0 8px 25px var(--shadow-hover);
+    }
+
+    .section-header {
+      padding: 2rem 2rem 1rem 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    h2 {
+      color: var(--text-primary);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+      transition: color 0.3s ease;
+    }
+
+    .section-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .section-content {
+      padding: 0 2rem 2rem 2rem;
+    }
+
+    /* Search and Filter */
+    .search-container {
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .project-title {
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .project-link:last-child {
+      border-bottom: none;
+    }
+
+    .project-link:hover {
+      color: var(--accent-hover);
+      transform: translateX(8px);
+    }
+
+    /* Certificates */
+    .cert-category {
+      margin-bottom: 2rem;
+    }
+
+    .cert-header {
+      background: var(--bg-tertiary);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+
+    .cert-header:hover {
+      background: var(--border-light);
+      border-color: var(--accent);
+    }
+
+    .cert-header.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    h3 {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+      flex: 1;
+      transition: color 0.3s ease;
+    }
+
+    .cert-header.active h3 {
+      color: white;
+    }
+
+    .cert-toggle {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-header.active .cert-toggle {
+      transform: rotate(180deg);
+    }
+
+    .cert-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .cert-content.active {
+      max-height: 2000px;
+      padding-top: 1rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .cert-item {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .cert-item:hover {
+      background: var(--border-light);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .cert-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .cert-link:hover {
+      color: var(--accent);
+    }
+
+    /* Contact */
+    .contact-section {
+      background: linear-gradient(135deg, #1f2937, #374151);
+      color: #f9fafb;
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .contact-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .contact-section h2 {
+      color: #f9fafb;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: #60a5fa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 3rem 0;
+      border: none;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .nav-content {
+        padding: 0 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .header {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+      }
+    }
+
+    /* Animation for filtered items */
+    .cert-item.hidden {
+      display: none;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="#" class="nav-brand">MVG Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="controls">
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <span id="theme-icon">🌙</span>
+          <span id="theme-text">Dark</span>
+        </button>
+        <button class="lang-toggle" onclick="window.location.href='index.html'">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    ↑
+  </button>
+
+  <div class="container">
+    <header class="header">
+      <div class="avatar" title="Manuel Verdejo García">
+        MVG
+      </div>
+      <div class="header-content">
+        <h1>Manuel Verdejo García</h1>
+        <p class="subtitle">Data Analyst | Business Intelligence Specialist</p>
+        <p class="intro-text">
+          Emerging professional with strong mathematical foundations and practical experience in data analysis. 
+          Specialized in Power BI, Python, R, and SQL for solving business problems through advanced 
+          statistical analysis and strategic data visualization.
+        </p>
+        <a href="#" class="download-cv" onclick="downloadCV()">
+          📄 Download Resume
+        </a>
+      </div>
+    </header>
+
+    <section class="section" id="projects">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p class="section-description">Practical implementations of data analysis and statistical modeling</p>
+      </div>
+      <div class="section-content">
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-title">Principal Component Analysis and Clustering – Teno Project</div>
+            <div class="project-links">
+              <a href="ACP Teno.pdf" class="project-link" download>PCA Analysis Report</a>
+              <a href="Clúster Teno.pdf" class="project-link" download>Clustering Analysis Report</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Linear Regression and Clustering – New York Rivers Analysis</div>
+            <div class="project-links">
+              <a href="Regresión Lineal Ríos Nueva York.pdf" class="project-link" download>Linear Regression Report</a>
+              <a href="Clúster Ríos Nueva York.pdf" class="project-link" download>Clustering Analysis Report</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Interactive Power BI Dashboards</div>
+            <div class="project-links">
+              <a href="FutbolInternacional.pbix" class="project-link" download>International Football Dashboard</a>
+              <a href="Libros.pbix" class="project-link" download>Books Analysis Dashboard</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Statistical Analysis Scripts in R</div>
+            <div class="project-links">
+              <a href="modelado_loess_clustering_pca.R" class="project-link" download>LOESS Modeling, Clustering & PCA</a>
+              <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>LOESS Regression, Bootstrap & PCA</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Optimization Algorithms in Python</div>
+            <div class="project-links">
+              <a href="Optimización.py" class="project-link" download>Optimization Algorithms I</a>
+              <a href="Optimización2.py" class="project-link" download>Optimization Algorithms II</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="section-header">
+        <h2>Professional Certifications</h2>
+        <p class="section-description">Continuous learning and specialization in data analysis technologies (courses without specified hours are 20 hours or less)</p>
+      </div>
+      <div class="section-content">
+        <div class="search-container">
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput"
+            placeholder="🔍 Search certifications (e.g., Python, Power BI, SQL...)"
+            oninput="filterCertificates()"
+          >
+        </div>
+
+        <div class="cert-category">
+          <div class="cert-header" onclick="toggleCategory(this)">
+            <h3>Analysis Tools and Productivity</h3>
+            <span class="cert-toggle">▼</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="data analysis coursera google">
+                <a href="ADTotal.pdf" class="cert-link" download>
+                  Data Analysis – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data analytics excel">
+                <a href="Data Analytics with Excel.pdf" class="cert-link" download>
+                  Data Analytics with Excel
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel regression analysis">
+                <a href="Excel regression analysis.pdf" class="cert-link" download>
+                  Excel Regression Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel power bi analysis visualization bilib">
+                <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
+                  Data Analysis and Visualization with Excel and Power BI - BILIB (125 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft excel 2016 bilib">
+                <a href="Certificado_Microsoft_Excel_2016.pdf" class="cert-link" download>
+                  Microsoft Excel 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft access 2016 bilib">
+                <a href="Certificado_Microsoft_Access_2016.pdf" class="cert-link" download>
+                  Microsoft Access 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="libreoffice calc bilib">
+                <a href="Certificado_LibreOffice_Calc_3.pdf" class="cert-link" download>
+                  LibreOffice Calc 3 - BILIB (25 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-category">
+          <div class="cert-header" onclick="toggleCategory(this)">
+            <h3>Business Intelligence and Power BI</h3>
+            <span class="cert-toggle">▼</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="power bi data analysis dashboard">
+                <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" class="cert-link" download>
+                  Power BI for Beginners: Data Analysis (2019)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi essential dashboard">
+                <a href="CertificadoDeFinalizacion_Power BI esencial 2020.pdf" class="cert-link" download>
+                  Power BI Essential (2020)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi dax data modeling">
+                <a href="CertificadoDeFinalizacion_Power BI Modelado de datos con DAX.pdf" class="cert-link" download>
+                  Power BI – Data Modeling with DAX
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi data visualization">
+                <a href="Data Visualization With Power BI.pdf" class="cert-link" download>
+                  Data Visualization with Power BI
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="business intelligence big data bilib">
+                <a href="Certificado_Business_Intelligence_y_anlisis_de_Big_Data.pdf" class="cert-link" download>
+                  Business Intelligence and Big Data Analysis - BILIB (120 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <div class="cert-header" onclick="toggleCategory(this)">
+            <h3>Database Management and SQL</h3>
+            <span class="cert-toggle">▼</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="sql basic database">
+                <a href="ABDEU.pdf" class="cert-link" download>
+                  Basic SQL
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql advanced">
+                <a href="Advanced SQL.pdf" class="cert-link" download>
+                  Advanced SQL
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql python analytics">
+                <a href="Analytics with SQL and Python.pdf" class="cert-link" download>
+                  Analytics with SQL and Python
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql data science">
+                <a href="SQL for Data Science.pdf" class="cert-link" download>
+                  SQL for Data Science
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <div class="cert-header" onclick="toggleCategory(this)">
+            <h3>Python and Machine Learning</h3>
+            <span class="cert-toggle">▼</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="python data wrangling">
+                <a href="Python Data Wrangling.pdf" class="cert-link" download>
+                  Python Data Wrangling
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="python data science">
+                <a href="Python for Data Science.pdf" class="cert-link" download>
+                  Python for Data Science
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="python machine learning ml">
+                <a href="Python for ML and DS.pdf" class="cert-link" download>
+                  Python for Machine Learning and Data Science
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="neural network">
+                <a href="Introduction to Neural Network.pdf" class="cert-link" download>
+                  Introduction to Neural Network
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="neural network r">
+                <a href="Neural Network in R.pdf" class="cert-link" download>
+                  Neural Network in R
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="knn naive bayes algorithm">
+                <a href="KNN and Naive Bayes Algorithm.pdf" class="cert-link" download>
+                  KNN and Naive Bayes Algorithm
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="batch normalization">
+                <a href="Batch Normalization.pdf" class="cert-link" download>
+                  Batch Normalization
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="cert-category">
+  <div class="cert-header" onclick="toggleCategory(this)">
+    <h3>Statistical Analysis with R</h3>
+    <span class="cert-toggle">▼</span>
+  </div>
+  <div class="cert-content">
+    <div class="cert-grid">
+      <div class="cert-item" data-keywords="r data science">
+        <a href="R for Data Science.pdf" class="cert-link" download>
+          R for Data Science
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="r clustering">
+        <a href="Clustering in R.pdf" class="cert-link" download>
+          Clustering in R
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="anova variance analysis">
+        <a href="Analysis of Variance.pdf" class="cert-link" download>
+          Analysis of Variance
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="pca principal component">
+        <a href="Principal Component Analysis.pdf" class="cert-link" download>
+          Principal Component Analysis
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="cross validation k-fold">
+        <a href="k-fold Cross Validation.pdf" class="cert-link" download>
+          k-Fold Cross Validation
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="time series forecasting r">
+        <a href="Multivariate Time Series Forecasting in R.pdf" class="cert-link" download>
+          Multivariate Time Series Forecasting in R
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="predictive modeling regression">
+        <a href="Predictive Modeling and Analytics - Regression.pdf" class="cert-link" download>
+          Predictive Modeling and Analytics - Regression
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="statistical methods decision making">
+        <a href="Statistical Methods for Decision Making.pdf" class="cert-link" download>
+          Statistical Methods for Decision Making
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cert-category">
+  <div class="cert-header" onclick="toggleCategory(this)">
+    <h3>Cybersecurity and ICT</h3>
+    <span class="cert-toggle">▼</span>
+  </div>
+  <div class="cert-content">
+    <div class="cert-grid">
+      <div class="cert-item" data-keywords="cybersecurity information security">
+        <a href="Advanced Cyber Security - Threats and Governance.pdf" class="cert-link" download>
+          Advanced Cyber Security - Threats and Governance
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="cybersecurity remote work">
+        <a href="Ciberseguridad en el Teletrabajo.pdf" class="cert-link" download>
+          Cybersecurity in Remote Work
+        </a>
+      </div>
+      <div class="cert-item" data-keywords="protection information security company">
+        <a href="Certificado_Proteccin_y_seguridad_informtica_en_la_empresa.pdf" class="cert-link" download>
+          Information Security and Protection in Companies
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cert-category">
+  <div class="cert-header" onclick="toggleCategory(this)">
+    <h3>Complementary Competencies</h3>
+    <span class="cert-toggle">▼</span>
+  </div>
+  <div class="cert-content">
+    <div class="cert-grid">
+      
+      <div class="cert-item" data-keywords="google digital tools">
+        <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" class="cert-link" download>
+          Introduction to Google Tools – Google (90 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="data science foundations">
+        <a href="Data Science Foundations.pdf" class="cert-link" download>
+          Data Science Foundations
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="data science projects">
+        <a href="Data Science Projects.pdf" class="cert-link" download>
+          Data Science Projects
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="project management google coursera">
+        <a href="GPTotal.pdf" class="cert-link" download>
+          Project Management – Coursera+Google (240 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="ux user experience design google coursera">
+        <a href="ABDEU.pdf" class="cert-link" download>
+          Basics of User Experience Design – Coursera+Google (240 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="market basket analysis">
+        <a href="Market Basket Analysis.pdf" class="cert-link" download>
+          Market Basket Analysis
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="e-commerce online marketing bilib">
+        <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
+          E-commerce and Online Marketing – BILIB (90 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="digital marketing fundamentals">
+        <a href="Fundamentos del Marketing Digital.pdf" class="cert-link" download>
+          Fundamentals of Digital Marketing
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="online marketing smes bilib">
+        <a href="Certificado_Marketing_online_para_Pymes.pdf" class="cert-link" download>
+          Online Marketing for SMEs (SEM, SEO, PPC) – BILIB (115 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="critical thinking digital world bilib">
+        <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
+          Critical Thinking in a Digital World – BILIB (70 H)
+        </a>
+      </div>
+
+      <div class="cert-item" data-keywords="personal productivity google activate">
+        <a href="Productividad Personal.pdf" class="cert-link" download>
+          Personal Productivity – Google Activate (40 H)
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="contact-section" id="contacto">
+  <h2>📬 Contact</h2>
+  <p class="contact-info">
+    📧 Email: <a href="mailto:manuelverdejogarcia@gmail.com">manuelverdejogarcia@gmail.com</a><br>
+    💼 LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank">LinkedIn Manuel Verdejo Garcia</a><br>
+    🌍 Availability: Spain | China | Singapour | Remote Work
+  </p>
+</section>
+
+</div>
+
+  <script>
+    // === Back to Top ===
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // === Theme Toggle ===
+    function toggleTheme() {
+      const body = document.body;
+      body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+      const icon = document.getElementById("theme-icon");
+      const text = document.getElementById("theme-text");
+      if (body.dataset.theme === "dark") {
+        icon.textContent = "☀️";
+        text.textContent = "Claro";
+      } else {
+        icon.textContent = "🌙";
+        text.textContent = "Oscuro";
+      }
+    }
+
+    // === Language Toggle (ejemplo simple) ===
+    function toggleLanguage() {
+      alert("Versión en inglés próximamente 🌍");
+    }
+
+    // === Accordion (Cert categories) ===
+    function toggleCategory(header) {
+      header.classList.toggle("active");
+      const content = header.nextElementSibling;
+      content.classList.toggle("active");
+    }
+
+    // === Search Filter ===
+    function filterCertificates() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll(".cert-item");
+      let found = false;
+
+      items.forEach(item => {
+        const keywords = item.getAttribute("data-keywords");
+        if (keywords.toLowerCase().includes(input)) {
+          item.classList.remove("hidden");
+          found = true;
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      let noResults = document.querySelector(".no-results");
+      if (!found) {
+        if (!noResults) {
+          noResults = document.createElement("div");
+          noResults.className = "no-results";
+          noResults.textContent = "❌ No se encontraron resultados.";
+          document.querySelector("#certificaciones .section-content").appendChild(noResults);
+        }
+      } else {
+        if (noResults) noResults.remove();
+      }
+    }
+
+    // === Descargar CV ===
+    function downloadCV() {
+      window.open("Currículum Analista de Datos Manuel Verdejo García.pdf", "_blank");
+    }
+  </script>
+</body>
+</html>
