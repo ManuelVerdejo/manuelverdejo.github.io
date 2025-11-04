@@ -1317,7 +1317,7 @@
         const downloadBtn = document.getElementById('download-btn');
     
         title.textContent = this.textContent;
-        desc.textContent = this.getAttribute('data-descripcion');
+        desc.innerHTML = this.getAttribute('data-descripcion');;
         downloadBtn.href = this.getAttribute('href');
     
         modal.style.display = 'block';
