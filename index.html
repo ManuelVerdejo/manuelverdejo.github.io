@@ -582,6 +582,52 @@
       color: var(--text-muted);
       font-style: italic;
     }
+
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .close {
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .download-button {
+    display: inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  .download-button:hover {
+    background-color: #005ecc;
+  }
   </style>
 </head>
 <body>
@@ -640,7 +686,7 @@
       <div class="project-card">
         <div class="project-title">IAs de Modelos Predictivos</div>
         <div class="project-links">
-          <a href="IA_Predicción_Precio_Vivienda.zip" class="project-link" download>Predicción de Precio de Vivienda</a>
+          <a href="IA_Predicción_Precio_Vivienda.zip" class="project-link" data-descripcion="Modelo predictivo para estimar el precio de viviendas basado en datos históricos de mercado.">Predicción de Precio de Vivienda</a>
           <a href="IA_Predicción_Ventas.zip" class="project-link" download>Predicción de Ventas de una Empresa</a>
         </div>
       </div>
@@ -746,7 +792,15 @@
     </div>
   </div>
 </section>
-
+<!-- Modal -->
+<div id="fileModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+    <a id="download-btn" href="#" download class="download-button">Descargar Archivo</a>
+  </div>
+</div>
 
 
     <section class="section" id="certificaciones">
@@ -1090,6 +1144,7 @@
       </div>
     </section>
 
+
     <hr class="divider">
 
     <section class="contact-section" id="contacto">
@@ -1171,6 +1226,35 @@
         if (noResults) noResults.remove();
       }
     }
+    // --- Script para el modal ---
+    document.querySelectorAll('.project-link').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Evita la descarga inmediata
+    
+        const modal = document.getElementById('fileModal');
+        const title = document.getElementById('modal-title');
+        const desc = document.getElementById('modal-description');
+        const downloadBtn = document.getElementById('download-btn');
+    
+        title.textContent = this.textContent;
+        desc.textContent = this.getAttribute('data-descripcion');
+        downloadBtn.href = this.getAttribute('href');
+    
+        modal.style.display = 'block';
+      });
+    });
+    
+    // Cerrar modal al pulsar la X
+    document.querySelector('.close').onclick = function() {
+      document.getElementById('fileModal').style.display = 'none';
+    };
+    
+    // Cerrar modal al hacer clic fuera
+    window.onclick = function(event) {
+      if (event.target === document.getElementById('fileModal')) {
+        document.getElementById('fileModal').style.display = 'none';
+      }
+    };
 
     // === Descargar CV ===
     function downloadCV() {
