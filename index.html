@@ -8,6 +8,9 @@
   <meta name="keywords" content="Manuel Verdejo García, analista de datos, Power BI, Python, R, SQL, Business Intelligence, Data Science, análisis estadístico, visualización de datos, machine learning">
   <meta name="author" content="Manuel Verdejo García">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232563eb'/%3E%3Ctext x='50' y='60' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle'%3EMVG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -56,6 +59,17 @@
       padding-top: 80px;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     /* Navbar */
     .navbar {
       position: fixed;
@@ -88,6 +102,11 @@
       transition: color 0.3s ease;
     }
 
+    .nav-brand:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
     .nav-links {
       display: flex;
       list-style: none;
@@ -104,9 +123,11 @@
       transition: all 0.3s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: var(--accent);
       background: var(--bg-tertiary);
+      outline: none;
     }
 
     .controls {
@@ -128,9 +149,11 @@
       transition: all 0.3s ease;
     }
 
-    .theme-toggle:hover {
+    .theme-toggle:hover,
+    .theme-toggle:focus {
       border-color: var(--accent);
       color: var(--accent);
+      outline: none;
     }
 
     .lang-toggle {
@@ -144,9 +167,11 @@
       transition: all 0.3s ease;
     }
 
-    .lang-toggle:hover {
+    .lang-toggle:hover,
+    .lang-toggle:focus {
       background: var(--accent-hover);
       transform: translateY(-2px);
+      outline: none;
     }
 
     /* Main Content */
@@ -169,9 +194,11 @@
       transition: all 0.3s ease;
     }
 
-    .header:hover {
-      box-shadow: 0 8px 25px var(--shadow-hover);
-      transform: translateY(-2px);
+    @media (prefers-reduced-motion: no-preference) {
+      .header:hover {
+        box-shadow: 0 8px 25px var(--shadow-hover);
+        transform: translateY(-2px);
+      }
     }
 
     .avatar {
@@ -190,9 +217,11 @@
       transition: all 0.3s ease;
     }
 
-    .avatar:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+    @media (prefers-reduced-motion: no-preference) {
+      .avatar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+      }
     }
 
     .header-content {
@@ -221,6 +250,49 @@
       font-size: 1rem;
       max-width: 800px;
       transition: color 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    .value-proposition {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .tech-badge:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px var(--shadow-hover);
+      }
+    }
+
+    .tech-icon {
+      font-size: 1.2rem;
     }
 
     .download-cv {
@@ -238,10 +310,12 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
 
-    .download-cv:hover {
+    .download-cv:hover,
+    .download-cv:focus {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+      outline: none;
     }
 
     /* Sections */
@@ -254,8 +328,10 @@
       transition: all 0.3s ease;
     }
 
-    .section:hover {
-      box-shadow: 0 8px 25px var(--shadow-hover);
+    @media (prefers-reduced-motion: no-preference) {
+      .section:hover {
+        box-shadow: 0 8px 25px var(--shadow-hover);
+      }
     }
 
     .section-header {
@@ -305,6 +381,38 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
+    .tech-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .filter-btn {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn:focus {
+      border-color: var(--accent);
+      color: var(--accent);
+      outline: none;
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
     /* Projects */
     .project-grid {
       display: grid;
@@ -321,10 +429,17 @@
       transition: all 0.3s ease;
     }
 
-    .project-card:hover {
+    @media (prefers-reduced-motion: no-preference) {
+      .project-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 8px 25px var(--shadow-hover);
+        transform: translateY(-4px);
+      }
+    }
+
+    .project-card:focus-within {
       border-color: var(--accent);
       box-shadow: 0 8px 25px var(--shadow-hover);
-      transform: translateY(-4px);
     }
 
     .project-title {
@@ -333,6 +448,22 @@
       font-weight: 600;
       margin-bottom: 1rem;
       transition: color 0.3s ease;
+    }
+
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
     }
 
     .project-links {
@@ -354,9 +485,11 @@
       border-bottom: none;
     }
 
-    .project-link:hover {
+    .project-link:hover,
+    .project-link:focus {
       color: var(--accent-hover);
       transform: translateX(8px);
+      outline: none;
     }
 
     /* Certificates */
@@ -370,15 +503,17 @@
       border-radius: 8px;
       cursor: pointer;
       display: flex;
-      justify-content: between;
+      justify-content: space-between;
       align-items: center;
       transition: all 0.3s ease;
       border: 1px solid var(--border);
     }
 
-    .cert-header:hover {
+    .cert-header:hover,
+    .cert-header:focus {
       background: var(--border-light);
       border-color: var(--accent);
+      outline: none;
     }
 
     .cert-header.active {
@@ -433,10 +568,16 @@
       transition: all 0.3s ease;
     }
 
-    .cert-item:hover {
-      background: var(--border-light);
+    @media (prefers-reduced-motion: no-preference) {
+      .cert-item:hover {
+        background: var(--border-light);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+    }
+
+    .cert-item:focus-within {
       border-color: var(--accent);
-      transform: translateY(-2px);
     }
 
     .cert-link {
@@ -447,8 +588,10 @@
       transition: color 0.3s ease;
     }
 
-    .cert-link:hover {
+    .cert-link:hover,
+    .cert-link:focus {
       color: var(--accent);
+      outline: none;
     }
 
     /* Contact */
@@ -461,9 +604,11 @@
       transition: all 0.3s ease;
     }
 
-    .contact-section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    @media (prefers-reduced-motion: no-preference) {
+      .contact-section:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      }
     }
 
     .contact-section h2 {
@@ -482,9 +627,11 @@
       transition: color 0.3s ease;
     }
 
-    .contact-info a:hover {
+    .contact-info a:hover,
+    .contact-info a:focus {
       color: #93c5fd;
       text-decoration: underline;
+      outline: none;
     }
 
     /* Back to Top Button */
@@ -514,10 +661,12 @@
       visibility: visible;
     }
 
-    .back-to-top:hover {
+    .back-to-top:hover,
+    .back-to-top:focus {
       background: var(--accent-hover);
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+      outline: none;
     }
 
     .divider {
@@ -525,6 +674,150 @@
       background: var(--border);
       margin: 3rem 0;
       border: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background-color: var(--bg-secondary);
+      margin: 10% auto;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      position: relative;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-content h3 {
+      margin: 0 0 1rem 0;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-right: 2rem;
+    }
+
+    .modal-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .close {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: var(--accent);
+      background: var(--bg-tertiary);
+      transform: rotate(90deg);
+      outline: none;
+    }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.875rem 1.75rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+
+    .download-button:hover,
+    .download-button:focus {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      outline: none;
+    }
+
+    .download-button::before {
+      content: "📥";
+      font-size: 1.1rem;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .project-card.hidden {
+      display: none;
+    }
+
+    .cert-item.hidden {
+      display: none;
+    }
+
+    /* Skip to content link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
 
     /* Mobile Responsiveness */
@@ -557,6 +850,10 @@
         font-size: 2rem;
       }
 
+      .tech-stack {
+        justify-content: center;
+      }
+
       .project-grid {
         grid-template-columns: 1fr;
       }
@@ -569,323 +866,313 @@
         bottom: 1rem;
         right: 1rem;
       }
+
+      .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 1.5rem;
+      }
+      
+      .modal-content h3 {
+        font-size: 1.25rem;
+      }
+      
+      .close {
+        right: 1rem;
+        top: 1rem;
+      }
     }
-
-    /* Animation for filtered items */
-    .cert-item.hidden {
-      display: none;
-    }
-
-    .no-results {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.modal-content {
-  background-color: var(--bg-secondary);
-  margin: 10% auto;
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border);
-  position: relative;
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-content h3 {
-  margin: 0 0 1rem 0;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding-right: 2rem;
-}
-
-.modal-content p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.close {
-  position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.close:hover {
-  color: var(--accent);
-  background: var(--bg-tertiary);
-  transform: rotate(90deg);
-}
-
-.download-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--accent);
-  color: white;
-  padding: 0.875rem 1.75rem;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  border: none;
-  cursor: pointer;
-}
-
-.download-button:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-.download-button::before {
-  content: "📥";
-  font-size: 1.1rem;
-}
-
-/* Responsive para móvil */
-@media (max-width: 768px) {
-  .modal-content {
-    width: 95%;
-    margin: 20% auto;
-    padding: 1.5rem;
-  }
-  
-  .modal-content h3 {
-    font-size: 1.25rem;
-  }
-  
-  .close {
-    right: 1rem;
-    top: 1rem;
-  }
-}
   </style>
 </head>
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="nav-content">
-      <a href="#" class="nav-brand">MVG Portfolio</a>
-      <ul class="nav-links">
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#certificaciones">Certificaciones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+      <a href="#" class="nav-brand" aria-label="Inicio - MVG Portfolio">MVG Portfolio</a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#proyectos" role="menuitem">Proyectos</a></li>
+        <li role="none"><a href="#certificaciones" role="menuitem">Certificaciones</a></li>
+        <li role="none"><a href="#contacto" role="menuitem">Contacto</a></li>
       </ul>
       <div class="controls">
-        <button class="theme-toggle" onclick="toggleTheme()">
-          <span id="theme-icon">🌙</span>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema de color">
+          <span id="theme-icon" aria-hidden="true">🌙</span>
           <span id="theme-text">Oscuro</span>
         </button>
-        <button class="lang-toggle" onclick="window.location.href='index_en.html'">EN</button>
+        <button class="lang-toggle" onclick="window.location.href='index_en.html'" aria-label="Cambiar a inglés">EN</button>
       </div>
     </div>
   </nav>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Volver arriba">
     ↑
   </button>
 
-  <div class="container">
+  <main id="main-content" class="container">
     <header class="header">
-      <div class="avatar" title="Manuel Verdejo García">
+      <div class="avatar" title="Manuel Verdejo García" role="img" aria-label="Iniciales MVG">
         MVG
       </div>
       <div class="header-content">
         <h1>Manuel Verdejo García</h1>
         <p class="subtitle">Analista de Datos | Especialista en Business Intelligence</p>
-        <p class="intro-text">
-          Profesional en formación con sólidos fundamentos matemáticos y experiencia práctica en análisis de datos. 
-          Especializado en Power BI, Python, R y SQL para la resolución de problemas empresariales mediante 
-          análisis estadístico avanzado y visualización de datos estratégica.
+        <p class="value-proposition">
+          ⚡ +15 proyectos de ML/AI | 30+ certificaciones | Experto en convertir datos en decisiones estratégicas
         </p>
-        <a href="#" class="download-cv" onclick="downloadCV()">
+        <p class="intro-text">
+          Profesional con sólidos fundamentos matemáticos y experiencia práctica transformando datos complejos 
+          en insights accionables. Especializado en Machine Learning, Deep Learning y sistemas de IA productivos 
+          con impacto mensurable en resultados empresariales.
+        </p>
+        
+        <div class="tech-stack" role="list" aria-label="Stack tecnológico">
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">🐍</span>
+            Python
+          </span>
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">📊</span>
+            Power BI
+          </span>
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">📈</span>
+            R
+          </span>
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">🗄️</span>
+            SQL
+          </span>
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">🤖</span>
+            ML/AI
+          </span>
+          <span class="tech-badge" role="listitem">
+            <span class="tech-icon" aria-hidden="true">🧠</span>
+            Deep Learning
+          </span>
+        </div>
+        
+        <a href="#" class="download-cv" onclick="downloadCV()" aria-label="Descargar currículum en PDF">
           📄 Descargar CV
         </a>
       </div>
     </header>
 
-<section class="section" id="proyectos">
-  <div class="section-header">
-    <h2>Proyectos Destacados</h2>
-    <p class="section-description">Implementaciones prácticas de análisis de datos, inteligencia artificial y modelado estadístico</p>
-  </div>
-
-  <div class="section-content">
-    <div class="project-grid">
-      <!-- Inteligencia Artificial - Modelos Predictivos -->
-      <div class="project-card">
-        <div class="project-title">IAs de Modelos Predictivos</div>
-        <div class="project-links">
-          <a href="IA_Predicción_Precio_Vivienda.zip" class="project-link" data-descripcion="Comparador de modelos de regresión de alto rendimiento (California Housing). Evalúa múltiples algoritmos como <b>Random Forest, XGBoost, LightGBM</b>, y <b>SVR</b>. Incluye análisis de importancia de características y visualización de errores.">Predicción de Precio de Vivienda</a>
-          <a href="IA_Predicción_Ventas.zip" class="project-link" data-descripcion="Pipeline avanzado de forecasting de series de tiempo. Combina modelos híbridos: <b>Prophet</b> para tendencias y estacionalidad, y <b>XGBoost</b> para características exógenas. Ofrece interpretabilidad de predicciones con <b>SHAP</b> y diagnóstico de series con <b>statsmodels</b>.">Predicción de Ventas de una Empresa</a>
-        </div>
-      </div>
-      
-     <div class="project-card">
-        <div class="project-title">IAs de Modelos Logísticos</div>
-        <div class="project-links">
-          <a href="Sistema de Scoring Crediticio.zip" class="project-link" data-descripcion="Sistema avanzado de evaluación crediticia con arquitectura híbrida (<b>Logistic Regression, XGBoost, LightGBM</b>) y técnicas de Explainable AI (<b>SHAP, LIME</b>). Incluye ingeniería de características, calibración, simulación Monte Carlo y métricas de fairness.">Sistema de Scoring Crediticio</a>
-        </div>
-      </div>
-
-      <!-- Inteligencia Artificial - Recomendación y NLP -->
-      <div class="project-card">
-        <div class="project-title">IAs de Recomendación y Análisis de Lenguaje</div>
-        <div class="project-links">
-          <a href="IA_Recomendación_Películas.zip" class="project-link" data-descripcion="Sistema de recomendación híbrido. Implementa filtrado colaborativo avanzado (<b>Surprise SVD/KNN</b>) y basado en contenido (<b>Scikit-learn TF-IDF</b>). Incluye <b>RandomizedSearchCV</b> para optimización y un motor robusto para la solución del problema de Cold Start.">Recomendación de Películas</a>
-          <a href="IA_Detector_Reviews.zip" class="project-link" data-descripcion="Sistema de Análisis de Sentimientos y Minería de Opiniones (ABSA). Utiliza un <b>Voting Classifier (Scikit-learn SVC/MultinomialNB)</b> potenciado por técnicas de Orientación Semántica (<b>NLTK</b>) para clasificar sentimientos y detectar comparaciones en textos.">Detección de Sentimiento en Reviews</a>
-        </div>
-      </div>
-
-      <!-- Inteligencia Artificial - Deep Learning -->
-      <div class="project-card">
-        <div class="project-title">IAs de Deep Learning y Modelos Avanzados</div>
-        <div class="project-links">
-          <a href="Sistemas caóticos de dinámica neuronal.zip" class="project-link" data-descripcion="Modelo generativo de sistemas dinámicos caóticos (Lorenz, Rössler). Arquitectura híbrida (Autoencoder + Neural ODE) implementada con <b>JAX</b> y <b>Diffrax</b> para simulación de física diferenciable. Utiliza <b>jax.vmap</b> para paralelización masiva, logrando una compresión del 87% y preservando propiedades caóticas (Exponente de Lyapunov).">Modelo de Dinámica Neuronal Caótica</a>
-          <a href="DeepLearning_GPU.zip" class="project-link" data-descripcion="Plataforma modular de Deep Learning no supervisado con aceleración GPU. Combina Autoencoders contrastivos, UMAP y HDBSCAN para clustering, reducción de dimensionalidad y detección de anomalías en datos multimodales.">Redes Neuronales Aceleradas en GPU</a>
-          <a href="DoubleDebiased.zip" class="project-link" data-descripcion="Framework avanzado de Inferencia Causal. Implementa <b>Double Machine Learning (DML)</b> con <b>doubleml</b> y <b>EconML</b> para la estimación ortogonalizada de efectos causales (PLR, PLIV) y la inferencia de Efectos de Tratamiento Heterogéneos (CATE), incluyendo validación asintótica (Monte Carlo) y modelos de **scikit-learn** como estimadores auxiliares.">Modelo Double Debiased Machine Learning</a>
-          <a href="Xai.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) para auditoría de modelos caja negra (TabNet). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b> y realiza auditoría de sesgos (Fairness). El resultado se consolida en un dashboard interactivo (<b>React/Recharts</b>) y un reporte ejecutivo en PDF (<b>reportlab</b>).">Explainable AI (XAI) – Interpretabilidad</a>
-        </div>
-      </div>
-
-      <!-- MLOps y Ciencia de Datos Experimental -->
-      <div class="project-card">
-        <div class="project-title">MLOps y Ciencia de Datos Experimental</div>
-        <div class="project-links">
-          <a href="mlops.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) y XAI para auditoría de un modelo de caja negra (<b>TabNet</b>) en un entorno crítico de **Salud (MIMIC-IV)**. Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b>, y realiza una auditoría de sesgos (Fairness). Los resultados se consolidan en un **Dashboard Interactivo** (<b>React/Recharts</b>) y un **Reporte Ejecutivo profesional** en PDF (<b>reportlab</b>).">Pipeline MLOps para Despliegue de Modelos</a>
-          <a href="Manifold_Cluster_Densidad.zip" class="project-link" data-descripcion="Pipeline completo de análisis no supervisado. Aplica técnicas de Reducción de Dimensionalidad (Manifold Learning: <b>UMAP, PCA</b>) y Clustering por Densidad (<b>HDBSCAN, Spectral Clustering</b>), con validación robusta y visualización 3D interactiva (<b>Plotly</b>).">Manifold Learning y Clustering de Densidad</a>
-        </div>
-      </div>
-
-      <!-- Simuladores Artificiales -->
-      <div class="project-card">
-        <div class="project-title">Simuladores Artificiales</div>
-        <div class="project-links">
-          <a href="Simulador_Ecosistema.zip" class="project-link" data-descripcion="Motor de simulación ecológica con pathfinding A*, genética evolutiva y ciclos estacionales. Reproduce dinámicas entre especies, plantas y enfermedades en un entorno 2D animado con ecosistemas autoadaptativos.">Simulador de Ecosistema Artificial</a>
-          <a href="Civilización.zip" class="project-link" data-descripcion="Simulador procedimental de civilizaciones con clima dinámico, geología, diplomacia, migración, evolución tecnológica y ecosistemas vivos. Modela interacciones complejas entre economía, cultura y medio ambiente.">Modelo Evolutivo de Civilización</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-title">Análisis Empresarial con Python</div>
-        <div class="project-links">
-          <a href="BMW_DataAnalysis.zip" class="project-link" data-descripcion="Análisis integral de ventas BMW (2010–2024) combinando estadística descriptiva, clustering, PCA y regresión. Incluye visualización avanzada y detección automática de outliers para optimizar estrategias de mercado.">Análisis de ventas de BMW</a>
-        </div>
-      </div>
-      <!-- Proyecto Teno -->
-      <div class="project-card">
-        <div class="project-title">Análisis de Componentes Principales y Clustering – Proyecto Teno</div>
-        <div class="project-links">
-          <a href="ACP Teno.pdf" class="project-link" download>Informe de Análisis ACP</a>
-          <a href="Clúster Teno.pdf" class="project-link" download>Informe de Análisis Clustering</a>
-        </div>
-      </div>
-
-      <!-- Ríos Nueva York -->
-      <div class="project-card">
-        <div class="project-title">Regresión Lineal y Clustering – Análisis Ríos Nueva York</div>
-        <div class="project-links">
-          <a href="Regresión Lineal Ríos Nueva York.pdf" class="project-link" download>Informe de Regresión Lineal</a>
-          <a href="Clúster Ríos Nueva York.pdf" class="project-link" download>Informe de Análisis Clustering</a>
-        </div>
-      </div>
-
-      <!-- Power BI -->
-      <div class="project-card">
-        <div class="project-title">Dashboards Interactivos en Power BI</div>
-        <div class="project-links">
-          <a href="FutbolInternacional.pbix" class="project-link" download>Dashboard Fútbol Internacional</a>
-          <a href="Libros.pbix" class="project-link" download>Dashboard Análisis de Libros</a>
-        </div>
-      </div>
-
-      <!-- Scripts en R -->
-      <div class="project-card">
-        <div class="project-title">Scripts de Análisis Estadístico en R</div>
-        <div class="project-links">
-          <a href="modelado_loess_clustering_pca.R" class="project-link" download>Modelado LOESS, Clustering y PCA</a>
-          <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>Regresión LOESS, Bootstrap y PCA</a>
-        </div>
-      </div>
-
-
-
-      <!-- Optimización -->
-      <div class="project-card">
-        <div class="project-title">Algoritmos de Optimización en Python</div>
-        <div class="project-links">
-          <a href="Optimización.py" class="project-link" download>Algoritmos de Optimización I</a>
-          <a href="Optimización2.py" class="project-link" download>Algoritmos de Optimización II</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Modal -->
-<div id="fileModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3 id="modal-title"></h3>
-    <p id="modal-description"></p>
-    <a id="download-btn" href="#" download class="download-button">Descargar Archivo</a>
-  </div>
-</div>
-
-
-    <section class="section" id="certificaciones">
+    <section class="section" id="proyectos" aria-labelledby="proyectos-heading">
       <div class="section-header">
-        <h2>Certificaciones Profesionales</h2>
+        <h2 id="proyectos-heading">Proyectos Destacados</h2>
+        <p class="section-description">Implementaciones prácticas de análisis de datos, inteligencia artificial y modelado estadístico</p>
+      </div>
+
+      <div class="section-content">
+        <div class="search-container">
+          <input 
+            type="text" 
+            class="search-input" 
+            id="projectSearch"
+            placeholder="🔍 Buscar proyectos..."
+            oninput="filterProjects()"
+            aria-label="Buscar proyectos por nombre o descripción"
+          >
+        </div>
+
+        <div class="tech-filters" role="group" aria-label="Filtros por tecnología">
+          <button class="filter-btn" data-tech="all" onclick="filterByTech('all')" aria-pressed="false">Todos</button>
+          <button class="filter-btn" data-tech="python" onclick="filterByTech('python')" aria-pressed="false">Python</button>
+          <button class="filter-btn" data-tech="ml" onclick="filterByTech('ml')" aria-pressed="false">Machine Learning</button>
+          <button class="filter-btn" data-tech="deeplearning" onclick="filterByTech('deeplearning')" aria-pressed="false">Deep Learning</button>
+          <button class="filter-btn" data-tech="nlp" onclick="filterByTech('nlp')" aria-pressed="false">NLP</button>
+          <button class="filter-btn" data-tech="xai" onclick="filterByTech('xai')" aria-pressed="false">XAI</button>
+          <button class="filter-btn" data-tech="powerbi" onclick="filterByTech('powerbi')" aria-pressed="false">Power BI</button>
+          <button class="filter-btn" data-tech="r" onclick="filterByTech('r')" aria-pressed="false">R</button>
+        </div>
+
+        <div class="project-grid">
+          <!-- Inteligencia Artificial - Modelos Predictivos -->
+          <article class="project-card" data-tech="python,ml,sklearn,xgboost">
+            <div class="project-title">IAs de Modelos Predictivos</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">Random Forest</span>
+            </div>
+            <div class="project-links">
+              <a href="IA_Predicción_Precio_Vivienda.zip" class="project-link" data-descripcion="Comparador de modelos de regresión de alto rendimiento (California Housing). Evalúa múltiples algoritmos como <b>Random Forest, XGBoost, LightGBM</b>, y <b>SVR</b>. Incluye análisis de importancia de características y visualización de errores.">Predicción de Precio de Vivienda</a>
+              <a href="IA_Predicción_Ventas.zip" class="project-link" data-descripcion="Pipeline avanzado de forecasting de series de tiempo. Combina modelos híbridos: <b>Prophet</b> para tendencias y estacionalidad, y <b>XGBoost</b> para características exógenas. Ofrece interpretabilidad de predicciones con <b>SHAP</b> y diagnóstico de series con <b>statsmodels</b>.">Predicción de Ventas de una Empresa</a>
+            </div>
+          </article>
+          
+          <article class="project-card" data-tech="python,ml,xai">
+            <div class="project-title">IAs de Modelos Logísticos</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">SHAP</span>
+            </div>
+            <div class="project-links">
+              <a href="Sistema de Scoring Crediticio.zip" class="project-link" data-descripcion="Sistema avanzado de evaluación crediticia con arquitectura híbrida (<b>Logistic Regression, XGBoost, LightGBM</b>) y técnicas de Explainable AI (<b>SHAP, LIME</b>). Incluye ingeniería de características, calibración, simulación Monte Carlo y métricas de fairness.">Sistema de Scoring Crediticio</a>
+            </div>
+          </article>
+
+          <!-- Inteligencia Artificial - Recomendación y NLP -->
+          <article class="project-card" data-tech="python,ml,nlp">
+            <div class="project-title">IAs de Recomendación y Análisis de Lenguaje</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+            <div class="project-links">
+              <a href="IA_Recomendación_Películas.zip" class="project-link" data-descripcion="Sistema de recomendación híbrido. Implementa filtrado colaborativo avanzado (<b>Surprise SVD/KNN</b>) y basado en contenido (<b>Scikit-learn TF-IDF</b>). Incluye <b>RandomizedSearchCV</b> para optimización y un motor robusto para la solución del problema de Cold Start.">Recomendación de Películas</a>
+              <a href="IA_Detector_Reviews.zip" class="project-link" data-descripcion="Sistema de Análisis de Sentimientos y Minería de Opiniones (ABSA). Utiliza un <b>Voting Classifier (Scikit-learn SVC/MultinomialNB)</b> potenciado por técnicas de Orientación Semántica (<b>NLTK</b>) para clasificar sentimientos y detectar comparaciones en textos.">Detección de Sentimiento en Reviews</a>
+            </div>
+          </article>
+
+          <!-- Inteligencia Artificial - Deep Learning -->
+          <article class="project-card" data-tech="python,deeplearning,jax,xai">
+            <div class="project-title">IAs de Deep Learning y Modelos Avanzados</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">JAX</span>
+              <span class="tech-tag">Neural ODEs</span>
+              <span class="tech-tag">XAI</span>
+            </div>
+            <div class="project-links">
+              <a href="Sistemas caóticos de dinámica neuronal.zip" class="project-link" data-descripcion="Modelo generativo de sistemas dinámicos caóticos (Lorenz, Rössler). Arquitectura híbrida (Autoencoder + Neural ODE) implementada con <b>JAX</b> y <b>Diffrax</b> para simulación de física diferenciable. Utiliza <b>jax.vmap</b> para paralelización masiva, logrando una compresión del 87% y preservando propiedades caóticas (Exponente de Lyapunov).">Modelo de Dinámica Neuronal Caótica</a>
+              <a href="DeepLearning_GPU.zip" class="project-link" data-descripcion="Plataforma modular de Deep Learning no supervisado con aceleración GPU. Combina Autoencoders contrastivos, UMAP y HDBSCAN para clustering, reducción de dimensionalidad y detección de anomalías en datos multimodales.">Redes Neuronales Aceleradas en GPU</a>
+              <a href="DoubleDebiased.zip" class="project-link" data-descripcion="Framework avanzado de Inferencia Causal. Implementa <b>Double Machine Learning (DML)</b> con <b>doubleml</b> y <b>EconML</b> para la estimación ortogonalizada de efectos causales (PLR, PLIV) y la inferencia de Efectos de Tratamiento Heterogéneos (CATE), incluyendo validación asintótica (Monte Carlo) y modelos de **scikit-learn** como estimadores auxiliares.">Modelo Double Debiased Machine Learning</a>
+              <a href="Xai.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) para auditoría de modelos caja negra (TabNet). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b> y realiza auditoría de sesgos (Fairness). El resultado se consolida en un dashboard interactivo (<b>React/Recharts</b>) y un reporte ejecutivo en PDF (<b>reportlab</b>).">Explainable AI (XAI) – Interpretabilidad</a>
+            </div>
+          </article>
+
+          <!-- MLOps y Ciencia de Datos Experimental -->
+          <article class="project-card" data-tech="python,ml,mlops">
+            <div class="project-title">MLOps y Ciencia de Datos Experimental</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">MLOps</span>
+              <span class="tech-tag">UMAP</span>
+            </div>
+            <div class="project-links">
+              <a href="mlops.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) y XAI para auditoría de un modelo de caja negra (<b>TabNet</b>) en un entorno crítico de **Salud (MIMIC-IV)**. Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b>, y realiza una auditoría de sesgos (Fairness). Los resultados se consolidan en un **Dashboard Interactivo** (<b>React/Recharts</b>) y un **Reporte Ejecutivo profesional** en PDF (<b>reportlab</b>).">Pipeline MLOps para Despliegue de Modelos</a>
+              <a href="Manifold_Cluster_Densidad.zip" class="project-link" data-descripcion="Pipeline completo de análisis no supervisado. Aplica técnicas de Reducción de Dimensionalidad (Manifold Learning: <b>UMAP, PCA</b>) y Clustering por Densidad (<b>HDBSCAN, Spectral Clustering</b>), con validación robusta y visualización 3D interactiva (<b>Plotly</b>).">Manifold Learning y Clustering de Densidad</a>
+            </div>
+          </article>
+
+          <!-- Simuladores Artificiales -->
+          <article class="project-card" data-tech="python,simulation">
+            <div class="project-title">Simuladores Artificiales</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Simulación</span>
+            </div>
+            <div class="project-links">
+              <a href="Simulador_Ecosistema.zip" class="project-link" data-descripcion="Motor de simulación ecológica con pathfinding A*, genética evolutiva y ciclos estacionales. Reproduce dinámicas entre especies, plantas y enfermedades en un entorno 2D animado con ecosistemas autoadaptativos.">Simulador de Ecosistema Artificial</a>
+              <a href="Civilización.zip" class="project-link" data-descripcion="Simulador procedimental de civilizaciones con clima dinámico, geología, diplomacia, migración, evolución tecnológica y ecosistemas vivos. Modela interacciones complejas entre economía, cultura y medio ambiente.">Modelo Evolutivo de Civilización</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tech="python,analysis">
+            <div class="project-title">Análisis Empresarial con Python</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PCA</span>
+              <span class="tech-tag">Clustering</span>
+            </div>
+            <div class="project-links">
+              <a href="BMW_DataAnalysis.zip" class="project-link" data-descripcion="Análisis integral de ventas BMW (2010–2024) combinando estadística descriptiva, clustering, PCA y regresión. Incluye visualización avanzada y detección automática de outliers para optimizar estrategias de mercado.">Análisis de ventas de BMW</a>
+            </div>
+          </article>
+
+          <!-- Proyecto Teno -->
+          <article class="project-card" data-tech="r,pca,clustering">
+            <div class="project-title">Análisis de Componentes Principales y Clustering – Proyecto Teno</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">PCA</span>
+              <span class="tech-tag">Clustering</span>
+            </div>
+            <div class="project-links">
+              <a href="ACP Teno.pdf" class="project-link" download>Informe de Análisis ACP</a>
+              <a href="Clúster Teno.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+            </div>
+          </article>
+
+          <!-- Ríos Nueva York -->
+          <article class="project-card" data-tech="r,regression,clustering">
+            <div class="project-title">Regresión Lineal y Clustering – Análisis Ríos Nueva York</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">Regresión</span>
+              <span class="tech-tag">Clustering</span>
+            </div>
+            <div class="project-links">
+              <a href="Regresión Lineal Ríos Nueva York.pdf" class="project-link" download>Informe de Regresión Lineal</a>
+              <a href="Clúster Ríos Nueva York.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+            </div>
+          </article>
+
+          <!-- Power BI -->
+          <article class="project-card" data-tech="powerbi,bi">
+            <div class="project-title">Dashboards Interactivos en Power BI</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX</span>
+            </div>
+            <div class="project-links">
+              <a href="FutbolInternacional.pbix" class="project-link" download>Dashboard Fútbol Internacional</a>
+              <a href="Libros.pbix" class="project-link" download>Dashboard Análisis de Libros</a>
+            </div>
+          </article>
+
+          <!-- Scripts en R -->
+          <article class="project-card" data-tech="r,statistics">
+            <div class="project-title">Scripts de Análisis Estadístico en R</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">LOESS</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a href="modelado_loess_clustering_pca.R" class="project-link" download>Modelado LOESS, Clustering y PCA</a>
+              <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>Regresión LOESS, Bootstrap y PCA</a>
+            </div>
+          </article>
+
+          <!-- Optimización -->
+          <article class="project-card" data-tech="python,optimization">
+            <div class="project-title">Algoritmos de Optimización en Python</div>
+            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Optimización</span>
+            </div>
+            <div class="project-links">
+              <a href="Optimización.py" class="project-link" download>Algoritmos de Optimización I</a>
+              <a href="Optimización2.py" class="project-link" download>Algoritmos de Optimización II</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="fileModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+      <div class="modal-content">
+        <button class="close" aria-label="Cerrar modal" onclick="closeModal()">&times;</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <a id="download-btn" href="#" download class="download-button">Descargar Archivo</a>
+      </div>
+    </div>
+
+    <section class="section" id="certificaciones" aria-labelledby="certificaciones-heading">
+      <div class="section-header">
+        <h2 id="certificaciones-heading">Certificaciones Profesionales</h2>
         <p class="section-description">Formación continua y especialización en tecnologías de análisis de datos (en los que no se indique las horas dedicadas a ellos serán de 20 o menos)</p>
       </div>
       <div class="section-content">
@@ -896,69 +1183,62 @@
             id="searchInput"
             placeholder="🔍 Buscar certificaciones (ej: Python, Power BI, SQL...)"
             oninput="filterCertificates()"
+            aria-label="Buscar certificaciones por nombre o tecnología"
           >
         </div>
 
-<div class="cert-category">
-  <div class="cert-header" onclick="toggleCategory(this)">
-    <h3>Herramientas de Análisis y Productividad</h3>
-    <span class="cert-toggle">▼</span>
-  </div>
-  <div class="cert-content">
-    <div class="cert-grid">
-
-      <div class="cert-item" data-keywords="análisis de datos coursera google">
-        <a href="ADTotal.pdf" class="cert-link" download>
-          Análisis de Datos – Coursera+Google (240 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="data analytics excel">
-        <a href="Data Analytics with Excel.pdf" class="cert-link" download>
-          Data Analytics with Excel
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="excel regresión análisis">
-        <a href="Excel regression analysis.pdf" class="cert-link" download>
-          Excel Regression Analysis
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="excel power bi análisis visualización bilib">
-        <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
-          Análisis y Visualización de Datos con Excel y Power BI - BILIB (125 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="microsoft excel 2016 bilib">
-        <a href="Certificado_Microsoft_Excel_2016.pdf" class="cert-link" download>
-          Microsoft Excel 2016 - BILIB (75 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="microsoft access 2016 bilib">
-        <a href="Certificado_Microsoft_Access_2016.pdf" class="cert-link" download>
-          Microsoft Access 2016 - BILIB (75 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="libreoffice calc bilib">
-        <a href="Certificado_LibreOffice_Calc_3.pdf" class="cert-link" download>
-          LibreOffice Calc 3 - BILIB (25 H)
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="herramientas-content">
+            <h3>Herramientas de Análisis y Productividad</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="herramientas-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="análisis de datos coursera google">
+                <a href="ADTotal.pdf" class="cert-link" download>
+                  Análisis de Datos – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data analytics excel">
+                <a href="Data Analytics with Excel.pdf" class="cert-link" download>
+                  Data Analytics with Excel
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel regresión análisis">
+                <a href="Excel regression analysis.pdf" class="cert-link" download>
+                  Excel Regression Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel power bi análisis visualización bilib">
+                <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
+                  Análisis y Visualización de Datos con Excel y Power BI - BILIB (125 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft excel 2016 bilib">
+                <a href="Certificado_Microsoft_Excel_2016.pdf" class="cert-link" download>
+                  Microsoft Excel 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft access 2016 bilib">
+                <a href="Certificado_Microsoft_Access_2016.pdf" class="cert-link" download>
+                  Microsoft Access 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="libreoffice calc bilib">
+                <a href="Certificado_LibreOffice_Calc_3.pdf" class="cert-link" download>
+                  LibreOffice Calc 3 - BILIB (25 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <div class="cert-category">
-          <div class="cert-header" onclick="toggleCategory(this)">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="powerbi-content">
             <h3>Business Intelligence y Power BI</h3>
-            <span class="cert-toggle">▼</span>
-          </div>
-          <div class="cert-content">
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="powerbi-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="power bi análisis datos dashboard">
                 <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" class="cert-link" download>
@@ -990,11 +1270,11 @@
         </div>
 
         <div class="cert-category">
-          <div class="cert-header" onclick="toggleCategory(this)">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="sql-content">
             <h3>Gestión de Bases de Datos y SQL</h3>
-            <span class="cert-toggle">▼</span>
-          </div>
-          <div class="cert-content">
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="sql-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="sql básico base datos">
                 <a href="ABDEU.pdf" class="cert-link" download>
@@ -1021,11 +1301,11 @@
         </div>
 
         <div class="cert-category">
-          <div class="cert-header" onclick="toggleCategory(this)">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="python-content">
             <h3>Python y Machine Learning</h3>
-            <span class="cert-toggle">▼</span>
-          </div>
-          <div class="cert-content">
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="python-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="python data wrangling">
                 <a href="Python Data Wrangling.pdf" class="cert-link" download>
@@ -1067,11 +1347,11 @@
         </div>
 
         <div class="cert-category">
-          <div class="cert-header" onclick="toggleCategory(this)">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="r-content">
             <h3>Análisis Estadístico con R</h3>
-            <span class="cert-toggle">▼</span>
-          </div>
-          <div class="cert-content">
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="r-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="r data science">
                 <a href="R for Data Science.pdf" class="cert-link" download>
@@ -1118,11 +1398,11 @@
         </div>
 
         <div class="cert-category">
-          <div class="cert-header" onclick="toggleCategory(this)">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="cyber-content">
             <h3>Ciberseguridad y TIC</h3>
-            <span class="cert-toggle">▼</span>
-          </div>
-          <div class="cert-content">
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="cyber-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="ciberseguridad seguridad informática">
                 <a href="Advanced Cyber Security - Threats and Governance.pdf" class="cert-link" download>
@@ -1142,100 +1422,87 @@
             </div>
           </div>
         </div>
+
         <div class="cert-category">
-  <div class="cert-header" onclick="toggleCategory(this)">
-    <h3>Competencias Complementarias</h3>
-    <span class="cert-toggle">▼</span>
-  </div>
-  <div class="cert-content">
-    <div class="cert-grid">
-      
-      <div class="cert-item" data-keywords="google digitaliza herramientas">
-        <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" class="cert-link" download>
-          Iniciación al uso de herramientas de Google - Google (90 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="data science fundamentos">
-        <a href="Data Science Foundations.pdf" class="cert-link" download>
-          Data Science Foundations
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="data science proyectos">
-        <a href="Data Science Projects.pdf" class="cert-link" download>
-          Data Science Projects
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="gestión proyectos google coursera">
-        <a href="GPTotal.pdf" class="cert-link" download>
-          Gestión de Proyectos – Coursera+Google (240 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="ux diseño experiencia usuario google coursera">
-        <a href="ABDEU.pdf" class="cert-link" download>
-          Aspectos básicos del diseño de la experiencia del usuario – Coursera+Google (240 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="market basket analysis">
-        <a href="Market Basket Analysis.pdf" class="cert-link" download>
-          Market Basket Analysis
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="comercio electrónico marketing online bilib">
-        <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
-          Comercio Electrónico y Marketing Online - BILIB (90 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="marketing digital fundamentos">
-        <a href="Fundamentos del Marketing Digital.pdf" class="cert-link" download>
-          Fundamentos del Marketing Digital
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="marketing online pymes bilib">
-        <a href="Certificado_Marketing_online_para_Pymes.pdf" class="cert-link" download>
-          Marketing online para Pymes (SEM, SEO y PPC) - BILIB (115 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="pensamiento crítico mundo digital bilib">
-        <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
-          Pensamiento Crítico en un Mundo Digital - BILIB (70 H)
-        </a>
-      </div>
-
-      <div class="cert-item" data-keywords="productividad personal google activate">
-        <a href="Productividad Personal.pdf" class="cert-link" download>
-          Productividad Personal – Google Activate (40 H)
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="complementarias-content">
+            <h3>Competencias Complementarias</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="complementarias-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="google digitaliza herramientas">
+                <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" class="cert-link" download>
+                  Iniciación al uso de herramientas de Google - Google (90 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data science fundamentos">
+                <a href="Data Science Foundations.pdf" class="cert-link" download>
+                  Data Science Foundations
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data science proyectos">
+                <a href="Data Science Projects.pdf" class="cert-link" download>
+                  Data Science Projects
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="gestión proyectos google coursera">
+                <a href="GPTotal.pdf" class="cert-link" download>
+                  Gestión de Proyectos – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="ux diseño experiencia usuario google coursera">
+                <a href="ABDEU.pdf" class="cert-link" download>
+                  Aspectos básicos del diseño de la experiencia del usuario – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="market basket analysis">
+                <a href="Market Basket Analysis.pdf" class="cert-link" download>
+                  Market Basket Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="comercio electrónico marketing online bilib">
+                <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
+                  Comercio Electrónico y Marketing Online - BILIB (90 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="marketing digital fundamentos">
+                <a href="Fundamentos del Marketing Digital.pdf" class="cert-link" download>
+                  Fundamentos del Marketing Digital
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="marketing online pymes bilib">
+                <a href="Certificado_Marketing_online_para_Pymes.pdf" class="cert-link" download>
+                  Marketing online para Pymes (SEM, SEO y PPC) - BILIB (115 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="pensamiento crítico mundo digital bilib">
+                <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
+                  Pensamiento Crítico en un Mundo Digital - BILIB (70 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="productividad personal google activate">
+                <a href="Productividad Personal.pdf" class="cert-link" download>
+                  Productividad Personal – Google Activate (40 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
-
 
     <hr class="divider">
 
-    <section class="contact-section" id="contacto">
-      <h2>📬 Contacto</h2>
-      <p class="contact-info">
+    <section class="contact-section" id="contacto" aria-labelledby="contacto-heading">
+      <h2 id="contacto-heading">📬 Contacto</h2>
+      <address class="contact-info">
         📧 Email: <a href="mailto:manuelverdejo2000@gmail.com">manuelverdejo2000@gmail.com</a><br>
-        💼 LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank">LinkedIn Manuel Verdejo Garcia</a><br>
-        🌍 Disponibilidad: Sevilla | Huelva | Córdoba | Trabajo Remoto
-      </p>
+        💼 LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank" rel="noopener noreferrer">LinkedIn Manuel Verdejo Garcia</a><br>
+        🌐 Disponibilidad: Sevilla | Huelva | Córdoba | Trabajo Remoto
+      </address>
     </section>
-  </div>
+  </main>
 
   <script>
     // === Back to Top ===
@@ -1247,6 +1514,7 @@
         backToTopBtn.classList.remove("visible");
       }
     });
+    
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1254,10 +1522,14 @@
     // === Theme Toggle ===
     function toggleTheme() {
       const body = document.body;
-      body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+      const currentTheme = body.dataset.theme;
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      body.dataset.theme = newTheme;
+      
       const icon = document.getElementById("theme-icon");
       const text = document.getElementById("theme-text");
-      if (body.dataset.theme === "dark") {
+      
+      if (newTheme === "dark") {
         icon.textContent = "☀️";
         text.textContent = "Claro";
       } else {
@@ -1266,19 +1538,16 @@
       }
     }
 
-    // === Language Toggle (ejemplo simple) ===
-    function toggleLanguage() {
-      alert("Versión en inglés próximamente 🌍");
-    }
-
     // === Accordion (Cert categories) ===
     function toggleCategory(header) {
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', !isExpanded);
       header.classList.toggle("active");
       const content = header.nextElementSibling;
       content.classList.toggle("active");
     }
 
-    // === Search Filter ===
+    // === Search Filter for Certificates ===
     function filterCertificates() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const items = document.querySelectorAll(".cert-item");
@@ -1294,8 +1563,8 @@
         }
       });
 
-      let noResults = document.querySelector(".no-results");
-      if (!found) {
+      let noResults = document.querySelector("#certificaciones .no-results");
+      if (!found && input !== "") {
         if (!noResults) {
           noResults = document.createElement("div");
           noResults.className = "no-results";
@@ -1306,40 +1575,130 @@
         if (noResults) noResults.remove();
       }
     }
-    // --- Script para el modal ---
+
+    // === Project Search Filter ===
+    function filterProjects() {
+      const input = document.getElementById("projectSearch").value.toLowerCase();
+      const cards = document.querySelectorAll(".project-card");
+      let found = false;
+
+      cards.forEach(card => {
+        const title = card.querySelector(".project-title").textContent.toLowerCase();
+        const tech = card.getAttribute("data-tech").toLowerCase();
+        const links = Array.from(card.querySelectorAll(".project-link"))
+          .map(link => link.textContent.toLowerCase())
+          .join(" ");
+        
+        if (title.includes(input) || tech.includes(input) || links.includes(input)) {
+          card.classList.remove("hidden");
+          found = true;
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+
+      let noResults = document.querySelector("#proyectos .no-results");
+      if (!found && input !== "") {
+        if (!noResults) {
+          noResults = document.createElement("div");
+          noResults.className = "no-results";
+          noResults.textContent = "❌ No se encontraron proyectos.";
+          document.querySelector("#proyectos .section-content").appendChild(noResults);
+        }
+      } else {
+        if (noResults) noResults.remove();
+      }
+    }
+
+    // === Tech Filter for Projects ===
+    let currentFilter = 'all';
+    
+    function filterByTech(tech) {
+      currentFilter = tech;
+      const cards = document.querySelectorAll(".project-card");
+      const buttons = document.querySelectorAll(".filter-btn");
+      
+      // Update button states
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-tech') === tech) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+        } else {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      });
+      
+      // Filter cards
+      cards.forEach(card => {
+        const cardTech = card.getAttribute("data-tech").toLowerCase();
+        if (tech === 'all' || cardTech.includes(tech.toLowerCase())) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    // === Modal Functions ===
     document.querySelectorAll('.project-link').forEach(link => {
       link.addEventListener('click', function (event) {
-        event.preventDefault(); // Evita la descarga inmediata
-    
-        const modal = document.getElementById('fileModal');
-        const title = document.getElementById('modal-title');
-        const desc = document.getElementById('modal-description');
-        const downloadBtn = document.getElementById('download-btn');
-    
-        title.textContent = this.textContent;
-        desc.innerHTML = this.getAttribute('data-descripcion');;
-        downloadBtn.href = this.getAttribute('href');
-    
-        modal.style.display = 'block';
+        const href = this.getAttribute('href');
+        const description = this.getAttribute('data-descripcion');
+        
+        // Only show modal if there's a description
+        if (description) {
+          event.preventDefault();
+          
+          const modal = document.getElementById('fileModal');
+          const title = document.getElementById('modal-title');
+          const desc = document.getElementById('modal-description');
+          const downloadBtn = document.getElementById('download-btn');
+          
+          title.textContent = this.textContent;
+          desc.innerHTML = description;
+          downloadBtn.href = href;
+          
+          modal.style.display = 'block';
+          
+          // Focus trap
+          downloadBtn.focus();
+        }
       });
     });
     
-    // Cerrar modal al pulsar la X
-    document.querySelector('.close').onclick = function() {
+    function closeModal() {
       document.getElementById('fileModal').style.display = 'none';
-    };
+    }
     
-    // Cerrar modal al hacer clic fuera
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+    
+    // Close modal when clicking outside
     window.onclick = function(event) {
-      if (event.target === document.getElementById('fileModal')) {
-        document.getElementById('fileModal').style.display = 'none';
+      const modal = document.getElementById('fileModal');
+      if (event.target === modal) {
+        closeModal();
       }
     };
 
-    // === Descargar CV ===
+    // === Download CV ===
     function downloadCV() {
       window.open("Currículum Analista de Datos Manuel Verdejo García.pdf", "_blank");
     }
+
+    // Initialize first filter button as active
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstFilter = document.querySelector('.filter-btn[data-tech="all"]');
+      if (firstFilter) {
+        firstFilter.classList.add('active');
+        firstFilter.setAttribute('aria-pressed', 'true');
+      }
+    });
   </script>
 </body>
 </html>
