@@ -782,6 +782,13 @@
       border: none;
     }
 
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000; /* backdrop abajo */
+  }
+    
     .modal {
       display: none;
       position: fixed;
@@ -795,7 +802,9 @@
       backdrop-filter: blur(4px);
       animation: fadeIn 0.3s ease;
     }
-
+    
+.no-scroll { overflow: hidden; } /* body bloqueo scroll al abrir modal */
+    
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
