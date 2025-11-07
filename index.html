@@ -3,40 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manuel Verdejo García – Portafolio Profesional</title>
+  <title>Manuel Verdejo GarcÃ­a â€” Portafolio Profesional</title>
   
   <!-- META SEO optimizado -->
-  <meta name="description" content="Manuel Verdejo García - Analista de Datos especializado en Power BI, Python, R y SQL. Portafolio profesional con proyectos de Business Intelligence y certificaciones en Data Science.">
-  <meta name="keywords" content="Manuel Verdejo García, analista de datos, Power BI, Python, R, SQL, Business Intelligence, Data Science, análisis estadístico, visualización de datos, machine learning">
-  <meta name="author" content="Manuel Verdejo García">
+  <meta name="description" content="Manuel Verdejo GarcÃ­a - Analista de Datos especializado en Power BI, Python, R y SQL. Portafolio profesional con proyectos de Business Intelligence y certificaciones en Data Science.">
+  <meta name="keywords" content="Manuel Verdejo GarcÃ­a, analista de datos, Power BI, Python, R, SQL, Business Intelligence, Data Science, anÃ¡lisis estadÃ­stico, visualizaciÃ³n de datos, machine learning">
+  <meta name="author" content="Manuel Verdejo GarcÃ­a">
   
   <!-- OPEN GRAPH para redes sociales -->
-  <meta property="og:title" content="Manuel Verdejo García – Analista de Datos & BI Specialist">
-  <meta property="og:description" content="+15 proyectos ML/AI | 30+ certificaciones | Experto en convertir datos en decisiones estratégicas">
+  <meta property="og:title" content="Manuel Verdejo GarcÃ­a â€” Analista de Datos & BI Specialist">
+  <meta property="og:description" content="+15 proyectos ML/AI | 30+ certificaciones | Experto en convertir datos en decisiones estratÃ©gicas">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://manuelverdejo.dev">
   <meta property="og:image" content="https://manuelverdejo.dev/og-image.jpg">
   
   <!-- TWITTER CARD -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Manuel Verdejo García – Analista de Datos">
+  <meta name="twitter:title" content="Manuel Verdejo GarcÃ­a â€” Analista de Datos">
   <meta name="twitter:description" content="Especialista en Power BI, Python, ML/AI y Business Intelligence">
   <meta name="twitter:image" content="https://manuelverdejo.dev/twitter-card.jpg">
   
-  <!-- STRUCTURED DATA JSON-LD para SEO (FIX: email sin mailto:) -->
+  <!-- STRUCTURED DATA JSON-LD para SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Manuel Verdejo García",
+    "name": "Manuel Verdejo GarcÃ­a",
     "jobTitle": "Analista de Datos | Especialista en Business Intelligence",
     "url": "https://manuelverdejo.dev",
     "sameAs": [
-      "https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260",
+      "https://www.linkedin.com/in/manuel-verdejo-garcÃ­a-8483b7260",
       "https://github.com/manuelverdejo"
     ],
     "knowsAbout": ["Power BI", "Python", "Machine Learning", "Data Science", "SQL", "R", "Business Intelligence"],
-    "email": "manuelverdejo2000@gmail.com"
+    "email": "mailto:manuelverdejo2000@gmail.com"
   }
   </script>
   
@@ -48,9 +48,6 @@
   
   <!-- FONT con display=swap para LCP optimization -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FIX: PRELOAD explícito de font para mejorar LCP -->
-  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" crossorigin>
   
   <style>
     * {
@@ -65,12 +62,12 @@
       --bg-tertiary: #f9fafb;
       --text-primary: #1a1a1a;
       --text-secondary: #374151;
-      --text-muted: #6b7280;
+      --text-muted: #6b7280; /* Mejorado para contraste WCAG AA */
       --border: #e1e8ed;
       --border-light: #f3f4f6;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --contact-link: #1e40af;
+      --contact-link: #1e40af; /* Color mÃ¡s oscuro para mejor contraste */
       --shadow: rgba(0,0,0,0.04);
       --shadow-hover: rgba(0,0,0,0.08);
     }
@@ -81,12 +78,12 @@
       --bg-tertiary: #334155;
       --text-primary: #f1f5f9;
       --text-secondary: #e2e8f0;
-      --text-muted: #cbd5e1;
+      --text-muted: #cbd5e1; /* Mejorado para contraste WCAG AA en dark mode */
       --border: #334155;
       --border-light: #475569;
       --accent: #3b82f6;
       --accent-hover: #60a5fa;
-      --contact-link: #93c5fd;
+      --contact-link: #93c5fd; /* Color mÃ¡s claro para mejor contraste en dark */
       --shadow: rgba(0,0,0,0.2);
       --shadow-hover: rgba(0,0,0,0.3);
     }
@@ -117,7 +114,7 @@
       }
     }
 
-    /* SKIP LINK para accesibilidad */
+    /* SKIP LINK para accesibilidad - visible on focus */
     .skip-link {
       position: absolute;
       top: -100px;
@@ -137,6 +134,7 @@
       outline: 3px solid #fff;
     }
 
+    /* Focus-visible support */
     :focus-visible {
       outline: 3px solid var(--accent);
       outline-offset: 4px;
@@ -202,6 +200,7 @@
       gap: 1rem;
     }
 
+    /* THEME TOGGLE mejorado con estados claros */
     .theme-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -239,6 +238,7 @@
       transform: translateY(-2px);
     }
 
+    /* Main Content */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -301,6 +301,7 @@
       transition: color 0.3s ease;
     }
 
+    /* MEJORA CONTRASTE subtitle e intro-text */
     .subtitle {
       color: var(--text-secondary);
       font-size: 1.1rem;
@@ -333,7 +334,7 @@
       border-top: 1px solid var(--border-light);
     }
 
-    /* FIX A11y: SVG con role="img" NO debe tener aria-hidden */
+    /* TECH BADGES mejorados con SVG inline */
     .tech-badge {
       display: inline-flex;
       align-items: center;
@@ -363,6 +364,7 @@
       flex-shrink: 0;
     }
 
+    /* CTA MEJORADO para Descargar CV */
     .download-cv {
       background: var(--accent);
       color: white;
@@ -405,6 +407,7 @@
       margin-top: 0.25rem;
     }
 
+    /* Sections */
     .section {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
@@ -444,6 +447,7 @@
       padding: 0 2rem 2rem 2rem;
     }
 
+    /* Search and Filter */
     .search-container {
       margin: 1.5rem 0;
       position: relative;
@@ -465,6 +469,7 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
+    /* ARIA LIVE region para anunciar resultados */
     .search-results-status {
       position: absolute;
       left: -10000px;
@@ -486,6 +491,7 @@
       margin: 1rem 0;
     }
 
+    /* FILTROS CON COUNTS */
     .filter-btn {
       background: var(--bg-tertiary);
       border: 1px solid var(--border);
@@ -519,6 +525,7 @@
       font-weight: 600;
     }
 
+    /* Projects */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -596,6 +603,7 @@
       transform: translateX(8px);
     }
 
+    /* Certificates */
     .cert-category {
       margin-bottom: 2rem;
     }
@@ -695,6 +703,7 @@
       color: var(--accent);
     }
 
+    /* Contact - MEJORA CONTRASTE */
     .contact-section {
       background: linear-gradient(135deg, #1f2937, #374151);
       color: #f9fafb;
@@ -721,6 +730,7 @@
       line-height: 1.8;
     }
 
+    /* MEJORA CONTRASTE en links de contacto */
     .contact-info a {
       color: var(--contact-link);
       text-decoration: none;
@@ -741,6 +751,7 @@
       text-decoration: underline;
     }
 
+    /* Back to Top Button */
     .back-to-top {
       position: fixed;
       bottom: 2rem;
@@ -782,13 +793,7 @@
       border: none;
     }
 
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 1000; /* backdrop abajo */
-  }
-    
+    /* MODAL mejorado con focus trap y aria-hidden */
     .modal {
       display: none;
       position: fixed;
@@ -802,9 +807,7 @@
       backdrop-filter: blur(4px);
       animation: fadeIn 0.3s ease;
     }
-    
-.no-scroll { overflow: hidden; } /* body bloqueo scroll al abrir modal */
-    
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -898,7 +901,7 @@
     }
 
     .download-button::before {
-      content: "📥";
+      content: "ðŸ“¥";
       font-size: 1.1rem;
     }
 
@@ -917,6 +920,7 @@
       display: none;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .nav-content {
         padding: 0 1rem;
@@ -981,9 +985,11 @@
   </style>
 </head>
 <body>
+  <!-- SKIP LINK mejorado y visible on focus -->
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <!-- Navigation con roles ARIA correctos -->
+  <nav class="navbar" role="navigation" aria-label="NavegaciÃ³n principal">
     <div class="nav-content">
       <a href="#" class="nav-brand" aria-label="Inicio - MVG Portfolio">MVG Portfolio</a>
       <ul class="nav-links" role="menubar">
@@ -992,6 +998,7 @@
         <li role="none"><a href="#contacto" role="menuitem">Contacto</a></li>
       </ul>
       <div class="controls">
+        <!-- THEME TOGGLE mejorado con aria-pressed y texto claro -->
         <button 
           class="theme-toggle" 
           id="themeToggleBtn"
@@ -1000,72 +1007,73 @@
           aria-label="Cambiar a tema oscuro"
           title="Cambiar a tema oscuro"
         >
-          <span id="theme-icon" aria-hidden="true">🌙</span>
+          <span id="theme-icon" aria-hidden="true">ðŸŒ™</span>
           <span id="theme-text">Cambiar a oscuro</span>
         </button>
-        <button class="lang-toggle" onclick="window.location.href='index_en.html'" aria-label="Cambiar a inglés">EN</button>
+        <button class="lang-toggle" onclick="window.location.href='index_en.html'" aria-label="Cambiar a inglÃ©s">EN</button>
       </div>
     </div>
   </nav>
 
+  <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Volver arriba">
-    ↑
+    â†‘
   </button>
 
   <main id="main-content" class="container">
     <header class="header">
-      <div class="avatar" title="Manuel Verdejo García" role="img" aria-label="Iniciales MVG">
+      <div class="avatar" title="Manuel Verdejo GarcÃ­a" role="img" aria-label="Iniciales MVG">
         MVG
       </div>
       <div class="header-content">
-        <h1>Manuel Verdejo García</h1>
+        <h1>Manuel Verdejo GarcÃ­a</h1>
         <p class="subtitle">Analista de Datos | Especialista en Business Intelligence</p>
         <p class="value-proposition">
-          ⚡ +15 proyectos de ML/AI | 30+ certificaciones | Experto en convertir datos en decisiones estratégicas
+          âš¡ +15 proyectos de ML/AI | 30+ certificaciones | Experto en convertir datos en decisiones estratÃ©gicas
         </p>
         <p class="intro-text">
-          Profesional analítico con pensamiento estratégico y dominio técnico en Machine Learning, Deep Learning y analítica avanzada. Capaz de conectar la inteligencia artificial con la realidad del negocio, generando soluciones que impulsan el crecimiento, mejoran procesos y traducen la complejidad de los datos en valor tangible.
+          Profesional analÃ­tico con pensamiento estratÃ©gico y dominio tÃ©cnico en Machine Learning, Deep Learning y analÃ­tica avanzada. Capaz de conectar la inteligencia artificial con la realidad del negocio, generando soluciones que impulsan el crecimiento, mejoran procesos y traducen la complejidad de los datos en valor tangible.
         </p>
         
-        <!-- FIX A11y: SVG sin aria-hidden cuando tiene role="img" -->
-        <div class="tech-stack" role="list" aria-label="Stack tecnológico">
+        <!-- TECH STACK con SVG accesibles -->
+        <div class="tech-stack" role="list" aria-label="Stack tecnolÃ³gico">
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>Python</title>
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
             Python
           </span>
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>Power BI</title>
               <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
             </svg>
             Power BI
           </span>
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>R</title>
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
             </svg>
             R
           </span>
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>SQL</title>
               <path d="M4 7v10c0 2 2 3 6 3s6-1 6-3V7M4 7c0 2 2 3 6 3s6-1 6-3M4 7c0-2 2-3 6-3s6 1 6 3"/><path d="M4 12c0 2 2 3 6 3s6-1 6-3"/>
             </svg>
             SQL
           </span>
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>ML/AI</title>
               <circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
             </svg>
             ML/AI
           </span>
           <span class="tech-badge" role="listitem">
-            <svg class="tech-icon" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="tech-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <title>Deep Learning</title>
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
             </svg>
@@ -1073,15 +1081,16 @@
           </span>
         </div>
         
+        <!-- CTA MEJORADO con copy de alto valor y tracking hook -->
         <a 
           href="#" 
           class="download-cv" 
           onclick="downloadCV(event)"
           data-ga-event="cv-download"
-          aria-label="Descargar currículum completo en PDF con portfolio, notebooks y archivos .pbix"
+          aria-label="Descargar currÃ­culum completo en PDF con portfolio, notebooks y archivos .pbix"
         >
           <span class="cv-main-text">
-            📄 Descargar CV Completo
+            ðŸ“„ Descargar CV Completo
           </span>
           <span class="cv-subtitle">
             Incluye portfolio, notebooks reproducibles y archivos .pbix
@@ -1096,10 +1105,11 @@
     <section class="section" id="proyectos" aria-labelledby="proyectos-heading">
       <div class="section-header">
         <h2 id="proyectos-heading">Proyectos Destacados</h2>
-        <p class="section-description">Implementaciones prácticas de análisis de datos, inteligencia artificial y modelado estadístico</p>
+        <p class="section-description">Implementaciones prÃ¡cticas de anÃ¡lisis de datos, inteligencia artificial y modelado estadÃ­stico</p>
       </div>
 
       <div class="section-content">
+        <!-- ARIA LIVE region para anunciar resultados -->
         <div class="search-results-status" role="status" aria-live="polite" aria-atomic="true" id="projectSearchStatus"></div>
         
         <div class="search-container">
@@ -1107,15 +1117,16 @@
             type="text" 
             class="search-input" 
             id="projectSearch"
-            placeholder="🔍 Buscar proyectos..."
+            placeholder="ðŸ” Buscar proyectos..."
             oninput="filterProjects()"
-            aria-label="Buscar proyectos por nombre o descripción"
+            aria-label="Buscar proyectos por nombre o descripciÃ³n"
           >
         </div>
         
         <div class="visible-results-count" id="projectResultsCount" aria-hidden="true"></div>
 
-        <div class="tech-filters" role="group" aria-label="Filtros por tecnología">
+        <!-- FILTROS CON COUNTS implementados -->
+        <div class="tech-filters" role="group" aria-label="Filtros por tecnologÃ­a">
           <button class="filter-btn" data-tech="all" onclick="filterByTech('all')" aria-pressed="true">
             Todos <span class="filter-count" data-count="all">0</span>
           </button>
@@ -1143,157 +1154,167 @@
         </div>
 
         <div class="project-grid">
+          <!-- Inteligencia Artificial - Modelos Predictivos -->
           <article class="project-card" data-tech="python,ml,sklearn,xgboost">
             <div class="project-title">IAs de Modelos Predictivos</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">XGBoost</span>
               <span class="tech-tag">Random Forest</span>
             </div>
             <div class="project-links">
-              <a href="IA_Predicción_Precio_Vivienda.zip" class="project-link" data-descripcion="Comparador de modelos de regresión de alto rendimiento (California Housing). Evalúa múltiples algoritmos como <b>Random Forest, XGBoost, LightGBM</b>, y <b>SVR</b>. Incluye análisis de importancia de características y visualización de errores.">Predicción de Precio de Vivienda</a>
-              <a href="IA_Predicción_Ventas.zip" class="project-link" data-descripcion="Pipeline avanzado de forecasting de series de tiempo. Combina modelos híbridos: <b>Prophet</b> para tendencias y estacionalidad, y <b>XGBoost</b> para características exógenas. Ofrece interpretabilidad de predicciones con <b>SHAP</b> y diagnóstico de series con <b>statsmodels</b>.">Predicción de Ventas de una Empresa</a>
+              <a href="IA_PredicciÃ³n_Precio_Vivienda.zip" class="project-link" data-descripcion="Comparador de modelos de regresiÃ³n de alto rendimiento (California Housing). EvalÃºa mÃºltiples algoritmos como <b>Random Forest, XGBoost, LightGBM</b>, y <b>SVR</b>. Incluye anÃ¡lisis de importancia de caracterÃ­sticas y visualizaciÃ³n de errores.">PredicciÃ³n de Precio de Vivienda</a>
+              <a href="IA_PredicciÃ³n_Ventas.zip" class="project-link" data-descripcion="Pipeline avanzado de forecasting de series de tiempo. Combina modelos hÃ­bridos: <b>Prophet</b> para tendencias y estacionalidad, y <b>XGBoost</b> para caracterÃ­sticas exÃ³genas. Ofrece interpretabilidad de predicciones con <b>SHAP</b> y diagnÃ³stico de series con <b>statsmodels</b>.">PredicciÃ³n de Ventas de una Empresa</a>
             </div>
           </article>
           
           <article class="project-card" data-tech="python,ml,xai">
-            <div class="project-title">IAs de Modelos Logísticos</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">IAs de Modelos LogÃ­sticos</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">XGBoost</span>
               <span class="tech-tag">SHAP</span>
             </div>
             <div class="project-links">
-              <a href="Sistema de Scoring Crediticio.zip" class="project-link" data-descripcion="Sistema avanzado de evaluación crediticia con arquitectura híbrida (<b>Logistic Regression, XGBoost, LightGBM</b>) y técnicas de Explainable AI (<b>SHAP, LIME</b>). Incluye ingeniería de características, calibración, simulación Monte Carlo y métricas de fairness.">Sistema de Scoring Crediticio</a>
+              <a href="Sistema de Scoring Crediticio.zip" class="project-link" data-descripcion="Sistema avanzado de evaluaciÃ³n crediticia con arquitectura hÃ­brida (<b>Logistic Regression, XGBoost, LightGBM</b>) y tÃ©cnicas de Explainable AI (<b>SHAP, LIME</b>). Incluye ingenierÃ­a de caracterÃ­sticas, calibraciÃ³n, simulaciÃ³n Monte Carlo y mÃ©tricas de fairness.">Sistema de Scoring Crediticio</a>
             </div>
           </article>
 
+          <!-- Inteligencia Artificial - RecomendaciÃ³n y NLP -->
           <article class="project-card" data-tech="python,ml,nlp">
-            <div class="project-title">IAs de Recomendación y Análisis de Lenguaje</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">IAs de RecomendaciÃ³n y AnÃ¡lisis de Lenguaje</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">NLP</span>
               <span class="tech-tag">Scikit-learn</span>
             </div>
             <div class="project-links">
-              <a href="IA_Recomendación_Películas.zip" class="project-link" data-descripcion="Sistema de recomendación híbrido. Implementa filtrado colaborativo avanzado (<b>Surprise SVD/KNN</b>) y basado en contenido (<b>Scikit-learn TF-IDF</b>). Incluye <b>RandomizedSearchCV</b> para optimización y un motor robusto para la solución del problema de Cold Start.">Recomendación de Películas</a>
-              <a href="IA_Detector_Reviews.zip" class="project-link" data-descripcion="Sistema de Análisis de Sentimientos y Minería de Opiniones (ABSA). Utiliza un <b>Voting Classifier (Scikit-learn SVC/MultinomialNB)</b> potenciado por técnicas de Orientación Semántica (<b>NLTK</b>) para clasificar sentimientos y detectar comparaciones en textos.">Detección de Sentimiento en Reviews</a>
+              <a href="IA_RecomendaciÃ³n_PelÃ­culas.zip" class="project-link" data-descripcion="Sistema de recomendaciÃ³n hÃ­brido. Implementa filtrado colaborativo avanzado (<b>Surprise SVD/KNN</b>) y basado en contenido (<b>Scikit-learn TF-IDF</b>). Incluye <b>RandomizedSearchCV</b> para optimizaciÃ³n y un motor robusto para la soluciÃ³n del problema de Cold Start.">RecomendaciÃ³n de PelÃ­culas</a>
+              <a href="IA_Detector_Reviews.zip" class="project-link" data-descripcion="Sistema de AnÃ¡lisis de Sentimientos y MinerÃ­a de Opiniones (ABSA). Utiliza un <b>Voting Classifier (Scikit-learn SVC/MultinomialNB)</b> potenciado por tÃ©cnicas de OrientaciÃ³n SemÃ¡ntica (<b>NLTK</b>) para clasificar sentimientos y detectar comparaciones en textos.">DetecciÃ³n de Sentimiento en Reviews</a>
             </div>
           </article>
 
+          <!-- Inteligencia Artificial - Deep Learning -->
           <article class="project-card" data-tech="python,deeplearning,jax,xai">
             <div class="project-title">IAs de Deep Learning y Modelos Avanzados</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">JAX</span>
               <span class="tech-tag">Neural ODEs</span>
               <span class="tech-tag">XAI</span>
             </div>
             <div class="project-links">
-              <a href="Sistemas caóticos de dinámica neuronal.zip" class="project-link" data-descripcion="Modelo generativo de sistemas dinámicos caóticos (Lorenz, Rössler). Arquitectura híbrida (Autoencoder + Neural ODE) implementada con <b>JAX</b> y <b>Diffrax</b> para simulación de física diferenciable. Utiliza <b>jax.vmap</b> para paralelización masiva, logrando una compresión del 87% y preservando propiedades caóticas (Exponente de Lyapunov).">Modelo de Dinámica Neuronal Caótica</a>
-              <a href="DeepLearning_GPU.zip" class="project-link" data-descripcion="Plataforma modular de Deep Learning no supervisado con aceleración GPU. Combina Autoencoders contrastivos, UMAP y HDBSCAN para clustering, reducción de dimensionalidad y detección de anomalías en datos multimodales.">Redes Neuronales Aceleradas en GPU</a>
-              <a href="DoubleDebiased.zip" class="project-link" data-descripcion="Framework avanzado de Inferencia Causal. Implementa <b>Double Machine Learning (DML)</b> con <b>doubleml</b> y <b>EconML</b> para la estimación ortogonalizada de efectos causales (PLR, PLIV) y la inferencia de Efectos de Tratamiento Heterogéneos (CATE), incluyendo validación asintótica (Monte Carlo) y modelos de <b>scikit-learn</b> como estimadores auxiliares.">Modelo Double Debiased Machine Learning</a>
-              <a href="Xai.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) para auditoría de modelos caja negra (TabNet). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b> y realiza auditoría de sesgos (Fairness). El resultado se consolida en un dashboard interactivo (<b>React/Recharts</b>) y un reporte ejecutivo en PDF (<b>reportlab</b>).">Explainable AI (XAI) – Interpretabilidad</a>
+              <a href="Sistemas caÃ³ticos de dinÃ¡mica neuronal.zip" class="project-link" data-descripcion="Modelo generativo de sistemas dinÃ¡micos caÃ³ticos (Lorenz, RÃ¶ssler). Arquitectura hÃ­brida (Autoencoder + Neural ODE) implementada con <b>JAX</b> y <b>Diffrax</b> para simulaciÃ³n de fÃ­sica diferenciable. Utiliza <b>jax.vmap</b> para paralelizaciÃ³n masiva, logrando una compresiÃ³n del 87% y preservando propiedades caÃ³ticas (Exponente de Lyapunov).">Modelo de DinÃ¡mica Neuronal CaÃ³tica</a>
+              <a href="DeepLearning_GPU.zip" class="project-link" data-descripcion="Plataforma modular de Deep Learning no supervisado con aceleraciÃ³n GPU. Combina Autoencoders contrastivos, UMAP y HDBSCAN para clustering, reducciÃ³n de dimensionalidad y detecciÃ³n de anomalÃ­as en datos multimodales.">Redes Neuronales Aceleradas en GPU</a>
+              <a href="DoubleDebiased.zip" class="project-link" data-descripcion="Framework avanzado de Inferencia Causal. Implementa <b>Double Machine Learning (DML)</b> con <b>doubleml</b> y <b>EconML</b> para la estimaciÃ³n ortogonalizada de efectos causales (PLR, PLIV) y la inferencia de Efectos de Tratamiento HeterogÃ©neos (CATE), incluyendo validaciÃ³n asintÃ³tica (Monte Carlo) y modelos de <b>scikit-learn</b> como estimadores auxiliares.">Modelo Double Debiased Machine Learning</a>
+              <a href="Xai.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) para auditorÃ­a de modelos caja negra (TabNet). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b> y realiza auditorÃ­a de sesgos (Fairness). El resultado se consolida en un dashboard interactivo (<b>React/Recharts</b>) y un reporte ejecutivo en PDF (<b>reportlab</b>).">Explainable AI (XAI) â€” Interpretabilidad</a>
             </div>
           </article>
 
+          <!-- MLOps y Ciencia de Datos Experimental -->
           <article class="project-card" data-tech="python,ml,mlops">
             <div class="project-title">MLOps y Ciencia de Datos Experimental</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">MLOps</span>
               <span class="tech-tag">UMAP</span>
             </div>
             <div class="project-links">
-              <a href="mlops.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) y XAI para auditoría de un modelo de caja negra (<b>TabNet</b>) en un entorno crítico de Salud (MIMIC-IV). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b>, y realiza una auditoría de sesgos (Fairness). Los resultados se consolidan en un Dashboard Interactivo (<b>React/Recharts</b>) y un Reporte Ejecutivo profesional en PDF (<b>reportlab</b>).">Pipeline MLOps para Despliegue de Modelos</a>
-              <a href="Manifold_Cluster_Densidad.zip" class="project-link" data-descripcion="Pipeline completo de análisis no supervisado. Aplica técnicas de Reducción de Dimensionalidad (Manifold Learning: <b>UMAP, PCA</b>) y Clustering por Densidad (<b>HDBSCAN, Spectral Clustering</b>), con validación robusta y visualización 3D interactiva (<b>Plotly</b>).">Manifold Learning y Clustering de Densidad</a>
+              <a href="mlops.zip" class="project-link" data-descripcion="Pipeline completo de IA Confiable (TAI) y XAI para auditorÃ­a de un modelo de caja negra (<b>TabNet</b>) en un entorno crÃ­tico de Salud (MIMIC-IV). Implementa explicabilidad local con <b>SHAP</b> y <b>LIME</b>, genera contrafactuales con <b>DiCE</b>, y realiza una auditorÃ­a de sesgos (Fairness). Los resultados se consolidan en un Dashboard Interactivo (<b>React/Recharts</b>) y un Reporte Ejecutivo profesional en PDF (<b>reportlab</b>).">Pipeline MLOps para Despliegue de Modelos</a>
+              <a href="Manifold_Cluster_Densidad.zip" class="project-link" data-descripcion="Pipeline completo de anÃ¡lisis no supervisado. Aplica tÃ©cnicas de ReducciÃ³n de Dimensionalidad (Manifold Learning: <b>UMAP, PCA</b>) y Clustering por Densidad (<b>HDBSCAN, Spectral Clustering</b>), con validaciÃ³n robusta y visualizaciÃ³n 3D interactiva (<b>Plotly</b>).">Manifold Learning y Clustering de Densidad</a>
             </div>
           </article>
 
+          <!-- Simuladores Artificiales -->
           <article class="project-card" data-tech="python,simulation">
             <div class="project-title">Simuladores Artificiales</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">Simulación</span>
+              <span class="tech-tag">SimulaciÃ³n</span>
             </div>
             <div class="project-links">
-              <a href="Simulador_Ecosistema.zip" class="project-link" data-descripcion="Motor de simulación ecológica con pathfinding A*, genética evolutiva y ciclos estacionales. Reproduce dinámicas entre especies, plantas y enfermedades en un entorno 2D animado con ecosistemas autoadaptativos.">Simulador de Ecosistema Artificial</a>
-              <a href="Civilización.zip" class="project-link" data-descripcion="Simulador procedimental de civilizaciones con clima dinámico, geología, diplomacia, migración, evolución tecnológica y ecosistemas vivos. Modela interacciones complejas entre economía, cultura y medio ambiente.">Modelo Evolutivo de Civilización</a>
+              <a href="Simulador_Ecosistema.zip" class="project-link" data-descripcion="Motor de simulaciÃ³n ecolÃ³gica con pathfinding A*, genÃ©tica evolutiva y ciclos estacionales. Reproduce dinÃ¡micas entre especies, plantas y enfermedades en un entorno 2D animado con ecosistemas autoadaptativos.">Simulador de Ecosistema Artificial</a>
+              <a href="CivilizaciÃ³n.zip" class="project-link" data-descripcion="Simulador procedimental de civilizaciones con clima dinÃ¡mico, geologÃ­a, diplomacia, migraciÃ³n, evoluciÃ³n tecnolÃ³gica y ecosistemas vivos. Modela interacciones complejas entre economÃ­a, cultura y medio ambiente.">Modelo Evolutivo de CivilizaciÃ³n</a>
             </div>
           </article>
 
           <article class="project-card" data-tech="python,analysis">
-            <div class="project-title">Análisis Empresarial con Python</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">AnÃ¡lisis Empresarial con Python</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">PCA</span>
               <span class="tech-tag">Clustering</span>
             </div>
             <div class="project-links">
-              <a href="BMW_DataAnalysis.zip" class="project-link" data-descripcion="Análisis integral de ventas BMW (2010–2024) combinando estadística descriptiva, clustering, PCA y regresión. Incluye visualización avanzada y detección automática de outliers para optimizar estrategias de mercado.">Análisis de ventas de BMW</a>
+              <a href="BMW_DataAnalysis.zip" class="project-link" data-descripcion="AnÃ¡lisis integral de ventas BMW (2010â€“2024) combinando estadÃ­stica descriptiva, clustering, PCA y regresiÃ³n. Incluye visualizaciÃ³n avanzada y detecciÃ³n automÃ¡tica de outliers para optimizar estrategias de mercado.">AnÃ¡lisis de ventas de BMW</a>
             </div>
           </article>
 
+          <!-- Proyecto Teno -->
           <article class="project-card" data-tech="r,pca,clustering">
-            <div class="project-title">Análisis de Componentes Principales y Clustering – Proyecto Teno</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">AnÃ¡lisis de Componentes Principales y Clustering â€” Proyecto Teno</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">R</span>
               <span class="tech-tag">PCA</span>
               <span class="tech-tag">Clustering</span>
             </div>
             <div class="project-links">
-              <a href="ACP Teno.pdf" class="project-link" download>Informe de Análisis ACP</a>
-              <a href="Clúster Teno.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+              <a href="ACP Teno.pdf" class="project-link" download>Informe de AnÃ¡lisis ACP</a>
+              <a href="ClÃºster Teno.pdf" class="project-link" download>Informe de AnÃ¡lisis Clustering</a>
             </div>
           </article>
 
+          <!-- RÃ­os Nueva York -->
           <article class="project-card" data-tech="r,regression,clustering">
-            <div class="project-title">Regresión Lineal y Clustering – Análisis Ríos Nueva York</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">RegresiÃ³n Lineal y Clustering â€” AnÃ¡lisis RÃ­os Nueva York</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">R</span>
-              <span class="tech-tag">Regresión</span>
+              <span class="tech-tag">RegresiÃ³n</span>
               <span class="tech-tag">Clustering</span>
             </div>
             <div class="project-links">
-              <a href="Regresión Lineal Ríos Nueva York.pdf" class="project-link" download>Informe de Regresión Lineal</a>
-              <a href="Clúster Ríos Nueva York.pdf" class="project-link" download>Informe de Análisis Clustering</a>
+              <a href="RegresiÃ³n Lineal RÃ­os Nueva York.pdf" class="project-link" download>Informe de RegresiÃ³n Lineal</a>
+              <a href="ClÃºster RÃ­os Nueva York.pdf" class="project-link" download>Informe de AnÃ¡lisis Clustering</a>
             </div>
           </article>
 
+          <!-- Power BI -->
           <article class="project-card" data-tech="powerbi,bi">
             <div class="project-title">Dashboards Interactivos en Power BI</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Power BI</span>
               <span class="tech-tag">DAX</span>
             </div>
             <div class="project-links">
-              <a href="FutbolInternacional.pbix" class="project-link" download>Dashboard Fútbol Internacional</a>
-              <a href="Libros.pbix" class="project-link" download>Dashboard Análisis de Libros</a>
+              <a href="FutbolInternacional.pbix" class="project-link" download>Dashboard FÃºtbol Internacional</a>
+              <a href="Libros.pbix" class="project-link" download>Dashboard AnÃ¡lisis de Libros</a>
             </div>
           </article>
 
+          <!-- Scripts en R -->
           <article class="project-card" data-tech="r,statistics">
-            <div class="project-title">Scripts de Análisis Estadístico en R</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">Scripts de AnÃ¡lisis EstadÃ­stico en R</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">R</span>
               <span class="tech-tag">LOESS</span>
               <span class="tech-tag">Bootstrap</span>
             </div>
             <div class="project-links">
               <a href="modelado_loess_clustering_pca.R" class="project-link" download>Modelado LOESS, Clustering y PCA</a>
-              <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>Regresión LOESS, Bootstrap y PCA</a>
+              <a href="regresion_loess_bootstrap_pca.R" class="project-link" download>RegresiÃ³n LOESS, Bootstrap y PCA</a>
             </div>
           </article>
 
+          <!-- OptimizaciÃ³n -->
           <article class="project-card" data-tech="python,optimization">
-            <div class="project-title">Algoritmos de Optimización en Python</div>
-            <div class="project-tech-tags" aria-label="Tecnologías utilizadas">
+            <div class="project-title">Algoritmos de OptimizaciÃ³n en Python</div>
+            <div class="project-tech-tags" aria-label="TecnologÃ­as utilizadas">
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">Optimización</span>
+              <span class="tech-tag">OptimizaciÃ³n</span>
             </div>
             <div class="project-links">
-              <a href="Optimización.py" class="project-link" download>Algoritmos de Optimización I</a>
-              <a href="Optimización2.py" class="project-link" download>Algoritmos de Optimización II</a>
+              <a href="OptimizaciÃ³n.py" class="project-link" download>Algoritmos de OptimizaciÃ³n I</a>
+              <a href="OptimizaciÃ³n2.py" class="project-link" download>Algoritmos de OptimizaciÃ³n II</a>
             </div>
           </article>
 
@@ -1301,7 +1322,7 @@
       </div>
     </section>
 
-    <!-- FIX: Modal con aria-hidden correctamente gestionado -->
+    <!-- MODAL con focus trap real y aria-hidden -->
     <div id="fileModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
       <div class="modal-content">
         <button class="close" aria-label="Cerrar modal" onclick="closeModal()">&times;</button>
@@ -1314,30 +1335,36 @@
     <section class="section" id="certificaciones" aria-labelledby="certificaciones-heading">
       <div class="section-header">
         <h2 id="certificaciones-heading">Certificaciones Profesionales</h2>
-        <p class="section-description">Formación continua y especialización en tecnologías de análisis de datos (en los que no se indique las horas dedicadas a ellos serán de 20 o menos)</p>
+        <p class="section-description">FormaciÃ³n continua y especializaciÃ³n en tecnologÃ­as de anÃ¡lisis de datos (en los que no se indique las horas dedicadas a ellos serÃ¡n de 20 o menos)</p>
       </div>
       <div class="section-content">
+        <!-- ARIA LIVE para certificaciones -->
+        <div class="search-results-status" role="status" aria-live="polite" aria-atomic="true" id="certSearchStatus"></div>
+        
         <div class="search-container">
           <input 
             type="text" 
             class="search-input" 
             id="searchInput"
-            placeholder="🔍 Buscar certificaciones (ej: Python, Power BI, SQL...)"
+            placeholder="ðŸ” Buscar certificaciones (ej: Python, Power BI, SQL...)"
             oninput="filterCertificates()"
-            aria-label="Buscar certificaciones por nombre o tecnología"
+            aria-label="Buscar certificaciones por nombre o tecnologÃ­a"
           >
         </div>
+        
+        <div class="visible-results-count" id="certResultsCount" aria-hidden="true"></div>
 
+        <!-- Acordeones con aria-expanded y aria-controls -->
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="herramientas-content">
-            <h3>Herramientas de Análisis y Productividad</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <h3>Herramientas de AnÃ¡lisis y Productividad</h3>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="herramientas-content">
             <div class="cert-grid">
-              <div class="cert-item" data-keywords="análisis de datos coursera google">
+              <div class="cert-item" data-keywords="anÃ¡lisis de datos coursera google">
                 <a href="ADTotal.pdf" class="cert-link" download>
-                  Análisis de Datos – Coursera+Google (240 H)
+                  AnÃ¡lisis de Datos â€” Coursera+Google (240 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="data analytics excel">
@@ -1345,14 +1372,14 @@
                   Data Analytics with Excel
                 </a>
               </div>
-              <div class="cert-item" data-keywords="excel regresión análisis">
+              <div class="cert-item" data-keywords="excel regresiÃ³n anÃ¡lisis">
                 <a href="Excel regression analysis.pdf" class="cert-link" download>
                   Excel Regression Analysis
                 </a>
               </div>
-              <div class="cert-item" data-keywords="excel power bi análisis visualización bilib">
+              <div class="cert-item" data-keywords="excel power bi anÃ¡lisis visualizaciÃ³n bilib">
                 <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
-                  Análisis y Visualización de Datos con Excel y Power BI - BILIB (125 H)
+                  AnÃ¡lisis y VisualizaciÃ³n de Datos con Excel y Power BI - BILIB (125 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="microsoft excel 2016 bilib">
@@ -1377,13 +1404,13 @@
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="powerbi-content">
             <h3>Business Intelligence y Power BI</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="powerbi-content">
             <div class="cert-grid">
-              <div class="cert-item" data-keywords="power bi análisis datos dashboard">
+              <div class="cert-item" data-keywords="power bi anÃ¡lisis datos dashboard">
                 <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" class="cert-link" download>
-                  Power BI para Principiantes: Análisis de Datos (2019)
+                  Power BI para Principiantes: AnÃ¡lisis de Datos (2019)
                 </a>
               </div>
               <div class="cert-item" data-keywords="power bi esencial dashboard">
@@ -1393,17 +1420,17 @@
               </div>
               <div class="cert-item" data-keywords="power bi dax modelado datos">
                 <a href="CertificadoDeFinalizacion_Power BI Modelado de datos con DAX.pdf" class="cert-link" download>
-                  Power BI – Modelado de Datos con DAX
+                  Power BI â€” Modelado de Datos con DAX
                 </a>
               </div>
-              <div class="cert-item" data-keywords="power bi visualización datos">
+              <div class="cert-item" data-keywords="power bi visualizaciÃ³n datos">
                 <a href="Data Visualization With Power BI.pdf" class="cert-link" download>
                   Data Visualization with Power BI
                 </a>
               </div>
               <div class="cert-item" data-keywords="business intelligence big data bilib">
                 <a href="Certificado_Business_Intelligence_y_anlisis_de_Big_Data.pdf" class="cert-link" download>
-                  Business Intelligence y Análisis de Big Data - BILIB (120 H)
+                  Business Intelligence y AnÃ¡lisis de Big Data - BILIB (120 H)
                 </a>
               </div>
             </div>
@@ -1412,14 +1439,14 @@
 
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="sql-content">
-            <h3>Gestión de Bases de Datos y SQL</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <h3>GestiÃ³n de Bases de Datos y SQL</h3>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="sql-content">
             <div class="cert-grid">
-              <div class="cert-item" data-keywords="sql básico base datos">
+              <div class="cert-item" data-keywords="sql bÃ¡sico base datos">
                 <a href="ABDEU.pdf" class="cert-link" download>
-                  SQL Básico
+                  SQL BÃ¡sico
                 </a>
               </div>
               <div class="cert-item" data-keywords="sql advanced avanzado">
@@ -1444,7 +1471,7 @@
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="python-content">
             <h3>Python y Machine Learning</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="python-content">
             <div class="cert-grid">
@@ -1489,8 +1516,8 @@
 
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="r-content">
-            <h3>Análisis Estadístico con R</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <h3>AnÃ¡lisis EstadÃ­stico con R</h3>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="r-content">
             <div class="cert-grid">
@@ -1504,7 +1531,7 @@
                   Clustering in R
                 </a>
               </div>
-              <div class="cert-item" data-keywords="anova variance análisis">
+              <div class="cert-item" data-keywords="anova variance anÃ¡lisis">
                 <a href="Analysis of Variance.pdf" class="cert-link" download>
                   Analysis of Variance
                 </a>
@@ -1541,11 +1568,11 @@
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="cyber-content">
             <h3>Ciberseguridad y TIC</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="cyber-content">
             <div class="cert-grid">
-              <div class="cert-item" data-keywords="ciberseguridad seguridad informática">
+              <div class="cert-item" data-keywords="ciberseguridad seguridad informÃ¡tica">
                 <a href="Advanced Cyber Security - Threats and Governance.pdf" class="cert-link" download>
                   Advanced Cyber Security - Threats and Governance
                 </a>
@@ -1555,9 +1582,9 @@
                   Ciberseguridad en el Teletrabajo
                 </a>
               </div>
-              <div class="cert-item" data-keywords="protección seguridad empresa">
+              <div class="cert-item" data-keywords="protecciÃ³n seguridad empresa">
                 <a href="Certificado_Proteccin_y_seguridad_informtica_en_la_empresa.pdf" class="cert-link" download>
-                  Protección y Seguridad Informática en la Empresa
+                  ProtecciÃ³n y Seguridad InformÃ¡tica en la Empresa
                 </a>
               </div>
             </div>
@@ -1567,13 +1594,13 @@
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="complementarias-content">
             <h3>Competencias Complementarias</h3>
-            <span class="cert-toggle" aria-hidden="true">▼</span>
+            <span class="cert-toggle" aria-hidden="true">â–¼</span>
           </button>
           <div class="cert-content" id="complementarias-content">
             <div class="cert-grid">
               <div class="cert-item" data-keywords="google digitaliza herramientas">
                 <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" class="cert-link" download>
-                  Iniciación al uso de herramientas de Google - Google (90 H)
+                  IniciaciÃ³n al uso de herramientas de Google - Google (90 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="data science fundamentos">
@@ -1586,14 +1613,14 @@
                   Data Science Projects
                 </a>
               </div>
-              <div class="cert-item" data-keywords="gestión proyectos google coursera">
+              <div class="cert-item" data-keywords="gestiÃ³n proyectos google coursera">
                 <a href="GPTotal.pdf" class="cert-link" download>
-                  Gestión de Proyectos – Coursera+Google (240 H)
+                  GestiÃ³n de Proyectos â€” Coursera+Google (240 H)
                 </a>
               </div>
-              <div class="cert-item" data-keywords="ux diseño experiencia usuario google coursera">
+              <div class="cert-item" data-keywords="ux diseÃ±o experiencia usuario google coursera">
                 <a href="ABDEU.pdf" class="cert-link" download>
-                  Aspectos básicos del diseño de la experiencia del usuario – Coursera+Google (240 H)
+                  Aspectos bÃ¡sicos del diseÃ±o de la experiencia del usuario â€” Coursera+Google (240 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="market basket analysis">
@@ -1601,9 +1628,9 @@
                   Market Basket Analysis
                 </a>
               </div>
-              <div class="cert-item" data-keywords="comercio electrónico marketing online bilib">
+              <div class="cert-item" data-keywords="comercio electrÃ³nico marketing online bilib">
                 <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
-                  Comercio Electrónico y Marketing Online - BILIB (90 H)
+                  Comercio ElectrÃ³nico y Marketing Online - BILIB (90 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="marketing digital fundamentos">
@@ -1616,14 +1643,14 @@
                   Marketing online para Pymes (SEM, SEO y PPC) - BILIB (115 H)
                 </a>
               </div>
-              <div class="cert-item" data-keywords="pensamiento crítico mundo digital bilib">
+              <div class="cert-item" data-keywords="pensamiento crÃ­tico mundo digital bilib">
                 <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
-                  Pensamiento Crítico en un Mundo Digital - BILIB (70 H)
+                  Pensamiento CrÃ­tico en un Mundo Digital - BILIB (70 H)
                 </a>
               </div>
               <div class="cert-item" data-keywords="productividad personal google activate">
                 <a href="Productividad Personal.pdf" class="cert-link" download>
-                  Productividad Personal – Google Activate (40 H)
+                  Productividad Personal â€” Google Activate (40 H)
                 </a>
               </div>
             </div>
@@ -1634,56 +1661,27 @@
     </section>
 
     <hr class="divider">
+
     <section class="contact-section" id="contacto" aria-labelledby="contacto-heading">
-      <h2 id="contacto-heading">📬 Contacto</h2>
+      <h2 id="contacto-heading">ðŸ“¬ Contacto</h2>
       <address class="contact-info">
-        📧 Email: <a href="mailto:manuelverdejo2000@gmail.com">manuelverdejo2000@gmail.com</a><br>
-        💼 LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank" rel="noopener noreferrer">LinkedIn Manuel Verdejo Garcia</a><br>
-        🌍 Disponibilidad: Sevilla | Huelva | Córdoba | Trabajo Remoto
+        ðŸ“§ Email: <a href="mailto:manuelverdejo2000@gmail.com">manuelverdejo2000@gmail.com</a><br>
+        ðŸ’¼ LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcÃ­a-8483b7260" target="_blank" rel="noopener noreferrer">LinkedIn Manuel Verdejo Garcia</a><br>
+        ðŸŒ Disponibilidad: Sevilla | Huelva | CÃ³rdoba | Trabajo Remoto
       </address>
     </section>
   </main>
 
-  <script>
+  <!-- JAVASCRIPT con defer y mejoras de accesibilidad -->
+  <script defer>
     // ==========================================
-    // FIX A - updateFilterCounts() CORREGIDO
-    // ==========================================
-    
-    function updateFilterCounts() {
-      const cards = document.querySelectorAll(".project-card");
-      const counts = {
-        all: 0,
-        python: 0,
-        ml: 0,
-        deeplearning: 0,
-        nlp: 0,
-        xai: 0,
-        powerbi: 0,
-        r: 0
-      };
-
-      cards.forEach(card => {
-        const tech = (card.getAttribute("data-tech") || "").toLowerCase();
-        counts.all++; // Solo incrementa una vez por tarjeta
-        
-        // Conteo por tecnología específica
-        Object.keys(counts).forEach(key => {
-          if (key === 'all') return; // Skip all en este loop
-          if (tech.includes(key)) counts[key]++;
-        });
-      });
-
-      // Actualizar UI
-      Object.keys(counts).forEach(tech => {
-        const countEl = document.querySelector(`[data-count="${tech}"]`);
-        if (countEl) countEl.textContent = `(${counts[tech]})`;
-      });
-    }
-    
-    // ==========================================
-    // PERSISTENCIA DE TEMA
+    // PERSISTENCIA DE TEMA (localStorage)
     // ==========================================
     
+    /* 
+     * FunciÃ³n para cargar tema guardado al inicio
+     * Prioridad: 1) localStorage, 2) prefers-color-scheme
+     */
     function loadTheme() {
       const savedTheme = localStorage.getItem('mvg-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -1694,19 +1692,22 @@
       updateThemeUI(theme);
     }
     
+    /*
+     * Actualiza elementos de UI segÃºn el tema activo
+     */
     function updateThemeUI(theme) {
       const icon = document.getElementById("theme-icon");
       const text = document.getElementById("theme-text");
       const btn = document.getElementById("themeToggleBtn");
       
       if (theme === "dark") {
-        icon.textContent = "☀️";
+        icon.textContent = "â˜€ï¸";
         text.textContent = "Cambiar a claro";
         btn.setAttribute('aria-label', 'Cambiar a tema claro');
         btn.setAttribute('title', 'Cambiar a tema claro');
         btn.setAttribute('aria-pressed', 'true');
       } else {
-        icon.textContent = "🌙";
+        icon.textContent = "ðŸŒ™";
         text.textContent = "Cambiar a oscuro";
         btn.setAttribute('aria-label', 'Cambiar a tema oscuro');
         btn.setAttribute('title', 'Cambiar a tema oscuro');
@@ -1714,6 +1715,9 @@
       }
     }
     
+    /*
+     * Toggle de tema con persistencia
+     */
     function toggleTheme() {
       const body = document.body;
       const currentTheme = body.dataset.theme;
@@ -1742,19 +1746,19 @@
     }
 
     // ==========================================
-    // ACORDEONES DE CERTIFICADOS
+    // ACORDEONES DE CERTIFICADOS (aria-expanded)
     // ==========================================
     
     function toggleCategory(header) {
       const isExpanded = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', String(!isExpanded));
+      header.setAttribute('aria-expanded', !isExpanded);
       header.classList.toggle("active");
       const content = header.nextElementSibling;
       content.classList.toggle("active");
     }
 
     // ==========================================
-    // BÚSQUEDA Y FILTRADO DE CERTIFICADOS
+    // BÃšSQUEDA Y FILTRADO DE CERTIFICADOS
     // ==========================================
     
     function filterCertificates() {
@@ -1763,7 +1767,7 @@
       let visibleCount = 0;
 
       items.forEach(item => {
-        const keywords = item.getAttribute("data-keywords") || "";
+        const keywords = item.getAttribute("data-keywords");
         if (keywords.toLowerCase().includes(input)) {
           item.classList.remove("hidden");
           visibleCount++;
@@ -1772,13 +1776,15 @@
         }
       });
 
+      // Actualizar conteo visible
       const countEl = document.getElementById("certResultsCount");
       if (input !== "") {
-        countEl.textContent = `${visibleCount} certificación${visibleCount !== 1 ? 'es' : ''} encontrada${visibleCount !== 1 ? 's' : ''}`;
+        countEl.textContent = `${visibleCount} certificaciÃ³n${visibleCount !== 1 ? 'es' : ''} encontrada${visibleCount !== 1 ? 's' : ''}`;
       } else {
         countEl.textContent = "";
       }
 
+      // Anunciar resultados (ARIA live)
       const statusEl = document.getElementById("certSearchStatus");
       if (input !== "") {
         statusEl.textContent = `Se encontraron ${visibleCount} certificaciones`;
@@ -1786,12 +1792,13 @@
         statusEl.textContent = "";
       }
 
+      // Mostrar mensaje si no hay resultados
       let noResults = document.querySelector("#certificaciones .no-results");
       if (visibleCount === 0 && input !== "") {
         if (!noResults) {
           noResults = document.createElement("div");
           noResults.className = "no-results";
-          noResults.textContent = "❌ No se encontraron resultados.";
+          noResults.textContent = "âŒ No se encontraron resultados.";
           document.querySelector("#certificaciones .section-content").appendChild(noResults);
         }
       } else {
@@ -1800,7 +1807,7 @@
     }
 
     // ==========================================
-    // BÚSQUEDA Y FILTRADO DE PROYECTOS
+    // BÃšSQUEDA Y FILTRADO DE PROYECTOS
     // ==========================================
     
     function filterProjects() {
@@ -1810,7 +1817,7 @@
 
       cards.forEach(card => {
         const title = card.querySelector(".project-title").textContent.toLowerCase();
-        const tech = (card.getAttribute("data-tech") || "").toLowerCase();
+        const tech = card.getAttribute("data-tech").toLowerCase();
         const links = Array.from(card.querySelectorAll(".project-link"))
           .map(link => link.textContent.toLowerCase())
           .join(" ");
@@ -1823,6 +1830,7 @@
         }
       });
 
+      // Actualizar conteo visible
       const countEl = document.getElementById("projectResultsCount");
       if (input !== "") {
         countEl.textContent = `${visibleCount} proyecto${visibleCount !== 1 ? 's' : ''} encontrado${visibleCount !== 1 ? 's' : ''}`;
@@ -1830,6 +1838,7 @@
         countEl.textContent = "";
       }
 
+      // Anunciar resultados (ARIA live)
       const statusEl = document.getElementById("projectSearchStatus");
       if (input !== "") {
         statusEl.textContent = `Se encontraron ${visibleCount} proyectos`;
@@ -1837,12 +1846,13 @@
         statusEl.textContent = "";
       }
 
+      // Mostrar mensaje si no hay resultados
       let noResults = document.querySelector("#proyectos .no-results");
       if (visibleCount === 0 && input !== "") {
         if (!noResults) {
           noResults = document.createElement("div");
           noResults.className = "no-results";
-          noResults.textContent = "❌ No se encontraron proyectos.";
+          noResults.textContent = "âŒ No se encontraron proyectos.";
           document.querySelector("#proyectos .section-content").appendChild(noResults);
         }
       } else {
@@ -1851,16 +1861,51 @@
     }
 
     // ==========================================
-    // FILTRADO POR TECNOLOGÍA
+    // FILTRADO POR TECNOLOGÃA CON COUNTS
     // ==========================================
     
     let currentFilter = 'all';
+    
+    /*
+     * Calcula y actualiza los counts de cada tecnologÃ­a
+     */
+    function updateFilterCounts() {
+      const cards = document.querySelectorAll(".project-card");
+      const counts = {
+        all: cards.length,
+        python: 0,
+        ml: 0,
+        deeplearning: 0,
+        nlp: 0,
+        xai: 0,
+        powerbi: 0,
+        r: 0
+      };
+
+      cards.forEach(card => {
+        const tech = card.getAttribute("data-tech").toLowerCase();
+        Object.keys(counts).forEach(key => {
+          if (key === 'all' || tech.includes(key.toLowerCase())) {
+            counts[key]++;
+          }
+        });
+      });
+
+      // Actualizar counts en los botones
+      Object.keys(counts).forEach(tech => {
+        const countEl = document.querySelector(`[data-count="${tech}"]`);
+        if (countEl) {
+          countEl.textContent = `(${counts[tech]})`;
+        }
+      });
+    }
     
     function filterByTech(tech) {
       currentFilter = tech;
       const cards = document.querySelectorAll(".project-card");
       const buttons = document.querySelectorAll(".filter-btn");
       
+      // Actualizar estados de botones (aria-pressed)
       buttons.forEach(btn => {
         if (btn.getAttribute('data-tech') === tech) {
           btn.classList.add('active');
@@ -1871,9 +1916,10 @@
         }
       });
       
+      // Filtrar tarjetas
       let visibleCount = 0;
       cards.forEach(card => {
-        const cardTech = (card.getAttribute("data-tech") || "").toLowerCase();
+        const cardTech = card.getAttribute("data-tech").toLowerCase();
         if (tech === 'all' || cardTech.includes(tech.toLowerCase())) {
           card.classList.remove("hidden");
           visibleCount++;
@@ -1882,6 +1928,7 @@
         }
       });
 
+      // Anunciar resultados (ARIA live)
       const statusEl = document.getElementById("projectSearchStatus");
       if (tech !== 'all') {
         statusEl.textContent = `Filtrando por ${tech}: ${visibleCount} proyectos`;
@@ -1891,28 +1938,26 @@
     }
 
     // ==========================================
-    // FIX B+C - MODAL CON FOCUS TRAP + INERT
+    // MODAL CON FOCUS TRAP REAL
     // ==========================================
     
-    let lastFocusedElement = null;
+    let lastFocusedElement = null; // Elemento que abriÃ³ el modal
     let focusableElements = [];
     let firstFocusable = null;
     let lastFocusable = null;
     
-    // FIX B: Selector completo de elementos focusables
-    const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"])';
-    
+    /*
+     * Maneja el focus trap dentro del modal
+     */
     function handleModalTab(e) {
       if (e.key !== 'Tab') return;
       
-      if (focusableElements.length === 0) return;
-      
-      if (e.shiftKey) {
+      if (e.shiftKey) { // Shift + Tab
         if (document.activeElement === firstFocusable) {
           e.preventDefault();
           lastFocusable.focus();
         }
-      } else {
+      } else { // Tab
         if (document.activeElement === lastFocusable) {
           e.preventDefault();
           firstFocusable.focus();
@@ -1920,232 +1965,59 @@
       }
     }
     
-    // FIX C: Función para aplicar inert a elementos fuera del modal
-    function setInertForSiblings(modal, inertValue) {
-      // Si el navegador soporta inert nativo
-      if ('inert' in HTMLElement.prototype) {
-        document.querySelectorAll('body > *').forEach(el => {
-          if (el !== modal && el.id !== 'backToTop') {
-            el.inert = inertValue;
-          }
-        });
-      } else {
-        // Fallback: usar aria-hidden y tabindex
-        document.querySelectorAll('body > *').forEach(el => {
-          if (el !== modal && el.id !== 'backToTop') {
-            if (inertValue) {
-              el.setAttribute('aria-hidden', 'true');
-              el.setAttribute('data-original-tabindex', el.getAttribute('tabindex') || '');
-              el.setAttribute('tabindex', '-1');
-            } else {
-              el.removeAttribute('aria-hidden');
-              const originalTabindex = el.getAttribute('data-original-tabindex');
-              if (originalTabindex === '') {
-                el.removeAttribute('tabindex');
-              } else {
-                el.setAttribute('tabindex', originalTabindex);
-              }
-              el.removeAttribute('data-original-tabindex');
-            }
-          }
-        });
-      }
+    function openModal(title, description, downloadUrl, triggerElement) {
+      const modal = document.getElementById('fileModal');
+      const titleEl = document.getElementById('modal-title');
+      const descEl = document.getElementById('modal-description');
+      const downloadBtn = document.getElementById('download-btn');
+      
+      // Guardar elemento que abriÃ³ el modal
+      lastFocusedElement = triggerElement;
+      
+      // Actualizar contenido
+      titleEl.textContent = title;
+      descEl.innerHTML = description;
+      downloadBtn.href = downloadUrl;
+      
+      // Mostrar modal
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      
+      // AÃ±adir aria-hidden al resto del contenido
+      document.querySelector('.navbar').setAttribute('aria-hidden', 'true');
+      document.querySelector('main').setAttribute('aria-hidden', 'true');
+      
+      // Configurar focus trap
+      focusableElements = modal.querySelectorAll('button, a[href]');
+      firstFocusable = focusableElements[0];
+      lastFocusable = focusableElements[focusableElements.length - 1];
+      
+      // Focus en el primer elemento (botÃ³n de descarga)
+      downloadBtn.focus();
+      
+      // AÃ±adir listener para tab trap
+      modal.addEventListener('keydown', handleModalTab);
     }
     
-/* ======= Utilidades y selectores ======= */
-const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"])';
-
-function setInertForSiblings(modalEl, inertValue) {
-  // Si el navegador soporta inert nativo, usarlo. Sino fallback robusto:
-  if ('inert' in HTMLElement.prototype) {
-    document.querySelectorAll('body > *').forEach(el => {
-      if (el === modalEl) return;
-      el.inert = inertValue;
-    });
-    return;
-  }
-  // Fallback: desactivar foco en todos los descendientes focusables
-  document.querySelectorAll('body > *').forEach(el => {
-    if (el === modalEl) return;
-    if (inertValue) {
-      el.setAttribute('aria-hidden', 'true');
-      const focusables = Array.from(el.querySelectorAll(focusableSelector));
-      focusables.forEach(f => {
-        // guardar valor anterior de tabindex
-        if (!f.hasAttribute('data-orig-tabindex')) {
-          f.setAttribute('data-orig-tabindex', f.hasAttribute('tabindex') ? f.getAttribute('tabindex') : '');
-        }
-        f.setAttribute('tabindex', '-1');
-      });
-      el.setAttribute('data-inertified','true');
-    } else {
-      el.removeAttribute('aria-hidden');
-      if (el.getAttribute('data-inertified') === 'true') {
-        const focusables = Array.from(el.querySelectorAll(focusableSelector));
-        focusables.forEach(f => {
-          const orig = f.getAttribute('data-orig-tabindex');
-          if (orig === '') f.removeAttribute('tabindex');
-          else f.setAttribute('tabindex', orig);
-          f.removeAttribute('data-orig-tabindex');
-        });
-        el.removeAttribute('data-inertified');
+    function closeModal() {
+      const modal = document.getElementById('fileModal');
+      
+      // Ocultar modal
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      
+      // Remover aria-hidden del resto del contenido
+      document.querySelector('.navbar').setAttribute('aria-hidden', 'false');
+      document.querySelector('main').setAttribute('aria-hidden', 'false');
+      
+      // Remover listener
+      modal.removeEventListener('keydown', handleModalTab);
+      
+      // Devolver focus al elemento que abriÃ³ el modal
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
       }
     }
-  });
-}
-
-    
-    const modal = document.querySelector('#fileModal') || document.querySelector('.modal') || null;
-if (!modal) {
-  console.warn('No se encontró modal (.modal o #fileModal). Asegúrate de tener un elemento modal en el DOM.');
-} else {
-  const backdrop = modal.querySelector('.modal-backdrop') || (() => {
-    const b = document.createElement('div'); b.className = 'modal-backdrop'; modal.prepend(b); return b;
-  })();
-  const closeBtn = modal.querySelector('.modal-close') || modal.querySelector('[data-close]') || null;
-  const downloadLink = modal.querySelector('.modal-download') || modal.querySelector('[data-download]') || null;
-  const bodyEl = document.body;
-  let lastFocusedBeforeModal = null;
-  let handleKey = null;
-
-  function openModalWith({ htmlContent = '', downloadUrl = '', filename = '' } = {}) {
-    // populate
-    const bodyContainer = modal.querySelector('.modal-body') || modal.querySelector('.content') || null;
-    if (bodyContainer) {
-      bodyContainer.innerHTML = htmlContent;
-    }
-
-    // configure descarga
-    if (downloadLink) {
-      if (downloadUrl) {
-        downloadLink.removeAttribute('disabled');
-        downloadLink.href = downloadUrl;
-        if (filename) downloadLink.setAttribute('download', filename);
-        else downloadLink.removeAttribute('download');
-        // remove old listener if any
-        downloadLink._onClick && downloadLink.removeEventListener('click', downloadLink._onClick);
-        // add safe click handler that logs and allows default behaviour
-        const onClick = (e) => {
-          // Depuración: log
-          console.log('[modal] descarga pulsada', downloadUrl);
-          // Si quieres forzar fetch->blob para CORS o headers, descomenta y usa la función fetchAndDownload
-          // e.preventDefault(); fetchAndDownload(downloadUrl, filename || 'download');
-        };
-        downloadLink._onClick = onClick;
-        downloadLink.addEventListener('click', onClick);
-      } else {
-        downloadLink.setAttribute('disabled','true');
-        downloadLink.removeAttribute('href');
-      }
-    }
-
-    // mostrar modal
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    modal.setAttribute('role','dialog');
-    modal.setAttribute('aria-modal','true');
-    lastFocusedBeforeModal = document.activeElement;
-    bodyEl.classList.add('no-scroll');
-
-    // inert a siblings
-    setInertForSiblings(modal, true);
-
-    // focus trap
-    const focusables = Array.from(modal.querySelectorAll(focusableSelector));
-    const firstFocusable = focusables[0];
-    const lastFocusable = focusables[focusables.length - 1];
-
-    handleKey = function(e) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeModal();
-        return;
-      }
-      if (e.key === 'Tab') {
-        if (focusables.length === 0) {
-          e.preventDefault();
-          return;
-        }
-        if (e.shiftKey) { // shift + tab
-          if (document.activeElement === firstFocusable) {
-            e.preventDefault();
-            lastFocusable.focus();
-          }
-        } else { // tab
-          if (document.activeElement === lastFocusable) {
-            e.preventDefault();
-            firstFocusable.focus();
-          }
-        }
-      }
-    };
-    modal.addEventListener('keydown', handleKey);
-
-    // event listeners para cerrar
-    backdrop.addEventListener('click', backdropClose);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-    // fijar focus en primer control
-    (firstFocusable || closeBtn || modal).focus();
-  }
-
-  function backdropClose(e) {
-    // si haces click en el backdrop (no en el modal)
-    closeModal();
-  }
-
-  function closeModal() {
-    // quitar listeners añadidos
-    backdrop.removeEventListener('click', backdropClose);
-    if (closeBtn) closeBtn.removeEventListener('click', closeModal);
-    if (downloadLink && downloadLink._onClick) {
-      downloadLink.removeEventListener('click', downloadLink._onClick);
-      delete downloadLink._onClick;
-    }
-    if (handleKey) modal.removeEventListener('keydown', handleKey);
-
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    bodyEl.classList.remove('no-scroll');
-    setInertForSiblings(modal, false);
-
-    // devolver focus
-    try { lastFocusedBeforeModal && lastFocusedBeforeModal.focus(); } catch (err) {}
-  }
-
-  // fetch + descargar (si necesitas manipular headers o CORS)
-  async function fetchAndDownload(url, filename) {
-    const res = await fetch(url);
-    const blob = await res.blob();
-    const blobUrl = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = filename || 'download';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(blobUrl);
-  }
-
-  // Delegación: escucha clicks en tarjetas y abre modal
-  document.body.addEventListener('click', (e) => {
-    const card = e.target.closest('.project-card, .ai-card, [data-card-id]');
-    if (!card) return;
-    // si se clicó explícitamente en un botón de descarga dentro del card, deja que el handler del botón se encargue
-    if (e.target.closest('.card-download, .download-btn')) return;
-
-    // construir contenido y url desde atributos data-*
-    const contentHtml = card.querySelector('.card-details')?.innerHTML || card.innerHTML;
-    const fileUrl = card.getAttribute('data-file-url') || card.dataset.fileUrl || card.getAttribute('href') || null;
-    const filename = card.getAttribute('data-filename') || card.dataset.filename || 'resource.pdf';
-
-    openModalWith({ htmlContent: contentHtml, downloadUrl: fileUrl, filename });
-  });
-
-  // Exponer funciones globalmente para depuración
-  window.__openModalWith = openModalWith;
-  window.__closeModal = closeModal;
-}
     
     // Listener para links de proyectos
     document.querySelectorAll('.project-link').forEach(link => {
@@ -2153,6 +2025,7 @@ if (!modal) {
         const href = this.getAttribute('href');
         const description = this.getAttribute('data-descripcion');
         
+        // Solo mostrar modal si hay descripciÃ³n
         if (description) {
           event.preventDefault();
           openModal(this.textContent, description, href, this);
@@ -2168,21 +2041,22 @@ if (!modal) {
       }
     });
     
-    // FIX G: addEventListener en vez de window.onclick
-    window.addEventListener('click', function(event) {
+    // Cerrar modal al hacer clic fuera
+    window.onclick = function(event) {
       const modal = document.getElementById('fileModal');
       if (event.target === modal) {
         closeModal();
       }
-    });
+    };
 
     // ==========================================
-    // DESCARGAR CV
+    // DESCARGAR CV con tracking hook
     // ==========================================
     
     function downloadCV(event) {
       event.preventDefault();
       
+      // Hook para Google Analytics (si estuviera configurado)
       if (typeof gtag !== 'undefined') {
         gtag('event', 'download_cv', {
           event_category: 'engagement',
@@ -2191,22 +2065,26 @@ if (!modal) {
         });
       }
       
-      window.open("Currículum Analista de Datos Manuel Verdejo García.pdf", "_blank");
+      // Abrir el PDF
+      window.open("CurrÃ­culum Analista de Datos Manuel Verdejo GarcÃ­a.pdf", "_blank");
     }
 
     // ==========================================
-    // INICIALIZACIÓN
+    // INICIALIZACIÃ“N AL CARGAR LA PÃGINA
     // ==========================================
     
     document.addEventListener('DOMContentLoaded', function() {
+      // Cargar tema guardado
       loadTheme();
       
+      // Activar primer filtro
       const firstFilter = document.querySelector('.filter-btn[data-tech="all"]');
       if (firstFilter) {
         firstFilter.classList.add('active');
         firstFilter.setAttribute('aria-pressed', 'true');
       }
       
+      // Calcular y mostrar counts iniciales
       updateFilterCounts();
     });
   </script>
