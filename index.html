@@ -1985,24 +1985,157 @@
       document.body.style.overflow = 'hidden';
     }
     
-    function closeModal() {
-      const modal = document.getElementById('fileModal');
-      
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      
-      // FIX C: Restaurar inert
-      setInertForSiblings(modal, false);
-      
-      modal.removeEventListener('keydown', handleModalTab);
-      
-      // Restaurar scroll
-      document.body.style.overflow = '';
-      
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
+    const modal = document.querySelector('#fileModal') || document.querySelector('.modal') || null;
+if (!modal) {
+  console.warn('No se encontró modal (.modal o #fileModal). Asegúrate de tener un elemento modal en el DOM.');
+} else {
+  const backdrop = modal.querySelector('.modal-backdrop') || (() => {
+    const b = document.createElement('div'); b.className = 'modal-backdrop'; modal.prepend(b); return b;
+  })();
+  const closeBtn = modal.querySelector('.modal-close') || modal.querySelector('[data-close]') || null;
+  const downloadLink = modal.querySelector('.modal-download') || modal.querySelector('[data-download]') || null;
+  const bodyEl = document.body;
+  let lastFocusedBeforeModal = null;
+  let handleKey = null;
+
+  function openModalWith({ htmlContent = '', downloadUrl = '', filename = '' } = {}) {
+    // populate
+    const bodyContainer = modal.querySelector('.modal-body') || modal.querySelector('.content') || null;
+    if (bodyContainer) {
+      bodyContainer.innerHTML = htmlContent;
+    }
+
+    // configure descarga
+    if (downloadLink) {
+      if (downloadUrl) {
+        downloadLink.removeAttribute('disabled');
+        downloadLink.href = downloadUrl;
+        if (filename) downloadLink.setAttribute('download', filename);
+        else downloadLink.removeAttribute('download');
+        // remove old listener if any
+        downloadLink._onClick && downloadLink.removeEventListener('click', downloadLink._onClick);
+        // add safe click handler that logs and allows default behaviour
+        const onClick = (e) => {
+          // Depuración: log
+          console.log('[modal] descarga pulsada', downloadUrl);
+          // Si quieres forzar fetch->blob para CORS o headers, descomenta y usa la función fetchAndDownload
+          // e.preventDefault(); fetchAndDownload(downloadUrl, filename || 'download');
+        };
+        downloadLink._onClick = onClick;
+        downloadLink.addEventListener('click', onClick);
+      } else {
+        downloadLink.setAttribute('disabled','true');
+        downloadLink.removeAttribute('href');
       }
     }
+
+    // mostrar modal
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    modal.setAttribute('role','dialog');
+    modal.setAttribute('aria-modal','true');
+    lastFocusedBeforeModal = document.activeElement;
+    bodyEl.classList.add('no-scroll');
+
+    // inert a siblings
+    setInertForSiblings(modal, true);
+
+    // focus trap
+    const focusables = Array.from(modal.querySelectorAll(focusableSelector));
+    const firstFocusable = focusables[0];
+    const lastFocusable = focusables[focusables.length - 1];
+
+    handleKey = function(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        if (focusables.length === 0) {
+          e.preventDefault();
+          return;
+        }
+        if (e.shiftKey) { // shift + tab
+          if (document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          }
+        } else { // tab
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
+        }
+      }
+    };
+    modal.addEventListener('keydown', handleKey);
+
+    // event listeners para cerrar
+    backdrop.addEventListener('click', backdropClose);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    // fijar focus en primer control
+    (firstFocusable || closeBtn || modal).focus();
+  }
+
+  function backdropClose(e) {
+    // si haces click en el backdrop (no en el modal)
+    closeModal();
+  }
+
+  function closeModal() {
+    // quitar listeners añadidos
+    backdrop.removeEventListener('click', backdropClose);
+    if (closeBtn) closeBtn.removeEventListener('click', closeModal);
+    if (downloadLink && downloadLink._onClick) {
+      downloadLink.removeEventListener('click', downloadLink._onClick);
+      delete downloadLink._onClick;
+    }
+    if (handleKey) modal.removeEventListener('keydown', handleKey);
+
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    bodyEl.classList.remove('no-scroll');
+    setInertForSiblings(modal, false);
+
+    // devolver focus
+    try { lastFocusedBeforeModal && lastFocusedBeforeModal.focus(); } catch (err) {}
+  }
+
+  // fetch + descargar (si necesitas manipular headers o CORS)
+  async function fetchAndDownload(url, filename) {
+    const res = await fetch(url);
+    const blob = await res.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename || 'download';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(blobUrl);
+  }
+
+  // Delegación: escucha clicks en tarjetas y abre modal
+  document.body.addEventListener('click', (e) => {
+    const card = e.target.closest('.project-card, .ai-card, [data-card-id]');
+    if (!card) return;
+    // si se clicó explícitamente en un botón de descarga dentro del card, deja que el handler del botón se encargue
+    if (e.target.closest('.card-download, .download-btn')) return;
+
+    // construir contenido y url desde atributos data-*
+    const contentHtml = card.querySelector('.card-details')?.innerHTML || card.innerHTML;
+    const fileUrl = card.getAttribute('data-file-url') || card.dataset.fileUrl || card.getAttribute('href') || null;
+    const filename = card.getAttribute('data-filename') || card.dataset.filename || 'resource.pdf';
+
+    openModalWith({ htmlContent: contentHtml, downloadUrl: fileUrl, filename });
+  });
+
+  // Exponer funciones globalmente para depuración
+  window.__openModalWith = openModalWith;
+  window.__closeModal = closeModal;
+}
     
     // Listener para links de proyectos
     document.querySelectorAll('.project-link').forEach(link => {
