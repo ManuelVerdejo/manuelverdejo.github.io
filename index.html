@@ -1305,23 +1305,19 @@
     <section class="section" id="certificaciones" aria-labelledby="certificaciones-heading">
       <div class="section-header">
         <h2 id="certificaciones-heading">Certificaciones Profesionales</h2>
-        <p class="section-description">Formación continua y especialización en tecnologías de análisis de datos</p>
+        <p class="section-description">Formación continua y especialización en tecnologías de análisis de datos (en los que no se indique las horas dedicadas a ellos serán de 20 o menos)</p>
       </div>
       <div class="section-content">
-        <div class="search-results-status" role="status" aria-live="polite" aria-atomic="true" id="certSearchStatus"></div>
-        
         <div class="search-container">
           <input 
             type="text" 
             class="search-input" 
             id="searchInput"
-            placeholder="🔍 Buscar certificaciones..."
+            placeholder="🔍 Buscar certificaciones (ej: Python, Power BI, SQL...)"
             oninput="filterCertificates()"
             aria-label="Buscar certificaciones por nombre o tecnología"
           >
         </div>
-        
-        <div class="visible-results-count" id="certResultsCount" aria-hidden="true"></div>
 
         <div class="cert-category">
           <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="herramientas-content">
@@ -1335,6 +1331,292 @@
                   Análisis de Datos – Coursera+Google (240 H)
                 </a>
               </div>
+              <div class="cert-item" data-keywords="data analytics excel">
+                <a href="Data Analytics with Excel.pdf" class="cert-link" download>
+                  Data Analytics with Excel
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel regresión análisis">
+                <a href="Excel regression analysis.pdf" class="cert-link" download>
+                  Excel Regression Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="excel power bi análisis visualización bilib">
+                <a href="Certificado_Anlisis_y_visualizacin_de_datos_con_Excel_y_PowerBI.pdf" class="cert-link" download>
+                  Análisis y Visualización de Datos con Excel y Power BI - BILIB (125 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft excel 2016 bilib">
+                <a href="Certificado_Microsoft_Excel_2016.pdf" class="cert-link" download>
+                  Microsoft Excel 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="microsoft access 2016 bilib">
+                <a href="Certificado_Microsoft_Access_2016.pdf" class="cert-link" download>
+                  Microsoft Access 2016 - BILIB (75 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="libreoffice calc bilib">
+                <a href="Certificado_LibreOffice_Calc_3.pdf" class="cert-link" download>
+                  LibreOffice Calc 3 - BILIB (25 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="powerbi-content">
+            <h3>Business Intelligence y Power BI</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="powerbi-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="power bi análisis datos dashboard">
+                <a href="CertificadoDeFinalizacion_Power BI para principiantes Analisis de datos 2019.pdf" class="cert-link" download>
+                  Power BI para Principiantes: Análisis de Datos (2019)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi esencial dashboard">
+                <a href="CertificadoDeFinalizacion_Power BI esencial 2020.pdf" class="cert-link" download>
+                  Power BI Esencial (2020)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi dax modelado datos">
+                <a href="CertificadoDeFinalizacion_Power BI Modelado de datos con DAX.pdf" class="cert-link" download>
+                  Power BI – Modelado de Datos con DAX
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="power bi visualización datos">
+                <a href="Data Visualization With Power BI.pdf" class="cert-link" download>
+                  Data Visualization with Power BI
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="business intelligence big data bilib">
+                <a href="Certificado_Business_Intelligence_y_anlisis_de_Big_Data.pdf" class="cert-link" download>
+                  Business Intelligence y Análisis de Big Data - BILIB (120 H)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="sql-content">
+            <h3>Gestión de Bases de Datos y SQL</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="sql-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="sql básico base datos">
+                <a href="ABDEU.pdf" class="cert-link" download>
+                  SQL Básico
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql advanced avanzado">
+                <a href="Advanced SQL.pdf" class="cert-link" download>
+                  Advanced SQL
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql python analytics">
+                <a href="Analytics with SQL and Python.pdf" class="cert-link" download>
+                  Analytics with SQL and Python
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="sql data science">
+                <a href="SQL for Data Science.pdf" class="cert-link" download>
+                  SQL for Data Science
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="python-content">
+            <h3>Python y Machine Learning</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="python-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="python data wrangling">
+                <a href="Python Data Wrangling.pdf" class="cert-link" download>
+                  Python Data Wrangling
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="python data science">
+                <a href="Python for Data Science.pdf" class="cert-link" download>
+                  Python for Data Science
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="python machine learning ml">
+                <a href="Python for ML and DS.pdf" class="cert-link" download>
+                  Python for Machine Learning and Data Science
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="neural network red neuronal">
+                <a href="Introduction to Neural Network.pdf" class="cert-link" download>
+                  Introduction to Neural Network
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="neural network r">
+                <a href="Neural Network in R.pdf" class="cert-link" download>
+                  Neural Network in R
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="knn naive bayes algorithm">
+                <a href="KNN and Naive Bayes Algorithm.pdf" class="cert-link" download>
+                  KNN and Naive Bayes Algorithm
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="batch normalization">
+                <a href="Batch Normalization.pdf" class="cert-link" download>
+                  Batch Normalization
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="r-content">
+            <h3>Análisis Estadístico con R</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="r-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="r data science">
+                <a href="R for Data Science.pdf" class="cert-link" download>
+                  R for Data Science
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="r clustering">
+                <a href="Clustering in R.pdf" class="cert-link" download>
+                  Clustering in R
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="anova variance análisis">
+                <a href="Analysis of Variance.pdf" class="cert-link" download>
+                  Analysis of Variance
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="pca principal component">
+                <a href="Principal Component Analysis.pdf" class="cert-link" download>
+                  Principal Component Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="cross validation k-fold">
+                <a href="k-fold Cross Validation.pdf" class="cert-link" download>
+                  k-Fold Cross Validation
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="time series forecasting r">
+                <a href="Multivariate Time Series Forecasting in R.pdf" class="cert-link" download>
+                  Multivariate Time Series Forecasting in R
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="predictive modeling regression">
+                <a href="Predictive Modeling and Analytics - Regression.pdf" class="cert-link" download>
+                  Predictive Modeling and Analytics - Regression
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="statistical methods decision making">
+                <a href="Statistical Methods for Decision Making.pdf" class="cert-link" download>
+                  Statistical Methods for Decision Making
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="cyber-content">
+            <h3>Ciberseguridad y TIC</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="cyber-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="ciberseguridad seguridad informática">
+                <a href="Advanced Cyber Security - Threats and Governance.pdf" class="cert-link" download>
+                  Advanced Cyber Security - Threats and Governance
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="ciberseguridad teletrabajo">
+                <a href="Ciberseguridad en el Teletrabajo.pdf" class="cert-link" download>
+                  Ciberseguridad en el Teletrabajo
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="protección seguridad empresa">
+                <a href="Certificado_Proteccin_y_seguridad_informtica_en_la_empresa.pdf" class="cert-link" download>
+                  Protección y Seguridad Informática en la Empresa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <button class="cert-header" onclick="toggleCategory(this)" aria-expanded="false" aria-controls="complementarias-content">
+            <h3>Competencias Complementarias</h3>
+            <span class="cert-toggle" aria-hidden="true">▼</span>
+          </button>
+          <div class="cert-content" id="complementarias-content">
+            <div class="cert-grid">
+              <div class="cert-item" data-keywords="google digitaliza herramientas">
+                <a href="Digitaliza paso a paso tu negocio con herramientas de Google.pdf" class="cert-link" download>
+                  Iniciación al uso de herramientas de Google - Google (90 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data science fundamentos">
+                <a href="Data Science Foundations.pdf" class="cert-link" download>
+                  Data Science Foundations
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="data science proyectos">
+                <a href="Data Science Projects.pdf" class="cert-link" download>
+                  Data Science Projects
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="gestión proyectos google coursera">
+                <a href="GPTotal.pdf" class="cert-link" download>
+                  Gestión de Proyectos – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="ux diseño experiencia usuario google coursera">
+                <a href="ABDEU.pdf" class="cert-link" download>
+                  Aspectos básicos del diseño de la experiencia del usuario – Coursera+Google (240 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="market basket analysis">
+                <a href="Market Basket Analysis.pdf" class="cert-link" download>
+                  Market Basket Analysis
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="comercio electrónico marketing online bilib">
+                <a href="Certificado_Comercio_electrnico_y_marketing_online.pdf" class="cert-link" download>
+                  Comercio Electrónico y Marketing Online - BILIB (90 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="marketing digital fundamentos">
+                <a href="Fundamentos del Marketing Digital.pdf" class="cert-link" download>
+                  Fundamentos del Marketing Digital
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="marketing online pymes bilib">
+                <a href="Certificado_Marketing_online_para_Pymes.pdf" class="cert-link" download>
+                  Marketing online para Pymes (SEM, SEO y PPC) - BILIB (115 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="pensamiento crítico mundo digital bilib">
+                <a href="Certificado_Pensamiento_crtico_en_un_mundo_digital.pdf" class="cert-link" download>
+                  Pensamiento Crítico en un Mundo Digital - BILIB (70 H)
+                </a>
+              </div>
+              <div class="cert-item" data-keywords="productividad personal google activate">
+                <a href="Productividad Personal.pdf" class="cert-link" download>
+                  Productividad Personal – Google Activate (40 H)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1343,7 +1625,6 @@
     </section>
 
     <hr class="divider">
-
     <section class="contact-section" id="contacto" aria-labelledby="contacto-heading">
       <h2 id="contacto-heading">📬 Contacto</h2>
       <address class="contact-info">
