@@ -1952,38 +1952,48 @@
       }
     }
     
-    function openModal(title, description, downloadUrl, triggerElement) {
-      const modal = document.getElementById('fileModal');
-      const titleEl = document.getElementById('modal-title');
-      const descEl = document.getElementById('modal-description');
-      const downloadBtn = document.getElementById('download-btn');
-      
-      lastFocusedElement = triggerElement;
-      
-      titleEl.textContent = title;
-      descEl.innerHTML = description; // FIX D: OK en este caso (contenido controlado)
-      downloadBtn.href = downloadUrl;
-      
-      modal.style.display = 'block';
-      modal.setAttribute('aria-hidden', 'false');
-      
-      // FIX C: Aplicar inert al resto del contenido
-      setInertForSiblings(modal, true);
-      
-      // FIX B: Selector completo de focusables
-      focusableElements = Array.from(modal.querySelectorAll(focusableSelector));
-      
-      if (focusableElements.length > 0) {
-        firstFocusable = focusableElements[0];
-        lastFocusable = focusableElements[focusableElements.length - 1];
-        downloadBtn.focus();
+/* ======= Utilidades y selectores ======= */
+const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"])';
+
+function setInertForSiblings(modalEl, inertValue) {
+  // Si el navegador soporta inert nativo, usarlo. Sino fallback robusto:
+  if ('inert' in HTMLElement.prototype) {
+    document.querySelectorAll('body > *').forEach(el => {
+      if (el === modalEl) return;
+      el.inert = inertValue;
+    });
+    return;
+  }
+  // Fallback: desactivar foco en todos los descendientes focusables
+  document.querySelectorAll('body > *').forEach(el => {
+    if (el === modalEl) return;
+    if (inertValue) {
+      el.setAttribute('aria-hidden', 'true');
+      const focusables = Array.from(el.querySelectorAll(focusableSelector));
+      focusables.forEach(f => {
+        // guardar valor anterior de tabindex
+        if (!f.hasAttribute('data-orig-tabindex')) {
+          f.setAttribute('data-orig-tabindex', f.hasAttribute('tabindex') ? f.getAttribute('tabindex') : '');
+        }
+        f.setAttribute('tabindex', '-1');
+      });
+      el.setAttribute('data-inertified','true');
+    } else {
+      el.removeAttribute('aria-hidden');
+      if (el.getAttribute('data-inertified') === 'true') {
+        const focusables = Array.from(el.querySelectorAll(focusableSelector));
+        focusables.forEach(f => {
+          const orig = f.getAttribute('data-orig-tabindex');
+          if (orig === '') f.removeAttribute('tabindex');
+          else f.setAttribute('tabindex', orig);
+          f.removeAttribute('data-orig-tabindex');
+        });
+        el.removeAttribute('data-inertified');
       }
-      
-      modal.addEventListener('keydown', handleModalTab);
-      
-      // Prevenir scroll del body
-      document.body.style.overflow = 'hidden';
     }
+  });
+}
+
     
     const modal = document.querySelector('#fileModal') || document.querySelector('.modal') || null;
 if (!modal) {
