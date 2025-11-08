@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manuel Verdejo García - Data Analytics & AI Engineer. Portfolio profesional con proyectos de IA, Machine Learning, Power BI y análisis de datos.">
+    <meta name="keywords" content="Data Analytics, AI Engineer, Machine Learning, Power BI, Python, R, Data Science">
+    <meta name="author" content="Manuel Verdejo García">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Manuel Verdejo García — Data Analytics & AI Engineer">
+    <meta property="og:description" content="Portfolio profesional especializado en análisis de datos, inteligencia artificial y automatización">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Manuel Verdejo García — Data Analytics & AI Engineer">
+    <meta property="twitter:description" content="Portfolio profesional especializado en análisis de datos, inteligencia artificial y automatización">
+    
+    <title>Manuel Verdejo García — Data Analytics & AI Engineer</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manuel Verdejo García",
+      "jobTitle": "Data Analytics & AI Engineer",
+      "email": "manuelverdejo2000@gmail.com",
+      "url": "https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260",
+      "knowsAbout": ["Data Analytics", "Machine Learning", "Power BI", "Python", "R", "Deep Learning"]
+    }
+    </script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #ffffff;
+    --text-primary: #0a0a0a;
+    --text-secondary: #525252;
+    --text-tertiary: #737373;
+    --border-color: #e5e5e5;
+    --accent-from: #3b82f6;
+    --accent-to: #9333ea;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --text-tertiary: #737373;
+    --border-color: #262626;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-from);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Animated Background */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    top: -200px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(225deg, #06b6d4, #8b5cf6);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(315deg, #ec4899, #f59e0b);
+    top: 50%;
+    right: 10%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -50px) scale(1.1); }
+    50% { transform: translate(-30px, 30px) scale(0.9); }
+    75% { transform: translate(40px, 20px) scale(1.05); }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 50;
+    transition: background 0.3s ease;
+}
+
+[data-theme="dark"] nav {
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-brand:hover {
+    opacity: 0.7;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+    border-radius: 2px;
+}
+
+.theme-toggle {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.hero h1 {
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+    letter-spacing: -0.02em;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Section Styles */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-header h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.section-description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Search & Filter */
+.controls {
+    margin-bottom: 48px;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 32px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 48px 14px 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-from);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    color: white;
+    border-color: transparent;
+}
+
+.filter-btn:active {
+    transform: scale(0.95);
+}
+
+.filter-count {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.results-count {
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.project-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--accent-from);
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    padding: 4px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-link {
+    color: var(--accent-from);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-link:hover {
+    color: var(--accent-to);
+}
+
+.project-link::before {
+    content: '→';
+    font-weight: 700;
+}
+
+/* Certifications */
+.cert-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cert-category {
+    margin-bottom: 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.cert-category:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.cert-header {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+
+.cert-header:hover {
+    background: var(--bg-secondary);
+}
+
+.cert-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cert-toggle {
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.cert-header[aria-expanded="true"] .cert-toggle {
+    transform: rotate(-180deg);
+}
+
+.cert-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.cert-content.open {
+    max-height: 2000px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 0 24px 24px;
+}
+
+.cert-item {
+    padding: 12px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cert-item:hover {
+    background: var(--bg-primary);
+    transform: translateX(4px);
+}
+
+.cert-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.contact-info {
+    font-style: normal;
+    font-size: 18px;
+    line-height: 2;
+    color: var(--text-secondary);
+}
+
+.contact-info a {
+    color: var(--accent-from);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-to);
+}
+
+.email-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin: 24px 0;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.email-copy:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-primary);
+    transition: background 0.2s ease;
+}
+
+.modal-close:hover {
+    background: var(--bg-tertiary);
+}
+
+.modal h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.modal p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-lg);
+    z-index: 40;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px);
+}
+
+/* Divider */
+.divider {
+    max-width: 1200px;
+    margin: 80px auto;
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .nav-links a {
+        font-size: 13px;
+    }
+    
+    .hero {
+        padding: 100px 16px 60px;
+    }
+    
+    .section {
+        padding: 80px 16px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-container {
+        justify-content: flex-start;
+    }
+    
+    .back-to-top {
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-from);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+</style>
+</head>
+
+<body data-theme="light">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">MVG</a>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#proyectos" role="menuitem" class="nav-link">Proyectos</a></li>
+                <li role="none"><a href="#certificaciones" role="menuitem" class="nav-link">Certificaciones</a></li>
+                <li role="none"><a href="#contacto" role="menuitem" class="nav-link">Contacto</a></li>
+                <li role="none">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                        <span id="themeIcon">☀️</span>
+                        <span id="themeText">Oscuro</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background" aria-hidden="true">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    <span>Disponible para proyectos</span>
+                </div>
+                
+                <h1>
+                    Manuel Verdejo García<br>
+                    <span class="gradient-text">Data Analytics & AI Engineer</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Especialista en análisis de datos, inteligencia artificial y automatización. 
+                    Transformo datos complejos en insights accionables mediante Machine Learning, 
+                    Deep Learning y visualización avanzada.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#cv-download" class="btn btn-primary" id="downloadCV" aria-label="Descargar CV con portfolio y recursos reproducibles">
+                        Descargar CV
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="#proyectos" class="btn btn-secondary">
+                        Ver Proyectos
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="proyectos">
+            <div class="section-header">
+                <h2>Proyectos Destacados</h2>
+                <p class="section-description">
+                    Implementaciones prácticas de análisis de datos, inteligencia artificial y modelado estadístico
+                </p>
+            </div>
+
+            <div class="controls">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="projectSearch" 
+                        placeholder="Buscar proyectos por nombre o tecnología..."
+                        aria-label="Buscar proyectos"
+                    >
+                </div>
+
+                <div class="filter-container" role="group" aria-label="Filtros de tecnología">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                        Todos <span class="filter-count">(24)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="python" aria-pressed="false">
+                        Python <span class="filter-count">(8)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ml" aria-pressed="false">
+                        Machine Learning <span class="filter-count">(4)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="deeplearning" aria-pressed="false">
+                        Deep Learning <span class="filter-count">(1)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="r" aria-pressed="false">
+                        R <span class="filter-count">(6)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="powerbi" aria-pressed="false">
+                        Power BI <span class="filter-count">(1)</span>
+                    </button>
+                </div>
+
+                <div class="results-count" role="status" aria-live="polite" id="resultsCount"></div>
+            </div>
+
+            <div class="project-grid" id="projectGrid">
+                <!-- AI Predictive Models -->
+                <article class="project-card" data-tags="python,ml,sklearn,xgboost">
+                    <div class="project-title">IAs de Modelos Predictivos</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Random Forest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/IA_Predicci%C3%B3n_Precio_Vivienda.zip" class="project-link" target="_blank">Predicción de Precio de Vivienda</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/IA_Predicci%C3%B3n_Ventas.zip" class="project-link" target="_blank">Predicción de Ventas de una Empresa</a>
+                    </div>
+                </article>
+
+                <!-- Logistic Models -->
+                <article class="project-card" data-tags="python,ml,xai">
+                    <div class="project-title">IAs de Modelos Logísticos</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">SHAP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Sistema%20de%20Scoring%20Crediticio.zip" class="project-link" target="_blank">Sistema de Scoring Crediticio</a>
+                    </div>
+                </article>
+
+                <!-- Recommendation & NLP -->
+                <article class="project-card" data-tags="python,ml,nlp">
+                    <div class="project-title">IAs de Recomendación y Análisis de Lenguaje</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/IA_Recomendaci%C3%B3n_Pel%C3%ADculas.zip" class="project-link" target="_blank">Recomendación de Películas</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/IA_Detector_Reviews.zip" class="project-link" target="_blank">Detección de Sentimiento en Reviews</a>
+                    </div>
+                </article>
+
+                <!-- Deep Learning -->
+                <article class="project-card" data-tags="python,deeplearning,jax,xai">
+                    <div class="project-title">IAs de Deep Learning y Modelos Avanzados</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">JAX</span>
+                        <span class="tech-tag">Neural ODEs</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Sistemas%20ca%C3%B3ticos%20de%20din%C3%A1mica%20neuronal.zip" class="project-link" target="_blank">Modelo de Dinámica Neuronal Caótica</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/DeepLearning_GPU.zip" class="project-link" target="_blank">Redes Neuronales Aceleradas en GPU</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/DoubleDebiased.zip" class="project-link" target="_blank">Modelo Double Debiased Machine Learning</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Xai.zip" class="project-link" target="_blank">Explainable AI (XAI) — Interpretabilidad</a>
+                    </div>
+                </article>
+
+                <!-- MLOps -->
+                <article class="project-card" data-tags="python,ml,mlops">
+                    <div class="project-title">MLOps y Ciencia de Datos Experimental</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MLOps</span>
+                        <span class="tech-tag">UMAP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/mlops.zip" class="project-link" target="_blank">Pipeline MLOps para Despliegue de Modelos</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Manifold_Cluster_Densidad.zip" class="project-link" target="_blank">Manifold Learning y Clustering de Densidad</a>
+                    </div>
+                </article>
+
+                <!-- Simulators -->
+                <article class="project-card" data-tags="python,simulation">
+                    <div class="project-title">Simuladores Artificiales</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Simulación</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Simulador_Ecosistema.zip" class="project-link" target="_blank">Simulador de Ecosistema Artificial</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Civilizaci%C3%B3n.zip" class="project-link" target="_blank">Modelo Evolutivo de Civilización</a>
+                    </div>
+                </article>
+
+                <!-- Python Analysis -->
+                <article class="project-card" data-tags="python,analysis">
+                    <div class="project-title">Análisis Empresarial con Python</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PCA</span>
+                        <span class="tech-tag">Clustering</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/BMW_DataAnalysis.zip" class="project-link" target="_blank">Análisis de ventas de BMW</a>
+                    </div>
+                </article>
+
+                <!-- R Projects -->
+                <article class="project-card" data-tags="r,pca,clustering">
+                    <div class="project-title">Análisis de Componentes Principales y Clustering</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">PCA</span>
+                        <span class="tech-tag">Clustering</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/ACP%20Teno.pdf" class="project-link" target="_blank">Informe de Análisis ACP</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Cl%C3%BAster%20Teno.pdf" class="project-link" target="_blank">Informe de Análisis Clustering</a>
+                    </div>
+                </article>
+
+                <!-- R Regression -->
+                <article class="project-card" data-tags="r,regression,clustering">
+                    <div class="project-title">Regresión Lineal y Clustering</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">Regresión</span>
+                        <span class="tech-tag">Clustering</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Regresi%C3%B3n%20Lineal%20R%C3%ADos%20Nueva%20York.pdf" class="project-link" target="_blank">Informe de Regresión Lineal</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Cl%C3%BAster%20R%C3%ADos%20Nueva%20York.pdf" class="project-link" target="_blank">Informe de Análisis Clustering</a>
+                    </div>
+                </article>
+
+                <!-- Power BI -->
+                <article class="project-card" data-tags="powerbi,bi">
+                    <div class="project-title">Dashboards Interactivos en Power BI</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">DAX</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/FutbolInternacional.pbix" class="project-link" target="_blank">Dashboard Fútbol Internacional</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Libros.pbix" class="project-link" target="_blank">Dashboard Análisis de Libros</a>
+                    </div>
+                </article>
+
+                <!-- R Scripts -->
+                <article class="project-card" data-tags="r,statistics">
+                    <div class="project-title">Scripts de Análisis Estadístico en R</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">LOESS</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/modelado_loess_clustering_pca.R" class="project-link" target="_blank">Modelado LOESS, Clustering y PCA</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/regresion_loess_bootstrap_pca.R" class="project-link" target="_blank">Regresión LOESS, Bootstrap y PCA</a>
+                    </div>
+                </article>
+
+                <!-- Optimization -->
+                <article class="project-card" data-tags="python,optimization">
+                    <div class="project-title">Algoritmos de Optimización en Python</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Optimización</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Optimizaci%C3%B3n.py" class="project-link" target="_blank">Algoritmos de Optimización I</a>
+                        <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Optimizaci%C3%B3n2.py" class="project-link" target="_blank">Algoritmos de Optimización II</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Certifications Section -->
+        <section class="section" id="certificaciones">
+            <div class="section-header">
+                <h2>Certificaciones Profesionales</h2>
+                <p class="section-description">
+                    Formación continua y especialización en tecnologías de análisis de datos
+                </p>
+            </div>
+
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="certSearch" 
+                    placeholder="Buscar certificaciones..."
+                    aria-label="Buscar certificaciones"
+                >
+            </div>
+
+            <div class="cert-accordion">
+                <!-- Herramientas -->
+                <div class="cert-category">
+                    <button class="cert-header" aria-expanded="false" aria-controls="herramientas-content">
+                        <h3>Herramientas de Análisis y Productividad</h3>
+                        <span class="cert-toggle">▼</span>
+                    </button>
+                    <div class="cert-content" id="herramientas-content">
+                        <div class="cert-grid">
+                            <div class="cert-item" data-keywords="análisis datos coursera google">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/ADTotal.pdf" class="cert-link" target="_blank">
+                                    Análisis de Datos — Coursera+Google (240 H)
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="excel analytics">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Data%20Analytics%20with%20Excel.pdf" class="cert-link" target="_blank">
+                                    Data Analytics with Excel
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="excel regression">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Excel%20regression%20analysis.pdf" class="cert-link" target="_blank">
+                                    Excel Regression Analysis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="cert-category">
+                    <button class="cert-header" aria-expanded="false" aria-controls="powerbi-content">
+                        <h3>Business Intelligence y Power BI</h3>
+                        <span class="cert-toggle">▼</span>
+                    </button>
+                    <div class="cert-content" id="powerbi-content">
+                        <div class="cert-grid">
+                            <div class="cert-item" data-keywords="power bi dashboard">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/CertificadoDeFinalizacion_Power%20BI%20para%20principiantes%20Analisis%20de%20datos%202019.pdf" class="cert-link" target="_blank">
+                                    Power BI para Principiantes (2019)
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="power bi esencial">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/CertificadoDeFinalizacion_Power%20BI%20esencial%202020.pdf" class="cert-link" target="_blank">
+                                    Power BI Esencial (2020)
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="dax modelado">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/CertificadoDeFinalizacion_Power%20BI%20Modelado%20de%20datos%20con%20DAX.pdf" class="cert-link" target="_blank">
+                                    Power BI — Modelado con DAX
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL -->
+                <div class="cert-category">
+                    <button class="cert-header" aria-expanded="false" aria-controls="sql-content">
+                        <h3>Gestión de Bases de Datos y SQL</h3>
+                        <span class="cert-toggle">▼</span>
+                    </button>
+                    <div class="cert-content" id="sql-content">
+                        <div class="cert-grid">
+                            <div class="cert-item" data-keywords="sql básico">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/ABDEU.pdf" class="cert-link" target="_blank">
+                                    SQL Básico
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="sql advanced">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Advanced%20SQL.pdf" class="cert-link" target="_blank">
+                                    Advanced SQL
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="sql python">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Analytics%20with%20SQL%20and%20Python.pdf" class="cert-link" target="_blank">
+                                    Analytics with SQL and Python
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python & ML -->
+                <div class="cert-category">
+                    <button class="cert-header" aria-expanded="false" aria-controls="python-content">
+                        <h3>Python y Machine Learning</h3>
+                        <span class="cert-toggle">▼</span>
+                    </button>
+                    <div class="cert-content" id="python-content">
+                        <div class="cert-grid">
+                            <div class="cert-item" data-keywords="python wrangling">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Python%20Data%20Wrangling.pdf" class="cert-link" target="_blank">
+                                    Python Data Wrangling
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="python data science">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Python%20for%20Data%20Science.pdf" class="cert-link" target="_blank">
+                                    Python for Data Science
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="machine learning">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Python%20for%20ML%20and%20DS.pdf" class="cert-link" target="_blank">
+                                    Python for Machine Learning
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="neural network">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Introduction%20to%20Neural%20Network.pdf" class="cert-link" target="_blank">
+                                    Introduction to Neural Network
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R -->
+                <div class="cert-category">
+                    <button class="cert-header" aria-expanded="false" aria-controls="r-content">
+                        <h3>Análisis Estadístico con R</h3>
+                        <span class="cert-toggle">▼</span>
+                    </button>
+                    <div class="cert-content" id="r-content">
+                        <div class="cert-grid">
+                            <div class="cert-item" data-keywords="r data science">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/R%20for%20Data%20Science.pdf" class="cert-link" target="_blank">
+                                    R for Data Science
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="clustering">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Clustering%20in%20R.pdf" class="cert-link" target="_blank">
+                                    Clustering in R
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="pca">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Principal%20Component%20Analysis.pdf" class="cert-link" target="_blank">
+                                    Principal Component Analysis
+                                </a>
+                            </div>
+                            <div class="cert-item" data-keywords="time series">
+                                <a href="https://customer-assets.emergentagent.com/job_data-ai-portfolio-13/artifacts/Multivariate%20Time%20Series%20Forecasting%20in%20R.pdf" class="cert-link" target="_blank">
+                                    Time Series Forecasting in R
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contacto">
+            <h2>Contacto</h2>
+            <address class="contact-info">
+                <p>📧 Email: <a href="mailto:manuelverdejo2000@gmail.com">manuelverdejo2000@gmail.com</a></p>
+                <div class="email-copy" id="emailCopy" role="button" tabindex="0" aria-label="Copiar email al portapapeles">
+                    <span>Copiar email</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </div>
+                <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/manuel-verdejo-garcía-8483b7260" target="_blank" rel="noopener noreferrer">Manuel Verdejo García</a></p>
+                <p>🌐 Disponibilidad: Sevilla | Huelva | Córdoba | Trabajo Remoto</p>
+            </address>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Cerrar modal">×</button>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+            <a href="#" class="btn btn-primary" id="modalDownload" target="_blank">Descargar Proyecto</a>
+        </div>
+    </div>
+
+<script>
+// Theme Management
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const themeText = document.getElementById('themeText');
+const body = document.body;
+
+// Load theme from localStorage
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+updateThemeButton(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeButton(newTheme);
+});
+
+function updateThemeButton(theme) {
+    if (theme === 'dark') {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Claro';
+    } else {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Oscuro';
+    }
+}
+
+// Smooth Scroll & Active Link
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Project Search & Filter
+const projectSearch = document.getElementById('projectSearch');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+const resultsCount = document.getElementById('resultsCount');
+
+let currentFilter = 'all';
+
+projectSearch.addEventListener('input', (e) => {
+    filterProjects(e.target.value.toLowerCase(), currentFilter);
+});
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        currentFilter = btn.getAttribute('data-filter');
+        filterProjects(projectSearch.value.toLowerCase(), currentFilter);
+    });
+});
+
+function filterProjects(searchTerm, filter) {
+    let visibleCount = 0;
+    
+    projectCards.forEach(card => {
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        const title = card.querySelector('.project-title').textContent.toLowerCase();
+        const links = Array.from(card.querySelectorAll('.project-link')).map(l => l.textContent.toLowerCase()).join(' ');
+        
+        const matchesSearch = title.includes(searchTerm) || tags.includes(searchTerm) || links.includes(searchTerm);
+        const matchesFilter = filter === 'all' || tags.includes(filter);
+        
+        if (matchesSearch && matchesFilter) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    resultsCount.textContent = `Mostrando ${visibleCount} de ${projectCards.length} proyectos`;
+}
+
+// Initial count
+filterProjects('', 'all');
+
+// Certification Search & Accordion
+const certSearch = document.getElementById('certSearch');
+const certHeaders = document.querySelectorAll('.cert-header');
+const certItems = document.querySelectorAll('.cert-item');
+
+certSearch.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    certItems.forEach(item => {
+        const keywords = item.getAttribute('data-keywords').toLowerCase();
+        const text = item.textContent.toLowerCase();
+        
+        if (keywords.includes(searchTerm) || text.includes(searchTerm)) {
+            item.style.display = 'block';
+            // Open parent accordion
+            const parent = item.closest('.cert-content');
+            const header = parent.previousElementSibling;
+            parent.classList.add('open');
+            header.setAttribute('aria-expanded', 'true');
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+certHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        
+        header.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('open');
+    });
+});
+
+// Email Copy
+const emailCopy = document.getElementById('emailCopy');
+emailCopy.addEventListener('click', () => {
+    navigator.clipboard.writeText('manuelverdejo2000@gmail.com').then(() => {
+        const originalText = emailCopy.querySelector('span').textContent;
+        emailCopy.querySelector('span').textContent = '¡Copiado!';
+        setTimeout(() => {
+            emailCopy.querySelector('span').textContent = originalText;
+        }, 2000);
+    });
+});
+
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 400) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Download CV with Analytics
+const downloadCV = document.getElementById('downloadCV');
+downloadCV.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // GA4 event tracking (placeholder - replace with your GA4 ID)
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'cv_download', {
+            'event_category': 'engagement',
+            'event_label': 'CV Download Click',
+            'value': 1
+        });
+    }
+    
+    // Placeholder download - replace with actual CV URL
+    alert('CV descarga: Incluye portfolio links y recursos reproducibles (PDF + código)\n\nReemplazar con URL real del CV.');
+    
+    // Uncomment when you have the real CV URL:
+    // window.open('YOUR_CV_URL_HERE', '_blank');
+});
+
+// Keyboard Navigation for Email Copy
+emailCopy.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        emailCopy.click();
+    }
+});
+</script>
+
+<!-- Google Analytics 4 (Replace with your GA4 ID) -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+</body>
+</html>
