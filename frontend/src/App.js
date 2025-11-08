@@ -23,15 +23,39 @@ const Home = () => {
   return (
     <div>
       <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '48px', fontWeight: '700', marginBottom: '24px', background: 'linear-gradient(135deg, #3b82f6, #9333ea)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            Manuel Verdejo García
+          </h1>
+          <p style={{ fontSize: '24px', color: '#a3a3a3', marginBottom: '32px' }}>
+            Data Analytics & AI Engineer
+          </p>
+          <a
+            href="/portfolio.html"
+            style={{
+              display: 'inline-block',
+              padding: '14px 32px',
+              background: 'linear-gradient(135deg, #3b82f6, #9333ea)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '12px',
+              fontWeight: '600',
+              fontSize: '18px',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3)'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.3)';
+            }}
+          >
+            Ver Portfolio Completo →
+          </a>
+        </div>
       </header>
     </div>
   );
