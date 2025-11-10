@@ -1545,7 +1545,9 @@
         <button class="close" aria-label="Cerrar modal">&times;</button>
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
-        <a id="download-btn" href="#" download class="download-button">Descargar Archivo</a>
+        <a id="download-btn" href="#" download class="download-button" role="button" aria-label="Descargar archivo">
+          Descargar Archivo
+        </a>
       </div>
     </div>
 
@@ -2174,6 +2176,10 @@
     }
     
     function openModal(title, description, downloadUrl, triggerElement) {
+        if (!downloadUrl || downloadUrl === '#') {
+          console.error('URL de descarga no válida');
+          return;
+        }
       const modal = document.getElementById('fileModal');
       const titleEl = document.getElementById('modal-title');
       const descEl = document.getElementById('modal-description');
@@ -2181,9 +2187,9 @@
       
       lastFocusedElement = triggerElement;
       
-      titleEl.textContent = title;
-      descEl.innerHTML = description;
-      downloadBtn.href = downloadUrl;
+    titleEl.textContent = title;
+    descEl.innerHTML = description;
+    downloadBtn.href = encodeURI(downloadUrl);
       
       modal.style.display = 'block';
       modal.setAttribute('aria-hidden', 'false');
@@ -2227,7 +2233,7 @@
     const description = projectLink.getAttribute('data-descripcion');
     if (description) {
       e.preventDefault();
-      const href = projectLink.getAttribute('href');
+      const href = encodeURI(projectLink.getAttribute('href'));
       const title = projectLink.textContent.trim();
       openModal(title, description, href, projectLink);
     }
@@ -2235,15 +2241,17 @@
   }
   
   // Click en botón cerrar del modal
-  if (e.target.closest('.close')) {
+  if (e.target.closest('.close') || e.target.classList.contains('close')) {
     e.preventDefault();
+    e.stopPropagation();
     closeModal();
     return;
   }
+
   
   // Click fuera del modal (en el backdrop)
   const modal = document.getElementById('fileModal');
-  if (e.target === modal) {
+  if (e.target === modal && modal.style.display === 'block') {
     closeModal();
   }
 });
