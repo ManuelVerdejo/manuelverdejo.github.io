@@ -1542,14 +1542,10 @@
 
     <div id="fileModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
       <div class="modal-content">
-        <button type="button" class="close" id="closeModalBtn" aria-label="Cerrar modal">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button class="close" aria-label="Cerrar modal">&times;</button>
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
-        <a id="download-btn" href="#" class="download-button" role="button" tabindex="0">
-          Descargar Archivo
-        </a>
+        <a id="download-btn" href="#" download class="download-button">Descargar Archivo</a>
       </div>
     </div>
 
@@ -2177,64 +2173,43 @@
       }
     }
     
-  function openModal(title, description, downloadUrl, triggerElement) {
-    const modal = document.getElementById('fileModal');
-    const titleEl = document.getElementById('modal-title');
-    const descEl = document.getElementById('modal-description');
-    const downloadBtn = document.getElementById('download-btn');
-    
-    // Guarda el elemento que abrió el modal
-    lastFocusedElement = triggerElement;
-    
-    // Llena el contenido
-    titleEl.textContent = title;
-    descEl.innerHTML = description;
-    
-    // === SOLUCIÓN CLAVE: Usar navegación directa en lugar de atributo download ===
-    // Codifica la URL para manejar espacios y caracteres especiales
-    const encodedUrl = encodeURI(downloadUrl);
-    
-    // Asigna el evento click para descargar
-    downloadBtn.onclick = function(e) {
-      e.preventDefault();
-      // Navega directamente al archivo
-      window.location.href = encodedUrl;
-      // Opcional: cierra el modal después de iniciar la descarga
-      setTimeout(() => closeModal(), 500);
-    };
-    
-    // Muestra el modal
-    modal.style.display = 'block';
-    modal.setAttribute('aria-hidden', 'false');
-    
-    // Bloquea interacción con el resto de la página
-    setInertForSiblings(modal, true);
-    
-    // Configura el enfoque dentro del modal
-    focusableElements = Array.from(modal.querySelectorAll(focusableSelector));
-    
-    if (focusableElements.length > 0) {
-      firstFocusable = focusableElements[0];
-      lastFocusable = focusableElements[focusableElements.length - 1];
-      downloadBtn.focus();
+    function openModal(title, description, downloadUrl, triggerElement) {
+      const modal = document.getElementById('fileModal');
+      const titleEl = document.getElementById('modal-title');
+      const descEl = document.getElementById('modal-description');
+      const downloadBtn = document.getElementById('download-btn');
+      
+      lastFocusedElement = triggerElement;
+      
+      titleEl.textContent = title;
+      descEl.innerHTML = description;
+      downloadBtn.href = downloadUrl;
+      
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      
+      setInertForSiblings(modal, true);
+      
+      focusableElements = Array.from(modal.querySelectorAll(focusableSelector));
+      
+      if (focusableElements.length > 0) {
+        firstFocusable = focusableElements[0];
+        lastFocusable = focusableElements[focusableElements.length - 1];
+        downloadBtn.focus();
+      }
+      
+      modal.addEventListener('keydown', handleModalTab);
+      
+      document.body.style.overflow = 'hidden';
     }
     
-    modal.addEventListener('keydown', handleModalTab);
-    document.body.style.overflow = 'hidden';
-  }
-      
-    
-    function closeModal() {
+  function closeModal() {
+    try {
       const modal = document.getElementById('fileModal');
-      
-      // Verifica si el modal está realmente abierto
-      if (modal.style.display !== 'block') return;
-      
-      // Oculta el modal
+      if (!modal) return;
+  
       modal.style.display = 'none';
       modal.setAttribute('aria-hidden', 'true');
-      
-      // Restaura el enfoque al elemento que abrió el modal
       setInertForSiblings(modal, false);
       modal.removeEventListener('keydown', handleModalTab);
       document.body.style.overflow = '';
@@ -2243,34 +2218,39 @@
         lastFocusedElement.focus();
         lastFocusedElement = null;
       }
-      
-      // Limpia el onclick para evitar fugas de memoria
-      const downloadBtn = document.getElementById('download-btn');
-      if (downloadBtn) {
-        downloadBtn.onclick = null;
-      }
+    } catch (error) {
+      console.error('Error cerrando modal:', error);
     }
+  }
     
-  document.querySelectorAll('.project-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const description = this.getAttribute('data-descripcion');
+  document.addEventListener('click', function(e) {
+  // 1. Manejar cierre de modal por botón X
+  if (e.target.closest('.close')) {
+    e.preventDefault();
+    e.stopPropagation();
+    closeModal();
+    return;
+  }
+
+  // 2. Manejar cierre de modal por clic en backdrop
+  const modal = document.getElementById('fileModal');
+  if (modal && e.target === modal) {
+    e.preventDefault();
+    closeModal();
+    return;
+  }
+
+  // 3. Manejar apertura de modal desde proyectos
+  const projectLink = e.target.closest('.project-link');
+  if (projectLink) {
+    const description = projectLink.getAttribute('data-descripcion');
     if (description) {
       e.preventDefault();
-      const href = this.getAttribute('href');
-      const title = this.textContent.trim();
-      openModal(title, description, href, this);
+      const href = projectLink.getAttribute('href');
+      const title = projectLink.textContent.trim();
+      openModal(title, description, href, projectLink);
     }
-  });
-});
-    // 2. Event listener para el botón cerrar
-document.getElementById('closeModalBtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  closeModal();
-});
-    // 3. Cerrar al hacer clic fuera del modal
-document.getElementById('fileModal').addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeModal();
+    return;
   }
 });
     
@@ -2297,431 +2277,17 @@ document.getElementById('fileModal').addEventListener('click', function(e) {
       window.open("Currículum Analista de Datos Manuel Verdejo García.pdf", "_blank");
     }
 
-// === CÓDIGO MODAL 100% FUNCIONAL Y VERIFICABLE ===
-
-console.log('✅ Script cargado correctamente');
-
-// Espera a que el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 DOM completamente cargado');
-  
-  // 1. Configuración inicial
-  loadTheme();
-  updateFilterCounts();
-  
-  // 2. Configurar botón de tema
-  const themeBtn = document.getElementById('themeToggleBtn');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
-    console.log('🎨 Botón de tema configurado');
-  }
-  
-  // 3. Configurar botón "volver arriba"
-  const backToTopBtn = document.getElementById('backToTop');
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', scrollToTop);
-    console.log('⬆️ Botón volver arriba configurado');
-  }
-  
-  // 4. Configurar filtros de proyectos
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const tech = this.getAttribute('data-tech');
-      filterByTech(tech);
-    });
-  });
-  
-  // 5. Configurar búsquedas
-  const projectSearch = document.getElementById('projectSearch');
-  if (projectSearch) {
-    projectSearch.addEventListener('input', filterProjects);
-  }
-  
-  const certSearch = document.getElementById('searchInput');
-  if (certSearch) {
-    certSearch.addEventListener('input', filterCertificates);
-  }
-  
-  // 6. === CONFIGURACIÓN DEL MODAL (SOLUCIÓN CLAVE) ===
-  console.log('🔧 Configurando modal...');
-  
-  // 6.1. Event listeners para cada project-link
-  document.querySelectorAll('.project-link').forEach((link, index) => {
-    link.addEventListener('click', function(e) {
-      console.log(`📄 Clic en project-link #${index}`);
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTheme();
       
-      const description = this.getAttribute('data-descripcion');
-      if (description) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        const title = this.textContent.trim();
-        console.log(`✨ Abriendo modal: ${title}`);
-        
-        openModal(title, description, href, this);
+      const firstFilter = document.querySelector('.filter-btn[data-tech="all"]');
+      if (firstFilter) {
+        firstFilter.classList.add('active');
+        firstFilter.setAttribute('aria-pressed', 'true');
       }
+      
+      updateFilterCounts();
     });
-    console.log(`🔗 Project-link #${index} configurado`);
-  });
-  
-  // 6.2. Event listener para el botón cerrar
-  const closeBtn = document.getElementById('closeModalBtn');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function(e) {
-      console.log('❌ Clic en botón cerrar');
-      e.preventDefault();
-      closeModal();
-    });
-    console.log('✖️ Botón cerrar configurado');
-  } else {
-    console.error('❌ ERROR: Botón closeModalBtn NO ENCONTRADO');
-  }
-  
-  // 6.3. Event listener para clic fuera del modal
-  const modal = document.getElementById('fileModal');
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === this) {
-        console.log('🖱️ Clic en backdrop del modal');
-        closeModal();
-      }
-    });
-    console.log('🎯 Backdrop del modal configurado');
-  } else {
-    console.error('❌ ERROR: Modal NO ENCONTRADO');
-  }
-  
-  // 7. Configurar acordeones de certificaciones
-  document.querySelectorAll('.cert-header').forEach(header => {
-    header.addEventListener('click', function() {
-      toggleCategory(this);
-    });
-  });
-  
-  console.log('✅ TODO CONFIGURADO CORRECTAMENTE');
-});
-
-// === FUNCIONES MODAL (SIMPLIFICADAS Y ROBUSTAS) ===
-
-let lastFocusedElement = null;
-
-function openModal(title, description, downloadUrl, triggerElement) {
-  console.log(`🔄 openModal ejecutado con: ${title}`);
-  
-  const modal = document.getElementById('fileModal');
-  const titleEl = document.getElementById('modal-title');
-  const descEl = document.getElementById('modal-description');
-  const downloadBtn = document.getElementById('download-btn');
-  
-  if (!modal || !titleEl || !descEl || !downloadBtn) {
-    console.error('❌ ERROR: Elementos del modal faltantes');
-    return;
-  }
-  
-  lastFocusedElement = triggerElement;
-  
-  // Llenar contenido
-  titleEl.textContent = title;
-  descEl.innerHTML = description;
-  
-  // === SOLUCIÓN CLAVE: Manejo de descarga ===
-  const encodedUrl = encodeURI(downloadUrl);
-  console.log(`📥 URL de descarga: ${encodedUrl}`);
-  
-  downloadBtn.onclick = function(e) {
-    e.preventDefault();
-    console.log('⬇️ Iniciando descarga...');
-    
-    // Método 1: Navegación directa (más compatible)
-    window.location.href = encodedUrl;
-    
-    // Método 2: Crear enlace temporal (alternativa si el 1 falla)
-    // Descomenta esto si el método 1 no funciona:
-    /*
-    const a = document.createElement('a');
-    a.href = encodedUrl;
-    a.download = encodedUrl.split('/').pop();
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    */
-    
-    // Cierra el modal después de iniciar la descarga
-    setTimeout(() => closeModal(), 500);
-  };
-  
-  // Mostrar modal
-  modal.style.display = 'block';
-  modal.setAttribute('aria-hidden', 'false');
-  console.log('🎭 Modal visible');
-  
-  // Bloquear interacción con el resto
-  if (typeof setInertForSiblings === 'function') {
-    setInertForSiblings(modal, true);
-  }
-  
-  // Enfocar el botón de descarga
-  downloadBtn.focus();
-  console.log('🔍 Foco en botón de descarga');
-}
-
-function closeModal() {
-  console.log('🔄 closeModal ejecutado');
-  
-  const modal = document.getElementById('fileModal');
-  if (!modal || modal.style.display !== 'block') {
-    console.log('⚠️ Modal ya está cerrado o no existe');
-    return;
-  }
-  
-  // Ocultar modal
-  modal.style.display = 'none';
-  modal.setAttribute('aria-hidden', 'true');
-  console.log('🎭 Modal oculto');
-  
-  // Restaurar enfoque
-  if (typeof setInertForSiblings === 'function') {
-    setInertForSiblings(modal, false);
-  }
-  
-  if (lastFocusedElement) {
-    lastFocusedElement.focus();
-    lastFocusedElement = null;
-    console.log('🔍 Foco restaurado');
-  }
-  
-  // Limpiar evento onclick
-  const downloadBtn = document.getElementById('download-btn');
-  if (downloadBtn) {
-    downloadBtn.onclick = null;
-  }
-  
-  document.body.style.overflow = '';
-  console.log('✅ Modal cerrado completamente');
-}
-
-// === RESTO DE FUNCIONES (sin cambios) ===
-
-function setInertForSiblings(modal, inertValue) {
-  console.log(`🔄 setInertForSiblings: ${inertValue}`);
-  
-  if ('inert' in HTMLElement.prototype) {
-    document.querySelectorAll('body > *').forEach(el => {
-      if (el !== modal && el.id !== 'backToTop' && el.id !== 'scrollProgress') {
-        el.inert = inertValue;
-      }
-    });
-  } else {
-    document.querySelectorAll('body > *').forEach(el => {
-      if (el !== modal && el.id !== 'backToTop' && el.id !== 'scrollProgress') {
-        if (inertValue) {
-          el.setAttribute('aria-hidden', 'true');
-          el.setAttribute('data-original-tabindex', el.getAttribute('tabindex') || '');
-          el.setAttribute('tabindex', '-1');
-        } else {
-          el.removeAttribute('aria-hidden');
-          const originalTabindex = el.getAttribute('data-original-tabindex');
-          if (originalTabindex === '') {
-            el.removeAttribute('tabindex');
-          } else {
-            el.setAttribute('tabindex', originalTabindex);
-          }
-          el.removeAttribute('data-original-tabindex');
-        }
-      }
-    });
-  }
-}
-
-// === FUNCIONES EXISTENTES (sin cambios, solo asegúrate de que estén) ===
-
-function loadTheme() {
-  const savedTheme = localStorage.getItem('mvg-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-  document.body.dataset.theme = theme;
-  updateThemeUI(theme);
-}
-
-function updateThemeUI(theme) {
-  const icon = document.getElementById("theme-icon");
-  const text = document.getElementById("theme-text");
-  const btn = document.getElementById("themeToggleBtn");
-  
-  if (!icon || !text || !btn) return;
-  
-  if (theme === "dark") {
-    icon.textContent = "☀️";
-    text.textContent = "Tema claro";
-    btn.setAttribute('aria-label', 'Cambiar a tema claro');
-    btn.setAttribute('title', 'Cambiar a tema claro');
-    btn.setAttribute('aria-pressed', 'true');
-  } else {
-    icon.textContent = "🌙";
-    text.textContent = "Tema oscuro";
-    btn.setAttribute('aria-label', 'Cambiar a tema oscuro');
-    btn.setAttribute('title', 'Cambiar a tema oscuro');
-    btn.setAttribute('aria-pressed', 'false');
-  }
-}
-
-function toggleTheme() {
-  const body = document.body;
-  const currentTheme = body.dataset.theme;
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  
-  body.dataset.theme = newTheme;
-  localStorage.setItem('mvg-theme', newTheme);
-  updateThemeUI(newTheme);
-}
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function toggleCategory(header) {
-  const isExpanded = header.getAttribute('aria-expanded') === 'true';
-  header.setAttribute('aria-expanded', String(!isExpanded));
-  header.classList.toggle("active");
-  const content = header.nextElementSibling;
-  content.classList.toggle("active");
-}
-
-function updateFilterCounts() {
-  const cards = document.querySelectorAll(".project-card");
-  const counts = { all: 0, python: 0, ml: 0, deeplearning: 0, nlp: 0, xai: 0, powerbi: 0, r: 0 };
-
-  cards.forEach(card => {
-    const tech = (card.getAttribute("data-tech") || "").toLowerCase();
-    counts.all++;
-    Object.keys(counts).forEach(key => {
-      if (key === 'all') return;
-      if (tech.includes(key)) counts[key]++;
-    });
-  });
-
-  Object.keys(counts).forEach(tech => {
-    const countEl = document.querySelector(`[data-count="${tech}"]`);
-    if (countEl) countEl.textContent = `(${counts[tech]})`;
-  });
-}
-
-function filterCertificates() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const items = document.querySelectorAll(".cert-item");
-  let visibleCount = 0;
-
-  items.forEach(item => {
-    const keywords = item.getAttribute("data-keywords") || "";
-    if (keywords.toLowerCase().includes(input)) {
-      item.classList.remove("hidden");
-      visibleCount++;
-    } else {
-      item.classList.add("hidden");
-    }
-  });
-
-  const countEl = document.getElementById("certResultsCount");
-  countEl.textContent = input ? `${visibleCount} certificación${visibleCount !== 1 ? 'es' : ''} encontrada${visibleCount !== 1 ? 's' : ''}` : "";
-
-  const statusEl = document.getElementById("certSearchStatus");
-  statusEl.textContent = input ? `Se encontraron ${visibleCount} certificaciones` : "";
-
-  handleNoResults("#certificaciones", visibleCount, input);
-}
-
-function filterProjects() {
-  const input = document.getElementById("projectSearch").value.toLowerCase();
-  const cards = document.querySelectorAll(".project-card");
-  let visibleCount = 0;
-
-  cards.forEach(card => {
-    const title = card.querySelector(".project-title").textContent.toLowerCase();
-    const tech = (card.getAttribute("data-tech") || "").toLowerCase();
-    const links = Array.from(card.querySelectorAll(".project-link")).map(link => link.textContent.toLowerCase()).join(" ");
-    
-    if (title.includes(input) || tech.includes(input) || links.includes(input)) {
-      card.classList.remove("hidden");
-      visibleCount++;
-    } else {
-      card.classList.add("hidden");
-    }
-  });
-
-  const countEl = document.getElementById("projectResultsCount");
-  countEl.textContent = input ? `${visibleCount} proyecto${visibleCount !== 1 ? 's' : ''} encontrado${visibleCount !== 1 ? 's' : ''}` : "";
-
-  const statusEl = document.getElementById("projectSearchStatus");
-  statusEl.textContent = input ? `Se encontraron ${visibleCount} proyectos` : "";
-
-  handleNoResults("#proyectos", visibleCount, input);
-}
-
-function handleNoResults(sectionSelector, visibleCount, input) {
-  const section = document.querySelector(sectionSelector);
-  let noResults = section.querySelector('.no-results');
-  
-  if (visibleCount === 0 && input) {
-    if (!noResults) {
-      noResults = document.createElement("div");
-      noResults.className = "no-results";
-      noResults.textContent = "❌ No se encontraron resultados.";
-      section.querySelector('.section-content').appendChild(noResults);
-    }
-  } else {
-    if (noResults) noResults.remove();
-  }
-}
-
-let currentFilter = 'all';
-
-function filterByTech(tech) {
-  currentFilter = tech;
-  const cards = document.querySelectorAll(".project-card");
-  const buttons = document.querySelectorAll(".filter-btn");
-  
-  buttons.forEach(btn => {
-    if (btn.getAttribute('data-tech') === tech) {
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-    } else {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-pressed', 'false');
-    }
-  });
-  
-  let visibleCount = 0;
-  cards.forEach(card => {
-    const cardTech = (card.getAttribute("data-tech") || "").toLowerCase();
-    if (tech === 'all' || cardTech.includes(tech.toLowerCase())) {
-      card.classList.remove("hidden");
-      visibleCount++;
-    } else {
-      card.classList.add("hidden");
-    }
-  });
-
-  const statusEl = document.getElementById("projectSearchStatus");
-  statusEl.textContent = tech !== 'all' ? `Filtrando por ${tech}: ${visibleCount} proyectos` : `Mostrando todos los proyectos: ${visibleCount}`;
-}
-
-// Scroll progress
-window.addEventListener('scroll', () => {
-  const scrollProgress = document.getElementById('scrollProgress');
-  if (!scrollProgress) return;
-  
-  const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (window.scrollY / windowHeight) * 100;
-  scrollProgress.style.width = scrolled + '%';
-  
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-console.log('📝 Script JavaScript cargado completamente');
   </script>
 </body>
 </html>
