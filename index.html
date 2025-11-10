@@ -1542,10 +1542,12 @@
 
     <div id="fileModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
       <div class="modal-content">
-        <button class="close" aria-label="Cerrar modal">&times;</button>
+        <button type="button" class="close" id="closeModalBtn" aria-label="Cerrar modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
-        <a id="download-btn" href="#" download class="download-button" role="button" aria-label="Descargar archivo">
+        <a id="download-btn" href="#" class="download-button" role="button" tabindex="0">
           Descargar Archivo
         </a>
       </div>
@@ -2175,83 +2177,99 @@
       }
     }
     
-    function openModal(title, description, downloadUrl, triggerElement) {
-        if (!downloadUrl || downloadUrl === '#') {
-          console.error('URL de descarga no válida');
-          return;
-        }
-      const modal = document.getElementById('fileModal');
-      const titleEl = document.getElementById('modal-title');
-      const descEl = document.getElementById('modal-description');
-      const downloadBtn = document.getElementById('download-btn');
-      
-      lastFocusedElement = triggerElement;
-      
+  function openModal(title, description, downloadUrl, triggerElement) {
+    const modal = document.getElementById('fileModal');
+    const titleEl = document.getElementById('modal-title');
+    const descEl = document.getElementById('modal-description');
+    const downloadBtn = document.getElementById('download-btn');
+    
+    // Guarda el elemento que abrió el modal
+    lastFocusedElement = triggerElement;
+    
+    // Llena el contenido
     titleEl.textContent = title;
     descEl.innerHTML = description;
-    downloadBtn.href = encodeURI(downloadUrl);
-      
-      modal.style.display = 'block';
-      modal.setAttribute('aria-hidden', 'false');
-      
-      setInertForSiblings(modal, true);
-      
-      focusableElements = Array.from(modal.querySelectorAll(focusableSelector));
-      
-      if (focusableElements.length > 0) {
-        firstFocusable = focusableElements[0];
-        lastFocusable = focusableElements[focusableElements.length - 1];
-        downloadBtn.focus();
-      }
-      
-      modal.addEventListener('keydown', handleModalTab);
-      
-      document.body.style.overflow = 'hidden';
+    
+    // === SOLUCIÓN CLAVE: Usar navegación directa en lugar de atributo download ===
+    // Codifica la URL para manejar espacios y caracteres especiales
+    const encodedUrl = encodeURI(downloadUrl);
+    
+    // Asigna el evento click para descargar
+    downloadBtn.onclick = function(e) {
+      e.preventDefault();
+      // Navega directamente al archivo
+      window.location.href = encodedUrl;
+      // Opcional: cierra el modal después de iniciar la descarga
+      setTimeout(() => closeModal(), 500);
+    };
+    
+    // Muestra el modal
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    
+    // Bloquea interacción con el resto de la página
+    setInertForSiblings(modal, true);
+    
+    // Configura el enfoque dentro del modal
+    focusableElements = Array.from(modal.querySelectorAll(focusableSelector));
+    
+    if (focusableElements.length > 0) {
+      firstFocusable = focusableElements[0];
+      lastFocusable = focusableElements[focusableElements.length - 1];
+      downloadBtn.focus();
     }
+    
+    modal.addEventListener('keydown', handleModalTab);
+    document.body.style.overflow = 'hidden';
+  }
+      
     
     function closeModal() {
       const modal = document.getElementById('fileModal');
       
+      // Verifica si el modal está realmente abierto
+      if (modal.style.display !== 'block') return;
+      
+      // Oculta el modal
       modal.style.display = 'none';
       modal.setAttribute('aria-hidden', 'true');
       
+      // Restaura el enfoque al elemento que abrió el modal
       setInertForSiblings(modal, false);
-      
       modal.removeEventListener('keydown', handleModalTab);
-      
       document.body.style.overflow = '';
       
       if (lastFocusedElement) {
         lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+      
+      // Limpia el onclick para evitar fugas de memoria
+      const downloadBtn = document.getElementById('download-btn');
+      if (downloadBtn) {
+        downloadBtn.onclick = null;
       }
     }
     
-  document.addEventListener('click', function(e) {
-  // Click en project-link
-  const projectLink = e.target.closest('.project-link');
-  if (projectLink) {
-    const description = projectLink.getAttribute('data-descripcion');
+  document.querySelectorAll('.project-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const description = this.getAttribute('data-descripcion');
     if (description) {
       e.preventDefault();
-      const href = encodeURI(projectLink.getAttribute('href'));
-      const title = projectLink.textContent.trim();
-      openModal(title, description, href, projectLink);
+      const href = this.getAttribute('href');
+      const title = this.textContent.trim();
+      openModal(title, description, href, this);
     }
-    return;
-  }
-  
-  // Click en botón cerrar del modal
-  if (e.target.closest('.close') || e.target.classList.contains('close')) {
-    e.preventDefault();
-    e.stopPropagation();
-    closeModal();
-    return;
-  }
-
-  
-  // Click fuera del modal (en el backdrop)
-  const modal = document.getElementById('fileModal');
-  if (e.target === modal && modal.style.display === 'block') {
+  });
+});
+    // 2. Event listener para el botón cerrar
+document.getElementById('closeModalBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  closeModal();
+});
+    // 3. Cerrar al hacer clic fuera del modal
+document.getElementById('fileModal').addEventListener('click', function(e) {
+  if (e.target === this) {
     closeModal();
   }
 });
@@ -2279,17 +2297,27 @@
       window.open("Currículum Analista de Datos Manuel Verdejo García.pdf", "_blank");
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      loadTheme();
-      
-      const firstFilter = document.querySelector('.filter-btn[data-tech="all"]');
-      if (firstFilter) {
-        firstFilter.classList.add('active');
-        firstFilter.setAttribute('aria-pressed', 'true');
-      }
-      
-      updateFilterCounts();
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  loadTheme();
+  
+  const firstFilter = document.querySelector('.filter-btn[data-tech="all"]');
+  if (firstFilter) {
+    firstFilter.classList.add('active');
+    firstFilter.setAttribute('aria-pressed', 'true');
+  }
+  
+  updateFilterCounts();
+  
+  // === VALIDACIÓN DE ARCHIVOS (opcional pero útil) ===
+  // Esto te ayudará a depurar si los archivos existen
+  const projectLinks = document.querySelectorAll('.project-link');
+  projectLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href !== '#' && !href.startsWith('http')) {
+      console.log('📁 Archivo a verificar:', href);
+    }
+  });
+});
   </script>
 </body>
 </html>
