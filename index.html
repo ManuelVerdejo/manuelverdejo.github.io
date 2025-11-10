@@ -2220,19 +2220,33 @@
       }
     }
     
-    function initProjectLinks() {
-      document.querySelectorAll('.project-link').forEach(link => {
-        link.addEventListener('click', function (event) {
-          const href = this.getAttribute('href');
-          const description = this.getAttribute('data-descripcion');
-          
-          if (description) {
-            event.preventDefault();
-            openModal(this.textContent.trim(), description, href, this);
-          }
-        });
-      });
+  document.addEventListener('click', function(e) {
+  // Click en project-link
+  const projectLink = e.target.closest('.project-link');
+  if (projectLink) {
+    const description = projectLink.getAttribute('data-descripcion');
+    if (description) {
+      e.preventDefault();
+      const href = projectLink.getAttribute('href');
+      const title = projectLink.textContent.trim();
+      openModal(title, description, href, projectLink);
     }
+    return;
+  }
+  
+  // Click en botón cerrar del modal
+  if (e.target.closest('.close')) {
+    e.preventDefault();
+    closeModal();
+    return;
+  }
+  
+  // Click fuera del modal (en el backdrop)
+  const modal = document.getElementById('fileModal');
+  if (e.target === modal) {
+    closeModal();
+  }
+});
     
     document.addEventListener('keydown', function(event) {
       const modal = document.getElementById('fileModal');
@@ -2241,12 +2255,7 @@
       }
     });
     
-    window.addEventListener('click', function(event) {
-      const modal = document.getElementById('fileModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
+   
 
     function downloadCV(event) {
       event.preventDefault();
@@ -2272,7 +2281,6 @@
       }
       
       updateFilterCounts();
-      initProjectLinks();
     });
   </script>
 </body>
