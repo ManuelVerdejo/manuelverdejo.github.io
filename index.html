@@ -1934,17 +1934,19 @@
       }
     }
     
-    document.querySelectorAll('.project-link').forEach(link => {
-      link.addEventListener('click', function (event) {
-        const href = this.getAttribute('href');
-        const description = this.getAttribute('data-descripcion');
-        
-        if (description) {
-          event.preventDefault();
-          openModal(this.textContent, description, href, this);
-        }
+    function initProjectLinks() {
+      document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function (event) {
+          const href = this.getAttribute('href');
+          const description = this.getAttribute('data-descripcion');
+          
+          if (description) {
+            event.preventDefault();
+            openModal(this.textContent.trim(), description, href, this);
+          }
+        });
       });
-    });
+    }
     
     document.addEventListener('keydown', function(event) {
       const modal = document.getElementById('fileModal');
@@ -1984,6 +1986,7 @@
       }
       
       updateFilterCounts();
+      initProjectLinks();
     });
   </script>
 </body>
