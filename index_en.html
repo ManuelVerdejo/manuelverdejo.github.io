@@ -2515,15 +2515,6 @@
             }
         });
         
-        // Toggle de visibilidad del slider
-        function toggleSlider() {
-            sliderVisible = !sliderVisible;
-            if (sliderVisible) {
-                volumeContainer.classList.add('visible');
-            } else {
-                volumeContainer.classList.remove('visible');
-            }
-        }
         
         // Mostrar/ocultar slider al hacer clic en el botón con clic derecho o mantener pulsado
         toggleBtn.addEventListener('contextmenu', (e) => {
@@ -2543,9 +2534,20 @@
             if (volumePercentage) {
                 volumePercentage.textContent = `${Math.round(volume * 100)}%`;
             }
+            // NO hay audio.pause() ni ocultar slider
         });
         
-        // Cerrar slider al hacer clic fuera
+        // CORRECTO: Función separada para toggle del slider
+        function toggleSlider() {
+            sliderVisible = !sliderVisible;
+            if (sliderVisible) {
+                volumeContainer.classList.add('visible');
+            } else {
+                volumeContainer.classList.remove('visible');
+            }
+        }
+        
+        // CORRECTO: Cierra al clicar fuera
         document.addEventListener('click', (e) => {
             if (!volumeContainer.contains(e.target) && !toggleBtn.contains(e.target)) {
                 volumeContainer.classList.remove('visible');
