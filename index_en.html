@@ -1318,14 +1318,14 @@
                     <span class="theme-text">Oscuro</span>
                 </button>
                 <button class="lang-toggle" id="lang-toggle">ES</button>
-                <!-- NUEVO BOTÓN DE AUDIO -->
+                <!-- BOTÓN DE AUDIO -->
                 <button id="audioToggleBtn" class="lang-toggle" aria-label="Control de audio" style="display: flex; align-items: center; justify-content: center; width: 40px; padding: 0.6rem;">
-                    <span id="audioIcon">🔇</span>
+                    <span id="audioIcon">🔇</span> <!-- Empieza silenciado -->
                 </button>
             </div>
             
-            <!-- SLIDER DE VOLUMEN (se muestra al activar audio) -->
-            <div id="volumeContainer" style="position: fixed; bottom: 20px; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 10px 15px; backdrop-filter: blur(10px); display: none; z-index: 9999; box-shadow: var(--shadow-glow);">
+            <!-- CONTENEDOR DEL SLIDER (mover justo antes del </body>) -->
+            <div id="volumeContainer" style="position: fixed; top: 90px; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 10px 15px; backdrop-filter: blur(10px); display: none; z-index: 999; box-shadow: var(--shadow-glow);">
                 <input type="range" id="volumeSlider" min="0" max="100" value="15" aria-label="Volumen" style="width: 100px;">
             </div>
         </div>
@@ -2464,7 +2464,7 @@
     </audio>
 
     <script>
-// Audio controls logic (Fixed)
+        // Audio controls logic (Fixed)
         const audio = document.getElementById('bgAudio');
         const toggleBtn = document.getElementById('audioToggleBtn');
         const volumeSlider = document.getElementById('volumeSlider');
@@ -2473,30 +2473,30 @@
         
         let audioEnabled = false; // Empieza silenciado
         
-        // Mostrar/ocultar slider al hacer clic en botón
+        // Al hacer clic en el botón
         toggleBtn.addEventListener('click', () => {
           if (!audioEnabled) {
-            // Activar audio
+            // ACTIVAR audio (🔇 → 🎵)
             audio.play().then(() => {
               audioEnabled = true;
-              audioIcon.textContent = '🎵'; // Icono de "sonando"
+              audioIcon.textContent = '🎵';
               volumeContainer.style.display = 'block'; // Mostrar slider
             }).catch(err => {
               console.warn('Autoplay bloqueado:', err);
             });
           } else {
-            // Desactivar audio
+            // DESACTIVAR audio (🎵 → 🔇)
             audio.pause();
             audioEnabled = false;
-            audioIcon.textContent = '🔇'; // Icono de "silenciado"
+            audioIcon.textContent = '🔇';
             volumeContainer.style.display = 'none'; // Ocultar slider
           }
         });
         
-        // Al mover el slider, silenciar el audio
+        // Al mover el slider → SILENCIAR
         volumeSlider.addEventListener('input', (e) => {
           audio.volume = e.target.value / 100;
-          // Silenciar automáticamente al ajustar volumen
+          // SILENCIAR automáticamente
           audio.pause();
           audioEnabled = false;
           audioIcon.textContent = '🔇';
@@ -2512,7 +2512,6 @@
           }
         });
         
-        // Volumen inicial bajo
         audio.volume = 0.15;
     </script>
 </body>
