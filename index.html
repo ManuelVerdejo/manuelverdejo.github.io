@@ -2447,8 +2447,9 @@
 
         // Make openModal globally available
         window.openModal = openModal;
+</script>  <!-- <<<<<<<< AÑADE ESTO: Cierra el script principal -->
 
-    <!-- Audio controls (MUÉVELO AQUÍ) -->
+    <!-- Audio controls (ahora fuera del bloque script) -->
     <div class="audio-controls" id="audioControls" style="display: none;">
       <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
         <span id="audioIcon">🎵</span>
@@ -2462,8 +2463,8 @@
       Tu navegador no soporta audio HTML5.
     </audio>
 
-    <!-- CIERRA EL SCRIPT CORRECTAMENTE ANTES DEL </body> -->
     <script>
+        // Script de audio (ahora en su propio bloque)
         const audio = document.getElementById('bgAudio');
         const audioControls = document.getElementById('audioControls');
         const toggleBtn = document.getElementById('audioToggleBtn');
