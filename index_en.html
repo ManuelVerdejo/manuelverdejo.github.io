@@ -2443,6 +2443,22 @@
         // Make openModal globally available
         window.openModal = openModal;
 
+    <!-- Audio controls (MUÉVELO AQUÍ) -->
+    <div class="audio-controls" id="audioControls" style="display: none;">
+      <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
+        <span id="audioIcon">🎵</span>
+      </button>
+      <input type="range" id="volumeSlider" min="0" max="100" value="15" 
+             aria-label="Volumen" title="Volumen">
+    </div>
+    
+    <audio id="bgAudio" loop>
+      <source src="background.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <!-- CIERRA EL SCRIPT CORRECTAMENTE ANTES DEL </body> -->
+    <script>
         const audio = document.getElementById('bgAudio');
         const audioControls = document.getElementById('audioControls');
         const toggleBtn = document.getElementById('audioToggleBtn');
@@ -2451,37 +2467,29 @@
         
         let audioEnabled = false;
         
-        // Mostrar controles después de que el usuario interactúe
         document.addEventListener('click', function initAudio() {
           audioControls.style.display = 'flex';
-          document.removeEventListener('click', initAudio);
-        }, { once: true });
+        });
         
-        // Toggle play/pause
         toggleBtn.addEventListener('click', () => {
           if (!audioEnabled) {
             audio.play().then(() => {
               audioEnabled = true;
               audioIcon.textContent = '🔇';
-              toggleBtn.setAttribute('aria-label', 'Pausar música de fondo');
             }).catch(err => {
               console.warn('Autoplay bloqueado:', err);
-              alert('El navegador bloqueó el audio automático. Haz clic de nuevo para activarlo.');
             });
           } else {
             audio.pause();
             audioEnabled = false;
             audioIcon.textContent = '🎵';
-            toggleBtn.setAttribute('aria-label', 'Reproducir música de fondo');
           }
         });
         
-        // Control de volumen
         volumeSlider.addEventListener('input', (e) => {
           audio.volume = e.target.value / 100;
         });
         
-        // Pausar cuando la pestaña no esté visible
         document.addEventListener('visibilitychange', () => {
           if (document.hidden && audioEnabled) {
             audio.pause();
@@ -2490,21 +2498,7 @@
           }
         });
         
-        // Configuración inicial
-        audio.volume = 0.15; // Volumen bajo por defecto (15%)
+        audio.volume = 0.15;
     </script>
-            <div class="audio-controls" id="audioControls" style="display: none;">
-          <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
-            <span id="audioIcon">🎵</span>
-          </button>
-          <input type="range" id="volumeSlider" min="0" max="100" value="15" 
-                 aria-label="Volumen" title="Volumen">
-        </div>
-        
-        <!-- Audio element (oculto pero funcional) -->
-        <audio id="bgAudio" loop>
-          <source src="background.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio HTML5.
-        </audio>
 </body>
 </html>
