@@ -47,13 +47,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- FONT con display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- Librerías para efectos visuales -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
-    <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet">
-    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
     
     <style>
         :root {
@@ -212,23 +210,6 @@
             overflow: hidden;
         }
 
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0.1;
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-links a:hover::before,
-        .nav-links a:focus::before {
-            left: 0;
-        }
 
         .nav-links a:hover,
         .nav-links a:focus {
@@ -1224,7 +1205,16 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        .tech-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
 
+        .tech-badge:hover .tech-icon {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
@@ -1264,11 +1254,9 @@
             <div class="hero-background"></div>
             <div class="hero-content">
                 <h1 class="hero-title" data-splitting>Manuel Verdejo García</h1>
-                <p class="hero-subtitle">Visionario en Análisis de Datos</p>
+                <p class="hero-subtitle">Analista de Datos</p>
                 <p class="hero-description">
-                    Transformando datos en decisiones estratégicas a través de la ciencia de datos, 
-                    inteligencia artificial y visualización avanzada. Especialista en convertir 
-                    complejidad en claridad.
+                    Especializado en Power BI, Python, R y SQL. Portafolio profesional con proyectos de Business Intelligence y certificaciones en Data Science
                 </p>
                 <div class="hero-cta">
                     <a href="#proyectos" class="cta-button cta-primary">
@@ -1294,7 +1282,7 @@
                     <p class="subtitle">Analista de Datos Senior | Especialista en Business Intelligence</p>
                     <p class="intro-text">
                         Profesional apasionado por la transformación de datos en insights accionables. 
-                        Con más de 5 años de experiencia en el sector, me especializo en el desarrollo 
+                        Con 1 años de experiencia profesional en el sector, me especializo en el desarrollo 
                         de soluciones de Business Intelligence, modelado predictivo y visualización 
                         de datos para la toma de decisiones estratégicas.
                     </p>
@@ -1303,28 +1291,48 @@
                     </p>
                     <div class="tech-stack">
                         <div class="tech-badge">
-                            <span class="tech-icon">📊</span>
+                            <!-- Power BI -->
+                            <svg class="tech-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 3h18v4H3V3zm1 6h2v8H4V9zm4 2h2v6H8v-6zm4-3h2v9h-2V8zm4 4h2v5h-2v-5zm4-2h2v7h-2v-7z"/>
+                            </svg>
                             <span>Power BI</span>
                         </div>
+
                         <div class="tech-badge">
-                            <span class="tech-icon">🐍</span>
+                            <!-- Python -->
+                            <svg class="tech-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c-1.1 0-2 .9-2 2v2H7c-1.1 0-2 .9-2 2v4h10V7c0-1.1-.9-2-2-2h-1V4c0-.6-.4-1-1-1zM7 8h2v2H7V8zm10 4H7v5c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2s2-.9 2-2v-2h3c1.1 0 2-.9 2-2v-3c0-1.1-.9-2-2-2zm-3 7h-2v-2h2v2z"/>
+                            </svg>
                             <span>Python</span>
                         </div>
+
                         <div class="tech-badge">
-                            <span class="tech-icon">📈</span>
+                            <!-- R -->
+                            <svg class="tech-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 4C6.5 4 2 6.7 2 10s4.5 6 10 6c.7 0 1.3 0 2-.1l3.5 4.1h4L18 14.5C20 13.2 21 11.7 21 10c0-3.3-4.5-6-9-6zm0 2c3.9 0 7 1.8 7 4s-3.1 4-7 4-7-1.8-7-4 3.1-4 7-4zm1.5 4h-1.2v1.2h1.2c.6 0 1.1-.2 1.1-.6 0-.3-.5-.6-1.1-.6z"/>
+                            </svg>
                             <span>R</span>
                         </div>
+
                         <div class="tech-badge">
-                            <span class="tech-icon">🗄️</span>
+                            <!-- SQL / Database -->
+                            <svg class="tech-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                                <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>
+                                <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>
+                            </svg>
                             <span>SQL</span>
                         </div>
+
                         <div class="tech-badge">
-                            <span class="tech-icon">🤖</span>
+                            <!-- Machine Learning / AI -->
+                            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 2a3 3 0 0 0-3 3v2a3 3 0 0 1-3 3 3 3 0 0 0 0 6 3 3 0 0 1 3 3v2a3 3 0 0 0 3 3"/>
+                                <path d="M15 2a3 3 0 0 1 3 3v2a3 3 0 0 0 3 3 3 3 0 0 1 0 6 3 3 0 0 0-3 3v2a3 3 0 0 1-3 3"/>
+                                <path d="M9 12h6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
                             <span>ML/AI</span>
-                        </div>
-                        <div class="tech-badge">
-                            <span class="tech-icon">☁️</span>
-                            <span>Azure</span>
                         </div>
                     </div>
                 </div>
@@ -1352,20 +1360,32 @@
                         <div class="visible-results-count" id="project-count"></div>
                     </div>
 
-                    <div class="tech-filters" id="project-filters">
-                        <button class="filter-btn active" data-filter="all">
-                            <span>Todos</span>
-                        </button>
-                        <button class="filter-btn" data-filter="powerbi">
-                            <span>ml</span>
-                        </button>
-                        <button class="filter-btn" data-filter="python">
-                            <span>deeplearning</span>
-                        </button>
-                        <button class="filter-btn" data-filter="machine-learning">
-                            <span>analysis/span>
-                        </button>
-                    </div>
+                        <div class="tech-filters" id="project-filters">
+                            <button class="filter-btn active" data-filter="all">
+                                <span>Todos</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Modelos Predictivos y ML">
+                                <span>Modelos Predictivos y ML</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Deep Learning">
+                                <span>Deep Learning</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Inferencia Causal y XAI">
+                                <span>Inferencia Causal y XAI</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Simulación y Modelado Artificial">
+                                <span>Simulación y Modelado Artificial</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Análisis Estadístico y Multivariante">
+                                <span>Análisis Estadístico y Multivariante</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Business Intelligence">
+                                <span>Business Intelligence</span>
+                            </button>
+                            <button class="filter-btn" data-filter="Optimización">
+                                <span>Optimización</span>
+                            </button>
+                        </div>
 
                     <div class="project-grid" id="project-grid">
                         <!-- Projects will be populated by JavaScript -->
@@ -1740,7 +1760,7 @@
         "title": "Predicción de Precio de Vivienda",
         "description": "Comparador de modelos de regresión de alto rendimiento (California Housing). Evalúa múltiples algoritmos con análisis de importancia de características y visualización de errores.",
         "technologies": ["Python", "ML", "Sklearn", "XGBoost", "Random Forest"],
-        "category": "python",
+        "category": "Modelos Predictivos y ML",
         "details": "Comparador de modelos de regresión de alto rendimiento (California Housing). Evalúa múltiples algoritmos como Random Forest, XGBoost, LightGBM, y SVR. Incluye análisis de importancia de características y visualización de errores.",
         "github": "IA_Predicción_Precio_Vivienda.zip",
         "demo": "",
@@ -1751,7 +1771,7 @@
         "title": "Predicción de Ventas de una Empresa",
         "description": "Pipeline avanzado de forecasting de series de tiempo con modelos híbridos Prophet y XGBoost, interpretabilidad SHAP y diagnóstico con statsmodels.",
         "technologies": ["Python", "ML", "XGBoost", "Prophet", "SHAP", "Statsmodels"],
-        "category": "python",
+        "category": "Modelos Predictivos y ML",
         "details": "Pipeline avanzado de forecasting de series de tiempo. Combina modelos híbridos: Prophet para tendencias y estacionalidad, y XGBoost para características exógenas. Ofrece interpretabilidad de predicciones con SHAP y diagnóstico de series con statsmodels.",
         "github": "IA_Predicción_Ventas.zip",
         "demo": "",
@@ -1762,7 +1782,7 @@
         "title": "Sistema de Scoring Crediticio",
         "description": "Sistema avanzado de evaluación crediticia con arquitectura híbrida y técnicas de Explainable AI (SHAP, LIME).",
         "technologies": ["Python", "ML", "XAI", "XGBoost", "Logistic Regression", "LightGBM", "SHAP", "LIME"],
-        "category": "python",
+        "category": "Modelos Predictivos y ML",
         "details": "Sistema avanzado de evaluación crediticia con arquitectura híbrida (Logistic Regression, XGBoost, LightGBM) y técnicas de Explainable AI (SHAP, LIME). Incluye ingeniería de características, calibración, simulación Monte Carlo y métricas de fairness.",
         "github": "Sistema de Scoring Crediticio.zip",
         "demo": "",
@@ -1773,7 +1793,7 @@
         "title": "Recomendación de Películas",
         "description": "Sistema de recomendación híbrido con filtrado colaborativo avanzado (Surprise SVD/KNN) y basado en contenido (Scikit-learn TF-IDF).",
         "technologies": ["Python", "ML", "NLP", "Scikit-learn", "Surprise", "TF-IDF", "RandomizedSearchCV"],
-        "category": "python",
+        "category": "Modelos Predictivos y ML",
         "details": "Sistema de recomendación híbrido. Implementa filtrado colaborativo avanzado (Surprise SVD/KNN) y basado en contenido (Scikit-learn TF-IDF). Incluye RandomizedSearchCV para optimización y un motor robusto para la solución del problema de Cold Start.",
         "github": "IA_Recomendación_Películas.zip",
         "demo": "",
@@ -1784,7 +1804,7 @@
         "title": "Detección de Sentimiento en Reviews",
         "description": "Sistema de Análisis de Sentimientos y Minería de Opiniones (ABSA) con Voting Classifier potenciado por técnicas de Orientación Semántica.",
         "technologies": ["Python", "ML", "NLP", "Scikit-learn", "NLTK", "SVC", "MultinomialNB"],
-        "category": "python",
+        "category": "Modelos Predictivos y ML",
         "details": "Sistema de Análisis de Sentimientos y Minería de Opiniones (ABSA). Utiliza un Voting Classifier (Scikit-learn SVC/MultinomialNB) potenciado por técnicas de Orientación Semántica (NLTK) para clasificar sentimientos y detectar comparaciones en textos.",
         "github": "IA_Detector_Reviews.zip",
         "demo": "",
@@ -1795,7 +1815,7 @@
         "title": "Modelo de Dinámica Neuronal Caótica",
         "description": "Modelo generativo de sistemas dinámicos caóticos con arquitectura híbrida Autoencoder + Neural ODE implementada con JAX.",
         "technologies": ["Python", "Deep Learning", "JAX", "Neural ODEs", "XAI", "Diffrax"],
-        "category": "python",
+        "category": "Deep Learning",
         "details": "Modelo generativo de sistemas dinámicos caóticos (Lorenz, Rössler). Arquitectura híbrida (Autoencoder + Neural ODE) implementada con JAX y Diffrax para simulación de física diferenciable. Utiliza jax.vmap para paralelización masiva, logrando una compresión del 87% y preservando propiedades caóticas (Exponente de Lyapunov).",
         "github": "Sistemas caóticos de dinámica neuronal.zip",
         "demo": "",
@@ -1806,7 +1826,7 @@
         "title": "Redes Neuronales Aceleradas en GPU",
         "description": "Plataforma modular de Deep Learning no supervisado con aceleración GPU para clustering, reducción de dimensionalidad y detección de anomalías.",
         "technologies": ["Python", "Deep Learning", "GPU", "Autoencoders", "UMAP", "HDBSCAN"],
-        "category": "python",
+        "category": "Deep Learning",
         "details": "Plataforma modular de Deep Learning no supervisado con aceleración GPU. Combina Autoencoders contrastivos, UMAP y HDBSCAN para clustering, reducción de dimensionalidad y detección de anomalías en datos multimodales.",
         "github": "DeepLearning_GPU.zip",
         "demo": "",
@@ -1817,7 +1837,7 @@
         "title": "Modelo Double Debiased Machine Learning",
         "description": "Framework avanzado de Inferencia Causal con Double Machine Learning para estimación ortogonalizada de efectos causales.",
         "technologies": ["Python", "ML", "Causal Inference", "DoubleML", "EconML", "Scikit-learn"],
-        "category": "python",
+        "category": "Inferencia Causal y XAI",
         "details": "Framework avanzado de Inferencia Causal. Implementa Double Machine Learning (DML) con doubleml y EconML para la estimación ortogonalizada de efectos causales (PLR, PLIV) y la inferencia de Efectos de Tratamiento Heterogéneos (CATE), incluyendo validación asintótica (Monte Carlo) y modelos de scikit-learn como estimadores auxiliares.",
         "github": "DoubleDebiased.zip",
         "demo": "",
@@ -1828,7 +1848,7 @@
         "title": "Explainable AI (XAI) – Interpretabilidad",
         "description": "Pipeline completo de IA Confiable (TAI) para auditoría de modelos caja negra con explicabilidad local, contrafactuales y auditoría de sesgos.",
         "technologies": ["Python", "ML", "XAI", "SHAP", "LIME", "DiCE", "TabNet", "React", "Recharts", "ReportLab"],
-        "category": "python",
+        "category": "Inferencia Causal y XAI",
         "details": "Pipeline completo de IA Confiable (TAI) para auditoría de modelos caja negra (TabNet). Implementa explicabilidad local con SHAP y LIME, genera contrafactuales con DiCE y realiza auditoría de sesgos (Fairness). El resultado se consolida en un dashboard interactivo (React/Recharts) y un reporte ejecutivo en PDF (reportlab).",
         "github": "Xai.zip",
         "demo": "",
@@ -1839,7 +1859,7 @@
         "title": "Pipeline MLOps para Despliegue de Modelos",
         "description": "Pipeline completo de IA Confiable (TAI) y XAI para auditoría de modelos críticos en entornos de salud.",
         "technologies": ["Python", "ML", "MLOps", "XAI", "SHAP", "LIME", "DiCE", "TabNet", "React", "Recharts"],
-        "category": "python",
+        "category": "Inferencia Causal y XAI",
         "details": "Pipeline completo de IA Confiable (TAI) y XAI para auditoría de un modelo de caja negra (TabNet) en un entorno crítico de Salud (MIMIC-IV). Implementa explicabilidad local con SHAP y LIME, genera contrafactuales con DiCE, y realiza una auditoría de sesgos (Fairness). Los resultados se consolidan en un Dashboard Interactivo (React/Recharts) y un Reporte Ejecutivo profesional en PDF (reportlab).",
         "github": "mlops.zip",
         "demo": "",
@@ -1850,7 +1870,7 @@
         "title": "Manifold Learning y Clustering de Densidad",
         "description": "Pipeline completo de análisis no supervisado con técnicas de reducción de dimensionalidad y clustering por densidad.",
         "technologies": ["Python", "ML", "MLOps", "UMAP", "PCA", "HDBSCAN", "Spectral Clustering", "Plotly"],
-        "category": "python",
+        "category": "Deep Learning",
         "details": "Pipeline completo de análisis no supervisado. Aplica técnicas de Reducción de Dimensionalidad (Manifold Learning: UMAP, PCA) y Clustering por Densidad (HDBSCAN, Spectral Clustering), con validación robusta y visualización 3D interactiva (Plotly).",
         "github": "Manifold_Cluster_Densidad.zip",
         "demo": "",
@@ -1861,7 +1881,7 @@
         "title": "Simulador de Ecosistema Artificial",
         "description": "Motor de simulación ecológica con pathfinding A*, genética evolutiva y ciclos estacionales en un entorno 2D animado.",
         "technologies": ["Python", "Simulation", "Pathfinding", "Genetic Algorithms"],
-        "category": "python",
+        "category": "Simulación y Modelado Artificial",
         "details": "Motor de simulación ecológica con pathfinding A*, genética evolutiva y ciclos estacionales. Reproduce dinámicas entre especies, plantas y enfermedades en un entorno 2D animado con ecosistemas autoadaptativos.",
         "github": "Simulador_Ecosistema.zip",
         "demo": "",
@@ -1872,7 +1892,7 @@
         "title": "Modelo Evolutivo de Civilización",
         "description": "Simulador procedimental de civilizaciones con clima dinámico, geología, diplomacia, migración y evolución tecnológica.",
         "technologies": ["Python", "Simulation", "Procedural Generation"],
-        "category": "python",
+        "category": "Simulación y Modelado Artificial",
         "details": "Simulador procedimental de civilizaciones con clima dinámico, geología, diplomacia, migración, evolución tecnológica y ecosistemas vivos. Modela interacciones complejas entre economía, cultura y medio ambiente.",
         "github": "Civilización.zip",
         "demo": "",
@@ -1883,7 +1903,7 @@
         "title": "Análisis de ventas de BMW",
         "description": "Análisis integral de ventas BMW (2010–2024) combinando estadística descriptiva, clustering, PCA y regresión.",
         "technologies": ["Python", "Analysis", "PCA", "Clustering", "Regression"],
-        "category": "python",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Análisis integral de ventas BMW (2010–2024) combinando estadística descriptiva, clustering, PCA y regresión. Incluye visualización avanzada y detección automática de outliers para optimizar estrategias de mercado.",
         "github": "BMW_DataAnalysis.zip",
         "demo": "",
@@ -1894,7 +1914,7 @@
         "title": "Informe de Análisis ACP",
         "description": "Análisis de Componentes Principales para el Proyecto Teno.",
         "technologies": ["R", "PCA", "Clustering"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Análisis de Componentes Principales (ACP) - Proyecto Teno. Informe detallado de análisis multivariante.",
         "github": "ACP Teno.pdf",
         "demo": "",
@@ -1905,7 +1925,7 @@
         "title": "Informe de Análisis Clustering",
         "description": "Análisis de Clustering para el Proyecto Teno.",
         "technologies": ["R", "PCA", "Clustering"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Análisis de Clustering - Proyecto Teno. Informe detallado de técnicas de agrupamiento.",
         "github": "Clúster Teno.pdf",
         "demo": "",
@@ -1916,7 +1936,7 @@
         "title": "Informe de Regresión Lineal",
         "description": "Análisis de Regresión Lineal para el dataset de Ríos de Nueva York.",
         "technologies": ["R", "Regression", "Clustering"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Regresión Lineal y Clustering – Análisis Ríos Nueva York. Informe de regresión lineal aplicada a datos ambientales.",
         "github": "Regresión Lineal Ríos Nueva York.pdf",
         "demo": "",
@@ -1927,7 +1947,7 @@
         "title": "Informe de Análisis Clustering",
         "description": "Análisis de Clustering para el dataset de Ríos de Nueva York.",
         "technologies": ["R", "Regression", "Clustering"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Regresión Lineal y Clustering – Análisis Ríos Nueva York. Informe de análisis cluster aplicado a datos ambientales.",
         "github": "Clúster Ríos Nueva York.pdf",
         "demo": "",
@@ -1938,7 +1958,7 @@
         "title": "Dashboard Fútbol Internacional",
         "description": "Dashboard interactivo en Power BI para análisis de estadísticas de fútbol internacional.",
         "technologies": ["Power BI", "BI", "DAX"],
-        "category": "powerbi",
+        "category": "Business Intelligence",
         "details": "Dashboard interactivo en Power BI para visualización y análisis de datos de fútbol internacional con métricas avanzadas.",
         "github": "FutbolInternacional.pbix",
         "demo": "",
@@ -1949,7 +1969,7 @@
         "title": "Dashboard Análisis de Libros",
         "description": "Dashboard interactivo en Power BI para análisis de datos de libros y lectura.",
         "technologies": ["Power BI", "BI", "DAX"],
-        "category": "powerbi",
+        "category": "Business Intelligence",
         "details": "Dashboard interactivo en Power BI para análisis de tendencias de lectura, popularidad de libros y métricas literarias.",
         "github": "Libros.pbix",
         "demo": "",
@@ -1960,7 +1980,7 @@
         "title": "Modelado LOESS, Clustering y PCA",
         "description": "Script de R para modelado LOESS, técnicas de clustering y análisis de componentes principales.",
         "technologies": ["R", "Statistics", "LOESS", "Bootstrap", "PCA", "Clustering"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Script de análisis estadístico en R que implementa modelado LOESS, clustering y PCA para análisis de datos complejos.",
         "github": "modelado_loess_clustering_pca.R",
         "demo": "",
@@ -1971,7 +1991,7 @@
         "title": "Regresión LOESS, Bootstrap y PCA",
         "description": "Script de R para regresión LOESS, muestreo Bootstrap y análisis de componentes principales.",
         "technologies": ["R", "Statistics", "LOESS", "Bootstrap", "PCA"],
-        "category": "machine-learning",
+        "category": "Análisis Estadístico y Multivariante",
         "details": "Script de análisis estadístico en R que combina regresión LOESS, técnicas de Bootstrap y PCA para inferencia robusta.",
         "github": "regresion_loess_bootstrap_pca.R",
         "demo": "",
@@ -1980,9 +2000,9 @@
     {
         "id": 23,
         "title": "Algoritmos de Optimización I",
-        "description": "Implementación de algoritmos de optimización en Python.",
+        "description": "Implementación de algoritmos de optimización de rutas en Python.",
         "technologies": ["Python", "Optimization"],
-        "category": "python",
+        "category": "Optimización",
         "details": "Script de Python con implementación de algoritmos de optimización avanzados para resolver problemas matemáticos complejos.",
         "github": "Optimización.py",
         "demo": "",
@@ -1991,9 +2011,9 @@
     {
         "id": 24,
         "title": "Algoritmos de Optimización II",
-        "description": "Segunda parte de implementación de algoritmos de optimización en Python.",
+        "description": "Segunda parte de implementación de algoritmos de optimización de rutas en Python.",
         "technologies": ["Python", "Optimization"],
-        "category": "python",
+        "category": "Optimización",
         "details": "Script de Python con implementación adicional de algoritmos de optimización para problemas avanzados.",
         "github": "Optimización2.py",
         "demo": "",
@@ -2008,8 +2028,8 @@
             if (typeof VANTA !== 'undefined') {
                 VANTA.BIRDS({
                     el: "#vanta-bg",
-                    mouseControls: true,
-                    touchControls: true,
+                    mouseControls: false,
+                    touchControls: false,
                     gyroControls: false,
                     minHeight: 200.00,
                     minWidth: 200.00,
@@ -2160,7 +2180,7 @@
                                 <span>🔍</span>
                             </a>
                             <a href="${project.github}" target="_blank" class="project-btn btn-secondary">
-                                <span>GitHub</span>
+                                <span>Descargar</span>
                                 <span>📂</span>
                             </a>
                         </div>
@@ -2223,7 +2243,7 @@
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
                 <div style="margin: 1.5rem 0;">
-                    <img src="${project.image}" alt="${project.title}" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <img src="${project.image}" loading="lazy" alt="${project.title}" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
                     <p style="color: var(--text-secondary); line-height: 1.6;">${project.details}</p>
                 </div>
             `;
