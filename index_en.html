@@ -1290,6 +1290,25 @@
         [data-theme="light"] #volumeContainer {
             background: rgba(248, 249, 250, 0.9);
         }
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+        }
+        
+        #volumeContainer.visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        
+        .volume-percentage {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-left: 8px;
+            font-weight: 600;
+            min-width: 30px;
+        }
     </style>
 </head>
 <body>
@@ -1319,14 +1338,15 @@
                 </button>
                 <button class="lang-toggle" id="lang-toggle">ES</button>
                 <!-- BOTÓN DE AUDIO -->
-                <button id="audioToggleBtn" class="lang-toggle" aria-label="Control de audio" style="display: flex; align-items: center; justify-content: center; width: 40px; padding: 0.6rem;">
-                    <span id="audioIcon">🔇</span> <!-- Empieza silenciado -->
+                <button id="audioToggleBtn" class="audio-toggle" aria-label="Control de audio" style="display: flex; align-items: center; justify-content: center; width: 40px; padding: 0.6rem; position: relative;">
+                    <span id="audioIcon">🔇</span>
                 </button>
             </div>
             
             <!-- CONTENEDOR DEL SLIDER (mover justo antes del </body>) -->
-            <div id="volumeContainer" style="position: fixed; top: 90px; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 10px 15px; backdrop-filter: blur(10px); display: none; z-index: 999; box-shadow: var(--shadow-glow);">
+            <div id="volumeContainer" style="position: fixed; top: 90px; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 10px 15px; backdrop-filter: blur(10px); z-index: 999; box-shadow: var(--shadow-glow); display: flex; align-items: center; gap: 10px;">
                 <input type="range" id="volumeSlider" min="0" max="100" value="15" aria-label="Volumen" style="width: 100px;">
+                <span class="volume-percentage">15%</span>
             </div>
         </div>
     </nav>
@@ -2464,55 +2484,83 @@
     </audio>
 
     <script>
-        // Audio controls logic (Fixed)
-        const audio = document.getElementById('bgAudio');
+ const audio = document.getElementById('bgAudio');
         const toggleBtn = document.getElementById('audioToggleBtn');
         const volumeSlider = document.getElementById('volumeSlider');
         const audioIcon = document.getElementById('audioIcon');
         const volumeContainer = document.getElementById('volumeContainer');
+        const volumePercentage = document.querySelector('.volume-percentage');
         
-        let audioEnabled = false; // Empieza silenciado
+        let audioEnabled = false;
+        let sliderVisible = false;
         
-        // Al hacer clic en el botón
+        // Inicializar volumen
+        audio.volume = volumeSlider.value / 100;
+        
+        // Toggle de audio (reproducir/pausar)
         toggleBtn.addEventListener('click', () => {
-          if (!audioEnabled) {
-            // ACTIVAR audio (🔇 → 🎵)
-            audio.play().then(() => {
-              audioEnabled = true;
-              audioIcon.textContent = '🎵';
-              volumeContainer.style.display = 'block'; // Mostrar slider
-            }).catch(err => {
-              console.warn('Autoplay bloqueado:', err);
-            });
-          } else {
-            // DESACTIVAR audio (🎵 → 🔇)
-            audio.pause();
-            audioEnabled = false;
-            audioIcon.textContent = '🔇';
-            volumeContainer.style.display = 'none'; // Ocultar slider
-          }
+            if (!audioEnabled) {
+                audio.play().then(() => {
+                    audioEnabled = true;
+                    audioIcon.textContent = '🎵';
+                    toggleSlider(); // Mostrar slider al activar
+                }).catch(err => {
+                    console.warn('Autoplay bloqueado:', err);
+                });
+            } else {
+                audio.pause();
+                audioEnabled = false;
+                audioIcon.textContent = '🔇';
+                // NO ocultar el slider al pausar, solo cambiar icono
+            }
         });
         
-        // Al mover el slider → SILENCIAR
+        // Toggle de visibilidad del slider
+        function toggleSlider() {
+            sliderVisible = !sliderVisible;
+            if (sliderVisible) {
+                volumeContainer.classList.add('visible');
+            } else {
+                volumeContainer.classList.remove('visible');
+            }
+        }
+        
+        // Mostrar/ocultar slider al hacer clic en el botón con clic derecho o mantener pulsado
+        toggleBtn.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            toggleSlider();
+        });
+        
+        // O alternativa: doble clic para mostrar slider
+        toggleBtn.addEventListener('dblclick', () => {
+            toggleSlider();
+        });
+        
+        // Actualizar volumen SIN pausar el audio
         volumeSlider.addEventListener('input', (e) => {
-          audio.volume = e.target.value / 100;
-          // SILENCIAR automáticamente
-          audio.pause();
-          audioEnabled = false;
-          audioIcon.textContent = '🔇';
-          volumeContainer.style.display = 'none';
+            const volume = e.target.value / 100;
+            audio.volume = volume;
+            if (volumePercentage) {
+                volumePercentage.textContent = `${Math.round(volume * 100)}%`;
+            }
+        });
+        
+        // Cerrar slider al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!volumeContainer.contains(e.target) && !toggleBtn.contains(e.target)) {
+                volumeContainer.classList.remove('visible');
+                sliderVisible = false;
+            }
         });
         
         // Pausar cuando la pestaña no está visible
         document.addEventListener('visibilitychange', () => {
-          if (document.hidden && audioEnabled) {
-            audio.pause();
-          } else if (!document.hidden && audioEnabled) {
-            audio.play();
-          }
+            if (document.hidden && audioEnabled) {
+                audio.pause();
+            } else if (!document.hidden && audioEnabled) {
+                audio.play();
+            }
         });
-        
-        audio.volume = 0.15;
     </script>
 </body>
 </html>
