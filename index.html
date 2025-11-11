@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-current-lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2088,14 +2088,25 @@
         // Language Toggle
         function initLanguageToggle() {
             const langToggle = document.getElementById('lang-toggle');
-            let currentLang = 'ES';
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('data-current-lang') || 'es';
+            
+            // Establece el texto inicial (muestra el idioma ACTUAL)
+            langToggle.textContent = currentLang.toUpperCase();
 
             langToggle.addEventListener('click', () => {
-                currentLang = currentLang === 'ES' ? 'EN' : 'ES';
-                langToggle.textContent = currentLang;
+                // Determina a qué idioma queremos cambiar
+                const targetLang = currentLang === 'es' ? 'en' : 'es';
                 
-                // Here you would implement language switching logic
-                console.log('Language switched to:', currentLang);
+                // Guarda la preferencia
+                localStorage.setItem('preferredLanguage', targetLang);
+                
+                // Redirige
+                if (targetLang === 'en') {
+                    window.location.href = 'index_en.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
             });
         }
 
@@ -2345,6 +2356,19 @@
                     closeModal();
                 }
             });
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const currentLang = document.documentElement.getAttribute('data-current-lang');
+            
+            // Solo redirige si el usuario tiene una preferencia guardada Y es diferente al idioma actual
+            if (savedLang && savedLang !== currentLang) {
+                console.log(`Redirecting to ${savedLang} based on user preference...`);
+                
+                if (savedLang === 'en') {
+                    window.location.href = '/en/index.html';
+                } else if (savedLang === 'es') {
+                    window.location.href = '/index.html';
+                }
+            }
         });
 
         // Make openModal globally available
