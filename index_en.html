@@ -1287,6 +1287,9 @@
           border: none;
           box-shadow: var(--shadow-sm);
         }
+        [data-theme="light"] #volumeContainer {
+            background: rgba(248, 249, 250, 0.9);
+        }
     </style>
 </head>
 <body>
@@ -1310,11 +1313,20 @@
                 <li><a href="#contacto">Contact</a></li>
             </ul>
             <div class="controls">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Change theme">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
                     <span class="theme-icon">🌙</span>
-                    <span class="theme-text">Dark</span>
+                    <span class="theme-text">Oscuro</span>
                 </button>
                 <button class="lang-toggle" id="lang-toggle">ES</button>
+                <!-- NUEVO BOTÓN DE AUDIO -->
+                <button id="audioToggleBtn" class="lang-toggle" aria-label="Control de audio" style="display: flex; align-items: center; justify-content: center; width: 40px; padding: 0.6rem;">
+                    <span id="audioIcon">🔇</span>
+                </button>
+            </div>
+            
+            <!-- SLIDER DE VOLUMEN (se muestra al activar audio) -->
+            <div id="volumeContainer" style="position: fixed; bottom: 20px; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 10px 15px; backdrop-filter: blur(10px); display: none; z-index: 9999; box-shadow: var(--shadow-glow);">
+                <input type="range" id="volumeSlider" min="0" max="100" value="15" aria-label="Volumen" style="width: 100px;">
             </div>
         </div>
     </nav>
@@ -2445,14 +2457,6 @@
 
 </script>  <!-- <<<<<<<< AÑADE ESTO: Cierra el script principal -->
 
-    <!-- Audio controls (ahora fuera del bloque script) -->
-    <div class="audio-controls" id="audioControls" style="display: none;">
-      <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
-        <span id="audioIcon">🎵</span>
-      </button>
-      <input type="range" id="volumeSlider" min="0" max="100" value="15" 
-             aria-label="Volumen" title="Volumen">
-    </div>
     
     <audio id="bgAudio" loop>
       <source src="background.mp3" type="audio/mpeg">
@@ -2460,38 +2464,46 @@
     </audio>
 
     <script>
-        // Script de audio (ahora en su propio bloque)
+// Audio controls logic (Fixed)
         const audio = document.getElementById('bgAudio');
-        const audioControls = document.getElementById('audioControls');
         const toggleBtn = document.getElementById('audioToggleBtn');
         const volumeSlider = document.getElementById('volumeSlider');
         const audioIcon = document.getElementById('audioIcon');
+        const volumeContainer = document.getElementById('volumeContainer');
         
-        let audioEnabled = false;
+        let audioEnabled = false; // Empieza silenciado
         
-        document.addEventListener('click', function initAudio() {
-          audioControls.style.display = 'flex';
-        });
-        
+        // Mostrar/ocultar slider al hacer clic en botón
         toggleBtn.addEventListener('click', () => {
           if (!audioEnabled) {
+            // Activar audio
             audio.play().then(() => {
               audioEnabled = true;
-              audioIcon.textContent = '🔇';
+              audioIcon.textContent = '🎵'; // Icono de "sonando"
+              volumeContainer.style.display = 'block'; // Mostrar slider
             }).catch(err => {
               console.warn('Autoplay bloqueado:', err);
             });
           } else {
+            // Desactivar audio
             audio.pause();
             audioEnabled = false;
-            audioIcon.textContent = '🎵';
+            audioIcon.textContent = '🔇'; // Icono de "silenciado"
+            volumeContainer.style.display = 'none'; // Ocultar slider
           }
         });
         
+        // Al mover el slider, silenciar el audio
         volumeSlider.addEventListener('input', (e) => {
           audio.volume = e.target.value / 100;
+          // Silenciar automáticamente al ajustar volumen
+          audio.pause();
+          audioEnabled = false;
+          audioIcon.textContent = '🔇';
+          volumeContainer.style.display = 'none';
         });
         
+        // Pausar cuando la pestaña no está visible
         document.addEventListener('visibilitychange', () => {
           if (document.hidden && audioEnabled) {
             audio.pause();
@@ -2500,6 +2512,7 @@
           }
         });
         
+        // Volumen inicial bajo
         audio.volume = 0.15;
     </script>
 </body>
