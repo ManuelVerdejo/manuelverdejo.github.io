@@ -2447,19 +2447,7 @@
 
         // Make openModal globally available
         window.openModal = openModal;
-        <div class="audio-controls" id="audioControls" style="display: none;">
-          <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
-            <span id="audioIcon">🎵</span>
-          </button>
-          <input type="range" id="volumeSlider" min="0" max="100" value="15" 
-                 aria-label="Volumen" title="Volumen">
-        </div>
-        
-        <!-- Audio element (oculto pero funcional) -->
-        <audio id="bgAudio" loop>
-          <source src="background.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio HTML5.
-        </audio>
+
         const audio = document.getElementById('bgAudio');
         const audioControls = document.getElementById('audioControls');
         const toggleBtn = document.getElementById('audioToggleBtn');
@@ -2510,5 +2498,18 @@
         // Configuración inicial
         audio.volume = 0.15; // Volumen bajo por defecto (15%)
     </script>
+        <div class="audio-controls" id="audioControls" style="display: none;">
+          <button id="audioToggleBtn" aria-label="Reproducir/Pausar música de fondo">
+            <span id="audioIcon">🎵</span>
+          </button>
+          <input type="range" id="volumeSlider" min="0" max="100" value="15" 
+                 aria-label="Volumen" title="Volumen">
+        </div>
+        
+        <!-- Audio element (oculto pero funcional) -->
+        <audio id="bgAudio" loop>
+          <source src="background.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio HTML5.
+        </audio>
 </body>
 </html>
