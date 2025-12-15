@@ -2001,7 +2001,7 @@
         "details": "Complete Trustworthy AI (TAI) and XAI pipeline for auditing a black-box model (TabNet) in a critical Healthcare environment (MIMIC-IV). Implements local explainability with SHAP and LIME, generates counterfactuals with DiCE, and performs bias auditing (Fairness). Results are consolidated in an Interactive Dashboard (React/Recharts) and a professional Executive Report in PDF (reportlab).",
         "github": "mlops.zip",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1667372393119-c81c0cda0a29?w=800&q=80"
     },
     {
         "id": 11,
@@ -2012,7 +2012,7 @@
         "details": "Complete unsupervised analysis pipeline. Applies Dimensionality Reduction techniques (Manifold Learning: UMAP, PCA) and Density Clustering (HDBSCAN, Spectral Clustering), with robust validation and interactive 3D visualization (Plotly).",
         "github": "Manifold_Cluster_Densidad.zip",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80"
     },
     {
         "id": 12,
@@ -2034,7 +2034,7 @@
         "details": "Procedural civilization simulator with dynamic climate, geology, diplomacy, migration, technological evolution and living ecosystems. Models complex interactions between economy, culture and environment.",
         "github": "Civilización.zip",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80"
     },
     {
         "id": 14,
@@ -2045,7 +2045,7 @@
         "details": "Comprehensive BMW sales analysis (2010–2024) combining descriptive statistics, clustering, PCA and regression. Includes advanced visualization and automatic outlier detection to optimize market strategies.",
         "github": "BMW_DataAnalysis.zip",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1555215695-3004980adade?w=800&q=80"
     },
     {
         "id": 15,
@@ -2144,7 +2144,7 @@
         "details": "Python script with implementation of advanced optimization algorithms for solving complex mathematical problems.",
         "github": "Optimización.py",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&q=80"
     },
     {
         "id": 24,
@@ -2155,7 +2155,7 @@
         "details": "Additional Python script with implementation of optimization algorithms for advanced problems.",
         "github": "Optimización2.py",
         "demo": "",
-        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80"
     },
 
 
@@ -2396,13 +2396,17 @@
             const modalContent = document.getElementById('modal-content');
 
             modalTitle.textContent = project.title;
+            // Busca esta parte dentro de la función openModal(projectId)
             modalContent.innerHTML = `
                 <div class="modal-tech-stack">
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
                 <div style="margin: 1.5rem 0;">
-                    <img src="${project.image}" loading="lazy" alt="${project.title}" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
-                    <p style="color: var(--text-secondary); line-height: 1.6;">${project.details}</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                        ${project.details}
+                    </p>
+            
+                    <img src="${project.image}" loading="lazy" alt="${project.title}" style="width: 100%; border-radius: 12px; margin-top: 1rem;">
                 </div>
             `;
 
